@@ -39,7 +39,7 @@
                 android:layout_height="wrap_content"
                 android:inputType="textEmailAddress"
                 android:ems="10"
-                android:id="@+id/editText"
+                android:id="@+id/editTextMail"
                 android:layout_gravity="center_horizontal"
                 android:layout_marginTop="150dp"/>
 
@@ -48,14 +48,14 @@
                 android:layout_height="wrap_content"
                 android:inputType="textPassword"
                 android:ems="10"
-                android:id="@+id/editText2"
+                android:id="@+id/editTextPassword"
                 android:layout_gravity="center_horizontal" />
 
             <Button
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="Log In"
-                android:id="@+id/button"
+                android:id="@+id/loginBtn"
                 android:layout_gravity="center_horizontal"
                 android:layout_marginTop="50dp"
             android:background="@color/mainOrange"/>
