@@ -41,4 +41,5 @@
         <item>@string/month_12</item>
     </string-array>
 
+    <string name="title_activity_subscription">SubscriptionActivity</string>
 </resources>
