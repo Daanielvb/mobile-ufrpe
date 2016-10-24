@@ -12,4 +12,5 @@
     <string name="user_info_button">User Info</string>
     <string name="workout_button">Workout Records</string>
     <string name="subscription_button">Subscription</string>
+    <string name="title_activity_subscription">SubscriptionActivity</string>
 </resources>
