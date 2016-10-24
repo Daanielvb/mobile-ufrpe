@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">FitKeeper</string>
+    <string name="home_name">Home</string>
+    <string name="action_sign_in">Login ou cadastro</string>
+    <string name="action_sign_in_short">Login</string>
+    <string name="error_field_required">Campo obrigatório</string>
+    <string name="error_incorrect_password">Senha incorreta</string>
+    <string name="error_invalid_email">Email inválido</string>
+    <string name="error_invalid_password">Senha muito curta</string>
+    <string name="prompt_email">Email</string>
+    <string name="prompt_password">Senha</string>
+    <string name="user_info_button">Informações do usuário</string>
+    <string name="workout_button">Registro de atividades</string>
+    <string name="subscription_button">Matricula</string>
+</resources>
