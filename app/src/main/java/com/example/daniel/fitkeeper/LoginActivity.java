@@ -12,6 +12,7 @@ public class LoginActivity extends AppCompatActivity {
     private Button loginBtn;
     private TextView emailText;
     private TextView passwordtText;
+    private TextView errorText;
     private String email;
     private String password;
 
@@ -27,6 +28,7 @@ public class LoginActivity extends AppCompatActivity {
         loginBtn = (Button) findViewById(R.id.loginBtn);
         emailText = (TextView) findViewById(R.id.editTextMail);
         passwordtText = (TextView) findViewById(R.id.editTextPassword);
+        errorText = (TextView) findViewById(R.id.errorTxt);
         loginBtn.setOnClickListener(new View.OnClickListener(){
             public void onClick(View v){
                 salvaDados();
@@ -56,9 +58,14 @@ public class LoginActivity extends AppCompatActivity {
 
     public void login(String email, String password){
             if(!email.equals("") && !password.equals("")){
+                errorText.setText("");
                 Intent it = new Intent(LoginActivity.this,HomeActivity.class);
                 startActivity(it);
             }
+            else if(email.equals(""))
+                errorText.setText(R.string.error_invalid_email);
+            else if(password.equals(""))
+                errorText.setText(R.string.error_invalid_password);
     }
 
 

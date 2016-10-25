@@ -7,6 +7,7 @@ import android.widget.Spinner;
 import android.widget.TextView;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 public class InfoActivity extends AppCompatActivity {
@@ -16,6 +17,7 @@ public class InfoActivity extends AppCompatActivity {
     public String weight;
     public  String imc;
 
+    private String[] months;
     private TextView nameText;
     private TextView ageText;
     private TextView heightText;
@@ -38,8 +40,9 @@ public class InfoActivity extends AppCompatActivity {
         }
 
         List<String> spinnerArray =  new ArrayList<String>();
-       //spinnerArray.addAll(getResources().getStringArray(R.id.months));
 
+        months = getResources().getStringArray(R.array.months);
+        spinnerArray.addAll(Arrays.asList(months));
         ArrayAdapter<String> adapter = new ArrayAdapter<String>(
                 this, android.R.layout.simple_spinner_item, spinnerArray);
 
