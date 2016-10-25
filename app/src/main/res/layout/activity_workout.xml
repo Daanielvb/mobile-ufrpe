@@ -20,7 +20,7 @@
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
         android:layout_height="70dp"
-        android:backgroundTint="#000000"
+        android:backgroundTint="@color/black"
         android:id="@+id/view">
 
         <TextView
@@ -28,8 +28,7 @@
             android:layout_height="wrap_content"
             android:layout_gravity="center_horizontal"
             android:textAppearance="?android:attr/textAppearanceLarge"
-            android:text="Workout"
-            android:id="@+id/textView1"
+            android:text="@string/workout_name"
             android:layout_alignParentTop="true"
             android:layout_centerHorizontal="true"
             android:textSize="40sp"/>
@@ -56,26 +55,26 @@
             android:background="@color/lightGray">
 
             <TextView
-                android:text="Exercise"
+                android:text="@string/exercise_name"
                 android:padding="3dip"
                 android:textSize="20dp"
                 android:textColor="@color/black"
                 android:background="@drawable/border2"/>
             <TextView
-                android:text="Set"
+                android:text="@string/set_name"
                 android:padding="3dip"
                 android:textSize="20dp"
                 android:textColor="@color/black"
                 android:background="@drawable/border2"/>
 
             <TextView
-                android:text="Reps"
+                android:text="@string/reps_name"
                 android:padding="3dip"
                 android:textSize="20dp"
                 android:textColor="@color/black"
                 android:background="@drawable/border2"/>
             <TextView
-                android:text="Weight"
+                android:text="@string/weight_name"
                 android:padding="3dip"
                 android:textSize="20dp"
                 android:textColor="@color/black"
@@ -88,28 +87,32 @@
                 android:padding="3dip"
                 android:textSize="20dp"
                 android:textColor="@color/black"
-                android:background="@drawable/border2"/>
+                android:background="@drawable/border2"
+                android:id="@+id/exercise1"/>
 
             <TextView
                 android:text="3"
                 android:padding="3dip"
                 android:textSize="20dp"
                 android:textColor="@color/black"
-                android:background="@drawable/border2"/>
+                android:background="@drawable/border2"
+                android:id="@+id/set1"/>
 
             <TextView
                 android:text="8"
                 android:padding="3dip"
                 android:textSize="20dp"
                 android:textColor="@color/black"
-                android:background="@drawable/border2"/>
+                android:background="@drawable/border2"
+                android:id="@+id/reps1"/>
 
             <TextView
                 android:text="20kg"
                 android:padding="3dip"
                 android:textSize="20dp"
                 android:textColor="@color/black"
-                android:background="@drawable/border2"/>
+                android:background="@drawable/border2"
+                android:id="@+id/weight1"/>
         </TableRow>
 
         <TableRow>
@@ -118,28 +121,32 @@
                 android:padding="3dip"
                 android:textSize="20dp"
                 android:textColor="@color/black"
-                android:background="@drawable/border2"/>
+                android:background="@drawable/border2"
+                android:id="@+id/exercise2"/>
 
             <TextView
                 android:text="3"
                 android:padding="3dip"
                 android:textSize="20dp"
                 android:textColor="@color/black"
-                android:background="@drawable/border2"/>
+                android:background="@drawable/border2"
+                android:id="@+id/set2"/>
 
             <TextView
                 android:text="8"
                 android:padding="3dip"
                 android:textSize="20dp"
                 android:textColor="@color/black"
-                android:background="@drawable/border2"/>
+                android:background="@drawable/border2"
+                android:id="@+id/reps2"/>
 
             <TextView
                 android:text="20kg"
                 android:padding="3dip"
                 android:textSize="20dp"
                 android:textColor="@color/black"
-                android:background="@drawable/border2"/>
+                android:background="@drawable/border2"
+                android:id="@+id/weight2"/>
         </TableRow>
 
         <TableRow>
@@ -148,28 +155,32 @@
                 android:padding="3dip"
                 android:textSize="20dp"
                 android:textColor="@color/black"
-                android:background="@drawable/border2"/>
+                android:background="@drawable/border2"
+                android:id="@+id/exercise3"/>
 
             <TextView
                 android:text="3"
                 android:padding="3dip"
                 android:textSize="20dp"
                 android:textColor="@color/black"
-                android:background="@drawable/border2"/>
+                android:background="@drawable/border2"
+                android:id="@+id/set3"/>
 
             <TextView
                 android:text="8"
                 android:padding="3dip"
                 android:textSize="20dp"
                 android:textColor="@color/black"
-                android:background="@drawable/border2"/>
+                android:background="@drawable/border2"
+                android:id="@+id/reps3"/>
 
             <TextView
                 android:text="20kg"
                 android:padding="3dip"
                 android:textSize="20dp"
                 android:textColor="@color/black"
-                android:background="@drawable/border2"/>
+                android:background="@drawable/border2"
+                android:id="@+id/weight3"/>
         </TableRow>
 
         <TableRow>
@@ -178,35 +189,39 @@
                 android:padding="3dip"
                 android:textSize="20dp"
                 android:textColor="@color/black"
-                android:background="@drawable/border2"/>
+                android:background="@drawable/border2"
+                android:id="@+id/exercise4"/>
 
             <TextView
                 android:text="3"
                 android:padding="3dip"
                 android:textSize="20dp"
                 android:textColor="@color/black"
-                android:background="@drawable/border2"/>
+                android:background="@drawable/border2"
+                android:id="@+id/set4"/>
 
             <TextView
                 android:text="8"
                 android:padding="3dip"
                 android:textSize="20dp"
                 android:textColor="@color/black"
-                android:background="@drawable/border2"/>
+                android:background="@drawable/border2"
+                android:id="@+id/reps4"/>
 
             <TextView
                 android:text="20kg"
                 android:padding="3dip"
                 android:textSize="20dp"
                 android:textColor="@color/black"
-                android:background="@drawable/border2"/>
+                android:background="@drawable/border2"
+                android:id="@+id/weight4"/>
         </TableRow>
     </TableLayout>
 
     <ImageButton
         android:layout_width="70dp"
         android:layout_height="50dp"
-        android:id="@+id/imageButton3"
+        android:id="@+id/backBtn"
         android:src="@drawable/ic_back_button"
         android:layout_marginBottom="30dp"
         android:background="@color/mainOrange"

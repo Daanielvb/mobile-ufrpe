@@ -20,7 +20,7 @@
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
         android:layout_height="70dp"
-        android:backgroundTint="#000000"
+        android:backgroundTint="@color/black"
         android:id="@+id/view">
 
         <TextView
@@ -28,8 +28,7 @@
             android:layout_height="wrap_content"
             android:layout_gravity="center_horizontal"
             android:textAppearance="?android:attr/textAppearanceLarge"
-            android:text="Subscription"
-            android:id="@+id/textView1"
+            android:text="@string/subscription_name"
             android:layout_alignParentTop="true"
             android:layout_centerHorizontal="true"
             android:textSize="40sp"/>
@@ -38,52 +37,52 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Membership plan:"
-        android:id="@+id/textView7"
+        android:text="@string/membership_plan_name"
+        android:id="@+id/membershipTxt"
         android:layout_below="@+id/view"
-        android:layout_toEndOf="@+id/imageButton3"
+        android:layout_toEndOf="@+id/backBtn"
         android:layout_marginTop="54dp" />
 
     <EditText
         android:layout_width="180dp"
         android:layout_height="wrap_content"
-        android:id="@+id/editText"
-        android:layout_below="@+id/textView7"
-        android:layout_alignStart="@+id/textView7"
+        android:id="@+id/membershipEdtTxt"
+        android:layout_below="@+id/membershipTxt"
+        android:layout_alignStart="@+id/membershipTxt"
         android:layout_marginTop="10dp"
         android:background="@drawable/border"/>
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Last day of membership plan:"
-        android:id="@+id/textView8"
+        android:text="@string/membership_last_day_name"
+        android:id="@+id/membershipLstDayTxt"
         android:layout_centerVertical="true"
-        android:layout_alignStart="@+id/editText" />
+        android:layout_alignStart="@+id/membershipEdtTxt" />
 
     <EditText
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:inputType="date"
         android:ems="10"
-        android:id="@+id/editText2"
-        android:layout_below="@+id/textView8"
-        android:layout_alignStart="@+id/textView8"
+        android:id="@+id/membershipLstDayEdtTxt"
+        android:layout_below="@+id/membershipLstDayTxt"
+        android:layout_alignStart="@+id/membershipLstDayTxt"
         android:layout_marginTop="20dp"
         android:background="@drawable/border"/>
 
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Renew membership"
-        android:id="@+id/button"
-        android:layout_above="@+id/imageButton3"
-        android:layout_alignEnd="@+id/editText2" />
+        android:text="@string/membership_renew_button_name"
+        android:id="@+id/renewBtn"
+        android:layout_above="@+id/backBtn"
+        android:layout_alignEnd="@+id/membershipLstDayEdtTxt" />
 
     <ImageButton
         android:layout_width="70dp"
         android:layout_height="50dp"
-        android:id="@+id/imageButton3"
+        android:id="@+id/backBtn"
         android:src="@drawable/ic_back_button"
         android:layout_marginBottom="30dp"
         android:background="@color/mainOrange"

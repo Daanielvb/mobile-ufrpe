@@ -1,6 +1,9 @@
 <resources>
     <string name="app_name">FitKeeper</string>
     <string name="home_name">Home</string>
+    <string name="user_info_name">User Info</string>
+    <string name="workout_name">Workout</string>
+    <string name="subscription_name">Subscription</string>
     <string name="prompt_email">Email</string>
     <string name="prompt_password">Password</string>
     <string name="action_sign_in">Sign in or register</string>
@@ -12,6 +15,22 @@
     <string name="user_info_button">User Info</string>
     <string name="workout_button">Workout Records</string>
     <string name="subscription_button">Subscription</string>
+    <string name="login_button">Log in</string>
+
+    <string name="name_user_info">Name:</string>
+    <string name="age_user_info">Age:</string>
+    <string name="height_user_info">Height:</string>
+    <string name="weight_user_info">Weight:</string>
+    <string name="imc_user_info">IMC:</string>
+
+    <string name="exercise_name">Exercise</string>
+    <string name="set_name">Set</string>
+    <string name="reps_name">Reps</string>
+    <string name="weight_name">Weight</string>
+
+    <string name="membership_plan_name">Membership plan:</string>
+    <string name="membership_last_day_name">Last day of membership plan:</string>
+    <string name="membership_renew_button_name">Renew membership</string>
 
     <string name="month_1">January</string>
     <string name="month_2">February</string>
@@ -40,6 +59,23 @@
         <item>@string/month_10</item>
         <item>@string/month_11</item>
         <item>@string/month_12</item>
+    </string-array>
+
+    <string name="day_1">Monday</string>
+    <string name="day_2">Tuesday</string>
+    <string name="day_3">Wednesday</string>
+    <string name="day_4">Thursday</string>
+    <string name="day_5">Friday</string>
+    <string name="day_6">Saturday</string>
+
+    <string-array
+        name="days">
+        <item>@string/day_1</item>
+        <item>@string/day_2</item>
+        <item>@string/day_3</item>
+        <item>@string/day_4</item>
+        <item>@string/day_5</item>
+        <item>@string/day_6</item>
     </string-array>
 
     <string name="title_activity_subscription">SubscriptionActivity</string>
