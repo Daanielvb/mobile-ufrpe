@@ -210,9 +210,7 @@
         android:src="@drawable/ic_back_button"
         android:layout_marginBottom="30dp"
         android:background="@color/mainOrange"
-        android:layout_alignParentBottom="true"
-        android:layout_centerHorizontal="true"
-        android:layout_alignLeft="@id/table"/>
+        android:layout_alignParentBottom="true" />
 
 
 </RelativeLayout>
