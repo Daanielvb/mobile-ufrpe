@@ -25,8 +25,7 @@
     <string name="month_10">October</string>
     <string name="month_11">November</string>
     <string name="month_12">December</string>
-    <string-array
-        name="months">
+    <string-array name="months">
         <item>@string/month_1</item>
         <item>@string/month_2</item>
         <item>@string/month_3</item>
@@ -49,8 +48,7 @@
     <string name="day_6">Saturday</string>
     <string name="day_7">Sunday</string>
 
-    <string-array
-        name="week">
+    <string-array name="week">
         <item>@string/day_1</item>
         <item>@string/day_2</item>
         <item>@string/day_3</item>
