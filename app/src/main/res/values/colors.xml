@@ -6,4 +6,6 @@
     <color name="backgroundOrange">#FF6600</color>
     <color name="mainOrange">#FF7F00</color>
     <color name="black">#000000</color>
+    <color name="white">#FFFFFF</color>
+    <color name="lightGray">#D3D3D3</color>
 </resources>

@@ -17,7 +17,7 @@ public class InfoActivity extends AppCompatActivity {
         setContentView(R.layout.activity_info);
 
         List<String> spinnerArray =  new ArrayList<String>();
-       //spinnerArray.addAll(getResources().getStringArray(R.id.months));
+       //spinnerArray.addAll(getResources().getStringArray(R.id));
         
         ArrayAdapter<String> adapter = new ArrayAdapter<String>(
                 this, android.R.layout.simple_spinner_item, spinnerArray);
