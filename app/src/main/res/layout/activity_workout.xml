@@ -8,7 +8,7 @@
     android:paddingRight="0dp"
     android:paddingTop="0dp"
     android:background="@color/backgroundOrange"
-    tools:context="com.example.daniel.fitkeeper.HomeActivity">
+    tools:context="com.example.daniel.fitkeeper.WorkoutActivity">
 
     <android.support.v7.widget.Toolbar
         android:layout_width="match_parent"

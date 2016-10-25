@@ -5,6 +5,7 @@
     <string name="user_info_name">Informações do Usuário</string>
     <string name="workout_name">Registro de atividades</string>
     <string name="subscription_name">Matrícula</string>
+    <string name="settings_name">Configurações</string>
     <string name="action_sign_in">Login ou cadastro</string>
     <string name="action_sign_in_short">Login</string>
     <string name="error_field_required">Campo obrigatório</string>
@@ -32,6 +33,13 @@
     <string name="membership_plan_name">Tipo de plano:</string>
     <string name="membership_last_day_name">Ultimo dia do plano:</string>
     <string name="membership_renew_button_name">Renovar matriícula</string>
+
+    <string name="current_password_name">Senha atual</string>
+    <string name="new_password_name">Nova senha</string>
+    <string name="repeat_password_name">Repita a nova senha</string>
+
+    <string name="save_button_name">Salvar</string>
+    <string name="logout_button_name">Sair</string>
 
     <string name="month_1">Janeiro</string>
     <string name="month_2">Fevereiro</string>

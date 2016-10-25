@@ -4,6 +4,7 @@
     <string name="user_info_name">User Info</string>
     <string name="workout_name">Workout</string>
     <string name="subscription_name">Subscription</string>
+    <string name="settings_name">Settings</string>
     <string name="prompt_email">Email</string>
     <string name="prompt_password">Password</string>
     <string name="action_sign_in">Sign in or register</string>
@@ -31,6 +32,13 @@
     <string name="membership_plan_name">Membership plan:</string>
     <string name="membership_last_day_name">Last day of membership plan:</string>
     <string name="membership_renew_button_name">Renew membership</string>
+
+    <string name="current_password_name">Current password</string>
+    <string name="new_password_name">New password</string>
+    <string name="repeat_password_name">Repeat new password</string>
+
+    <string name="save_button_name">Save</string>
+    <string name="logout_button_name">Log out</string>
 
     <string name="month_1">January</string>
     <string name="month_2">February</string>
