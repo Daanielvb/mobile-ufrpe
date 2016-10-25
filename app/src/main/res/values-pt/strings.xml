@@ -13,4 +13,32 @@
     <string name="user_info_button">Informações do usuário</string>
     <string name="workout_button">Registro de atividades</string>
     <string name="subscription_button">Matricula</string>
+
+    <string name="month_1">Janeiro</string>
+    <string name="month_2">Fevereiro</string>
+    <string name="month_3">Março</string>
+    <string name="month_4">Abril</string>
+    <string name="month_5">Maio</string>
+    <string name="month_6">Junho</string>
+    <string name="month_7">Julho</string>
+    <string name="month_8">Agosto</string>
+    <string name="month_9">Setembro</string>
+    <string name="month_10">Outubro</string>
+    <string name="month_11">Novembro</string>
+    <string name="month_12">Dezembro</string>
+    <string-array
+        name="months">
+        <item>@string/month_1</item>
+        <item>@string/month_2</item>
+        <item>@string/month_3</item>
+        <item>@string/month_4</item>
+        <item>@string/month_5</item>
+        <item>@string/month_6</item>
+        <item>@string/month_7</item>
+        <item>@string/month_8</item>
+        <item>@string/month_9</item>
+        <item>@string/month_10</item>
+        <item>@string/month_11</item>
+        <item>@string/month_12</item>
+    </string-array>
 </resources>

@@ -19,6 +19,7 @@
         android:id="@+id/textView1"
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
+        android:fontFamily="sans-serif-medium"
         android:textSize="70sp"/>
 
     <LinearLayout
@@ -38,7 +39,7 @@
                 android:layout_width="298dp"
                 android:layout_height="40dp"
                 android:inputType="textEmailAddress"
-                android:hint="E-mail"
+                android:hint="@string/prompt_email"
                 android:padding="5dp"
                 android:ems="10"
                 android:id="@+id/editTextMail"
@@ -50,7 +51,7 @@
                 android:layout_width="298dp"
                 android:layout_height="40dp"
                 android:inputType="textPassword"
-                android:hint="Password"
+                android:hint="@string/prompt_password"
                 android:padding="5dp"
                 android:ems="10"
                 android:id="@+id/editTextPassword"
@@ -65,12 +66,12 @@
                 android:id="@+id/loginBtn"
                 android:layout_gravity="center_horizontal"
                 android:layout_marginTop="30dp"
-            android:background="@color/mainOrange"/>
+                android:background="@color/mainOrange"/>
 
             <ImageButton
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:id="@+id/imageButton1"
+                android:id="@+id/forgotPassBtn"
                 android:layout_gravity="right"
                 android:src="@drawable/ic_question_mark"
                 android:layout_marginTop="80dp"
