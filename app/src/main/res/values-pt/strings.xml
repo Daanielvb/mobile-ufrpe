@@ -1,7 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="app_name">FitKeeper</string>
-    <string name="home_name">Home</string>
+    <string name="home_name">Tela Inicial</string>
+    <string name="user_info_name">Informações do Usuário</string>
+    <string name="workout_name">Registro de atividades</string>
+    <string name="subscription_name">Matrícula</string>
+    <string name="settings_name">Configurações</string>
     <string name="action_sign_in">Login ou cadastro</string>
     <string name="action_sign_in_short">Login</string>
     <string name="error_field_required">Campo obrigatório</string>
@@ -12,7 +16,30 @@
     <string name="prompt_password">Senha</string>
     <string name="user_info_button">Informações do usuário</string>
     <string name="workout_button">Registro de atividades</string>
-    <string name="subscription_button">Matricula</string>
+    <string name="subscription_button">Matrícula</string>
+    <string name="login_button">Logar</string>
+
+    <string name="name_user_info">Nome:</string>
+    <string name="age_user_info">Idade:</string>
+    <string name="height_user_info">Altura:</string>
+    <string name="weight_user_info">Peso:</string>
+    <string name="imc_user_info">IMC:</string>
+
+    <string name="exercise_name">Exercício</string>
+    <string name="set_name">Sér</string>
+    <string name="reps_name">Reps</string>
+    <string name="weight_name">Carga</string>
+
+    <string name="membership_plan_name">Tipo de plano:</string>
+    <string name="membership_last_day_name">Ultimo dia do plano:</string>
+    <string name="membership_renew_button_name">Renovar matriícula</string>
+
+    <string name="current_password_name">Senha atual</string>
+    <string name="new_password_name">Nova senha</string>
+    <string name="repeat_password_name">Repita a nova senha</string>
+
+    <string name="save_button_name">Salvar</string>
+    <string name="logout_button_name">Sair</string>
 
     <string name="month_1">Janeiro</string>
     <string name="month_2">Fevereiro</string>
@@ -26,6 +53,7 @@
     <string name="month_10">Outubro</string>
     <string name="month_11">Novembro</string>
     <string name="month_12">Dezembro</string>
+
     <string-array
         name="months">
         <item>@string/month_1</item>
@@ -42,6 +70,7 @@
         <item>@string/month_12</item>
     </string-array>
 
+
     <string name="day_1">Segunda-Feira</string>
     <string name="day_2">Terça-Feira</string>
     <string name="day_3">Quarta-Feira</string>
@@ -50,8 +79,10 @@
     <string name="day_6">Sábado</string>
     <string name="day_7">Domingo</string>
 
+
+
     <string-array
-        name="week">
+        name="days">
         <item>@string/day_1</item>
         <item>@string/day_2</item>
         <item>@string/day_3</item>
@@ -59,5 +90,6 @@
         <item>@string/day_5</item>
         <item>@string/day_6</item>
         <item>@string/day_7</item>
+
     </string-array>
 </resources>

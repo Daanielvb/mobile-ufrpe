@@ -1,6 +1,10 @@
 <resources>
     <string name="app_name">FitKeeper</string>
     <string name="home_name">Home</string>
+    <string name="user_info_name">User Info</string>
+    <string name="workout_name">Workout</string>
+    <string name="subscription_name">Subscription</string>
+    <string name="settings_name">Settings</string>
     <string name="prompt_email">Email</string>
     <string name="prompt_password">Password</string>
     <string name="action_sign_in">Sign in or register</string>
@@ -12,6 +16,29 @@
     <string name="user_info_button">User Info</string>
     <string name="workout_button">Workout Records</string>
     <string name="subscription_button">Subscription</string>
+    <string name="login_button">Log in</string>
+
+    <string name="name_user_info">Name:</string>
+    <string name="age_user_info">Age:</string>
+    <string name="height_user_info">Height:</string>
+    <string name="weight_user_info">Weight:</string>
+    <string name="imc_user_info">IMC:</string>
+
+    <string name="exercise_name">Exercise</string>
+    <string name="set_name">Set</string>
+    <string name="reps_name">Reps</string>
+    <string name="weight_name">Weight</string>
+
+    <string name="membership_plan_name">Membership plan:</string>
+    <string name="membership_last_day_name">Last day of membership plan:</string>
+    <string name="membership_renew_button_name">Renew membership</string>
+
+    <string name="current_password_name">Current password</string>
+    <string name="new_password_name">New password</string>
+    <string name="repeat_password_name">Repeat new password</string>
+
+    <string name="save_button_name">Save</string>
+    <string name="logout_button_name">Log out</string>
 
     <string name="month_1">January</string>
     <string name="month_2">February</string>
@@ -25,7 +52,10 @@
     <string name="month_10">October</string>
     <string name="month_11">November</string>
     <string name="month_12">December</string>
-    <string-array name="months">
+
+
+    <string-array
+        name="months">
         <item>@string/month_1</item>
         <item>@string/month_2</item>
         <item>@string/month_3</item>
@@ -57,5 +87,7 @@
         <item>@string/day_6</item>
         <item>@string/day_7</item>
     </string-array>
+
+
     <string name="title_activity_subscription">SubscriptionActivity</string>
 </resources>
