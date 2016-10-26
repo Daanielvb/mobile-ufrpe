@@ -233,6 +233,15 @@
         android:background="@color/mainOrange"
         android:layout_alignParentBottom="true" />
 
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceSmall"
+        android:text=""
+        android:id="@+id/currentDayTxt"
+        android:layout_below="@+id/spinnerWeek"
+        android:layout_toEndOf="@+id/backBtn" />
+
 
 </RelativeLayout>
 

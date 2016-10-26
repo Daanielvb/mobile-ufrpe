@@ -69,13 +69,11 @@ public class InfoActivity extends AppCompatActivity implements View.OnClickListe
                 person.setWeight(person.getWeight() - 2);
                 person.setImc();
                 setPerson(person);
-;            }
+               }
 
             @Override
             public void onNothingSelected(AdapterView<?> parentView) {
-                // your code here
             }
-
         });
 
 
@@ -123,6 +121,7 @@ public class InfoActivity extends AppCompatActivity implements View.OnClickListe
                 break;
         }
     }
+
 
     public void setPerson(Person p){
         nameText.setText(p.getName());

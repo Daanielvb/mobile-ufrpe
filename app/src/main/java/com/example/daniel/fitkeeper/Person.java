@@ -12,6 +12,8 @@ public class Person {
     public float weight;
     public double imc;
 
+    public Membership membership;
+
     public Person(String name, int age, double height,float weight){
         this.name = name;
         this.age = age;
@@ -59,6 +61,10 @@ public class Person {
 
     public float getWeight() {
         return weight;
+    }
+
+    public void setMembership(Membership m){
+        this.membership = m;
     }
 
 }

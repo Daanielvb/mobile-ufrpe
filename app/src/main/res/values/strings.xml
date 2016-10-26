@@ -30,7 +30,7 @@
     <string name="weight_name">Weight</string>
 
     <string name="membership_plan_name">Membership plan:</string>
-    <string name="membership_last_day_name">Last day of membership plan:</string>
+    <string name="membership_last_day_name">Membership expiration date:</string>
     <string name="membership_renew_button_name">Renew membership</string>
 
     <string name="current_password_name">Current password</string>
@@ -52,8 +52,8 @@
     <string name="month_10">October</string>
     <string name="month_11">November</string>
     <string name="month_12">December</string>
-    <string name="current_month">Workout from:</string>
-
+    <string name="current_month">Data from:</string>
+    <string name="current_day">Workout from:</string>
     <string-array
         name="months">
         <item>@string/month_1</item>
@@ -86,6 +86,15 @@
         <item>@string/day_5</item>
         <item>@string/day_6</item>
         <item>@string/day_7</item>
+    </string-array>
+
+    <string name="annual_plan">Annual plan</string>
+    <string name="semester_plan">Semestral plan</string>
+    <string name="monthly_plan">Monthly plan</string>
+    <string-array name="plans">
+        <item>@string/annual_plan</item>
+        <item>@string/semester_plan</item>
+        <item>@string/monthly_plan</item>
     </string-array>
 
 
