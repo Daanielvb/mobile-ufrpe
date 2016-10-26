@@ -40,6 +40,7 @@
 
     <string name="save_button_name">Salvar</string>
     <string name="logout_button_name">Sair</string>
+    <string name="current_month">Treino de:</string>
 
     <string name="month_1">Janeiro</string>
     <string name="month_2">Fevereiro</string>

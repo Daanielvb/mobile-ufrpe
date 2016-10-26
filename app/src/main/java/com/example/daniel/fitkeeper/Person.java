@@ -8,16 +8,16 @@ import java.util.jar.Attributes;
 public class Person {
     public String name;
     public int age;
-    public float height;
+    public Double height;
     public float weight;
-    public  float imc;
+    public double imc;
 
-    public Person(String name, int age, float height,float weight, float imc){
+    public Person(String name, int age, double height,float weight){
         this.name = name;
         this.age = age;
         this.height = height;
         this.weight = weight;
-        this.imc = imc;
+        setImc();
     }
 
     public void setName(String name) {
@@ -28,7 +28,7 @@ public class Person {
         this.age = age;
     }
 
-    public void setHeight(float height) {
+    public void setHeight(double height) {
         this.height = height;
     }
 
@@ -36,11 +36,11 @@ public class Person {
         this.weight = weight;
     }
 
-    public void setImc(float imc) {
-        this.imc = imc;
+    public void setImc() {
+        this.imc = this.weight/Math.pow(this.height,2) ;
     }
 
-    public float getHeight() {
+    public double getHeight() {
 
         return height;
     }
@@ -53,12 +53,12 @@ public class Person {
         return name;
     }
 
-    public int getImc() {
-        return age;
+    public double getImc() {
+        return imc;
     }
 
-    public String getWeight() {
-        return name;
+    public float getWeight() {
+        return weight;
     }
 
 }

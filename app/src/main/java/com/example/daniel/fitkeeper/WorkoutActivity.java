@@ -1,16 +1,20 @@
 package com.example.daniel.fitkeeper;
 
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.View;
 import android.widget.ArrayAdapter;
+import android.widget.ImageButton;
 import android.widget.Spinner;
 
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
-public class WorkoutActivity extends AppCompatActivity {
+public class WorkoutActivity extends AppCompatActivity implements View.OnClickListener{
     private String[] weeks;
+    private ImageButton backBtn;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -26,7 +30,15 @@ public class WorkoutActivity extends AppCompatActivity {
                 this, android.R.layout.simple_spinner_item, spinnerArray);
 
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-        Spinner sItems = (Spinner) findViewById(R.id.snipperWeek);
+        Spinner sItems = (Spinner) findViewById(R.id.spinnerWeek);
         sItems.setAdapter(adapter);
+    }
+
+    public void onClick(View view) {
+        switch(view.getId()){
+            case R.id.backBtn:
+                finish();
+                break;
+        }
     }
 }

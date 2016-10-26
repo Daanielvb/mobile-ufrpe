@@ -12,6 +12,7 @@ public class HomeActivity extends AppCompatActivity implements View.OnClickListe
     private Button workoutBtn;
     private Button subscriptionBtn;
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
