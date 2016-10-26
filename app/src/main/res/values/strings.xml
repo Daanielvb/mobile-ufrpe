@@ -98,4 +98,7 @@
 
 
     <string name="title_activity_subscription">SubscriptionActivity</string>
+
+    <string name="reset_mail_success">Success! We sent you an email to recover your password</string>
+    <string name="reset_mail_error">Error. This email is not registered</string>
 </resources>

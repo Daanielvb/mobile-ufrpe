@@ -97,4 +97,9 @@
         <item>@string/semester_plan</item>
         <item>@string/monthly_plan</item>
     </string-array>
+
+    <string name="title_activity_subscription">SubscriptionActivity</string>
+
+    <string name="reset_mail_success">Enviamos para seu email um link para recuperar sua senha</string>
+    <string name="reset_mail_error">Erro. Esse email não está cadastrado</string>
 </resources>
