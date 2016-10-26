@@ -6,6 +6,7 @@
     <string name="workout_name">Registro de atividades</string>
     <string name="subscription_name">Matrícula</string>
     <string name="settings_name">Configurações</string>
+    <string name="reset_password_name">Resetar Senha</string>
     <string name="action_sign_in">Login ou cadastro</string>
     <string name="action_sign_in_short">Login</string>
     <string name="error_field_required">Campo obrigatório</string>
@@ -18,6 +19,7 @@
     <string name="workout_button">Registro de atividades</string>
     <string name="subscription_button">Matrícula</string>
     <string name="login_button">Logar</string>
+    <string name="send_button">Enviar</string>
 
     <string name="name_user_info">Nome:</string>
     <string name="age_user_info">Idade:</string>
