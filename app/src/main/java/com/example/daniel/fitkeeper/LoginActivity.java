@@ -20,14 +20,15 @@ public class LoginActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
+        emailText = (TextView) findViewById(R.id.editTextMail);
+        passwordtText = (TextView) findViewById(R.id.editTextPassword);
         if (savedInstanceState != null) {
             email = savedInstanceState.getString("email");
             password = savedInstanceState.getString("password");
             atualizaDados();
         }
         loginBtn = (Button) findViewById(R.id.loginBtn);
-        emailText = (TextView) findViewById(R.id.editTextMail);
-        passwordtText = (TextView) findViewById(R.id.editTextPassword);
+
         errorText = (TextView) findViewById(R.id.errorTxt);
         loginBtn.setOnClickListener(new View.OnClickListener(){
             public void onClick(View v){

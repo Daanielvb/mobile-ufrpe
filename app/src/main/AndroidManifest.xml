@@ -29,6 +29,7 @@
             android:name=".SubscriptionActivity"
             android:label="@string/title_activity_subscription"
             android:theme="@style/Theme.AppCompat.NoActionBar" />
+        <activity android:name=".SettingsActivity" />
     </application>
 
 </manifest>
