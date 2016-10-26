@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingBottom="0dp"
+    android:paddingLeft="0dp"
+    android:paddingRight="0dp"
+    android:paddingTop="0dp"
+    android:background="@color/backgroundOrange"
+    tools:context="com.example.daniel.fitkeeper.SubscriptionActivity">
+
+    <!--
+    <android.support.v7.widget.Toolbar
+        android:layout_width="match_parent"
+        android:background="#3b5998"
+        android:elevation="4dp"
+        android:theme="@style/ThemeOverlay.AppCompat.ActionBar"
+        android:popupTheme="@style/ThemeOverlay.AppCompat.Dark"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_height="70dp"
+        android:backgroundTint="@color/black"
+        android:id="@+id/view">
+
+    </android.support.v7.widget.Toolbar>
+    -->
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="@string/subscription_name"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:textSize="60sp"
+        android:id="@id/screenTxt"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/membership_plan_name"
+        android:id="@+id/membershipTxt"
+        android:layout_below="@+id/screenTxt"
+        android:layout_toEndOf="@+id/backBtn"
+        android:layout_marginTop="54dp"
+        android:textSize="25sp"/>
+
+    <TextView
+        android:layout_width="350dp"
+        android:layout_height="30dp"
+        android:id="@+id/membershipEdtTxt"
+        android:layout_below="@+id/membershipTxt"
+        android:layout_alignStart="@+id/membershipTxt"
+        android:background="@drawable/border"
+        android:padding="5dp"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/membership_last_day_name"
+        android:id="@+id/membershipLstDayTxt"
+        android:layout_centerVertical="true"
+        android:layout_alignStart="@+id/membershipEdtTxt"
+        android:textSize="25sp"/>
+
+    <TextView
+        android:layout_width="350dp"
+        android:layout_height="30dp"
+        android:inputType="date"
+        android:ems="10"
+        android:id="@+id/membershipLstDayEdtTxt"
+        android:layout_below="@+id/membershipLstDayTxt"
+        android:layout_alignStart="@+id/membershipLstDayTxt"
+        android:background="@drawable/border"
+        android:padding="5dp"/>
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/membership_renew_button_name"
+        android:id="@+id/renewBtn"
+        android:layout_above="@+id/backBtn"
+        android:layout_alignEnd="@+id/membershipLstDayEdtTxt" />
+
+    <ImageButton
+        android:layout_width="70dp"
+        android:layout_height="50dp"
+        android:id="@+id/backBtn"
+        android:src="@drawable/ic_back_button"
+        android:layout_marginBottom="30dp"
+        android:background="@color/mainOrange"
+        android:layout_alignParentBottom="true"/>
+
+
+</RelativeLayout>
