@@ -9,7 +9,7 @@ import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.TextView;
 
-public class LoginActivity extends AppCompatActivity implements View.OnClickListener {
+public class LoginActivity extends AppCompatActivity {
     private Button loginBtn;
     private TextView emailText;
     private TextView passwordtText;
@@ -23,16 +23,23 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
         setUI();
-        if (savedInstanceState != null) {
-            email = savedInstanceState.getString("email");
-            password = savedInstanceState.getString("password");
-            atualizaDados();
-        }
+            if (savedInstanceState != null) {
+                email = savedInstanceState.getString("email");
+                password = savedInstanceState.getString("password");
+                atualizaDados();
+            }
 
         loginBtn.setOnClickListener(new View.OnClickListener(){
             public void onClick(View v){
                 salvaDados();
                 login(email,password);
+            }
+        });
+
+        forgotPassBtn.setOnClickListener(new View.OnClickListener(){
+            public void onClick(View v){
+                Intent it = new Intent(LoginActivity.this,ResetPasswordActivity.class);
+                startActivity(it);
             }
         });
     }
@@ -76,18 +83,6 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
         errorText = (TextView) findViewById(R.id.errorTxt);
     }
 
-    public void onClick(View view) {
-        switch(view.getId()){
-            case R.id.loginBtn:
-                salvaDados();
-                login(email,password);
-                break;
-            case R.id.forgotPassBtn:
-                Intent it = new Intent(LoginActivity.this,ResetPasswordActivity.class);
-                startActivity(it);
-                break;
-        }
-    }
 
 
 }
