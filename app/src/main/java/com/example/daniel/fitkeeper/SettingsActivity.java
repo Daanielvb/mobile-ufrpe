@@ -1,5 +1,6 @@
 package com.example.daniel.fitkeeper;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
@@ -55,7 +56,8 @@ public class SettingsActivity extends AppCompatActivity implements View.OnClickL
                 finish();
                 break;
             case R.id.logoutBtn:
-                finish();
+                Intent it = new Intent(SettingsActivity.this,LoginActivity.class);
+                startActivity(it);
                 break;
         }
     }
