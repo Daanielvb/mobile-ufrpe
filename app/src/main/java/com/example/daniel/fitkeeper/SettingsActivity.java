@@ -42,7 +42,7 @@ public class SettingsActivity extends AppCompatActivity implements View.OnClickL
         saveBtn = (Button) findViewById(R.id.saveBtn);
         logoutBtn = (Button) findViewById(R.id.logoutBtn);
         backBtn = (ImageButton) findViewById(R.id.backBtn);
-        emailText = (TextView) findViewById(R.id.editTextMail);
+        emailText = (TextView) findViewById(R.id.emailEdtTxt);
         passwordText = (TextView) findViewById(R.id.crtPassEdtTxt);
         backBtn.setOnClickListener(this);
         logoutBtn.setOnClickListener(this);
@@ -52,6 +52,9 @@ public class SettingsActivity extends AppCompatActivity implements View.OnClickL
     public void onClick(View view) {
         switch(view.getId()){
             case R.id.backBtn:
+                finish();
+                break;
+            case R.id.logoutBtn:
                 finish();
                 break;
         }
