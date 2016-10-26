@@ -118,7 +118,8 @@
         android:id="@+id/nameEdtTxt"
         android:layout_alignBaseline="@+id/nameTxt"
         android:layout_centerHorizontal="true"
-        android:background="@drawable/border"/>
+        android:background="@drawable/border"
+        android:padding="5dp"/>
 
     <EditText
         android:layout_width="180dp"
@@ -126,7 +127,8 @@
         android:id="@+id/ageEdtTxt"
         android:layout_alignBaseline="@+id/ageTxt"
         android:layout_centerHorizontal="true"
-        android:background="@drawable/border"/>
+        android:background="@drawable/border"
+        android:padding="5dp"/>
 
     <EditText
         android:layout_width="180dp"
@@ -134,7 +136,8 @@
         android:id="@+id/heightEdtTxt"
         android:layout_alignBaseline="@+id/heightTxt"
         android:layout_centerHorizontal="true"
-        android:background="@drawable/border"/>
+        android:background="@drawable/border"
+        android:padding="5dp"/>
 
     <EditText
         android:layout_width="180dp"
@@ -142,7 +145,8 @@
         android:id="@+id/weightEdtTxt"
         android:layout_alignBaseline="@+id/weightTxt"
         android:layout_centerHorizontal="true"
-        android:background="@drawable/border"/>
+        android:background="@drawable/border"
+        android:padding="5dp"/>
 
     <EditText
         android:layout_width="180dp"
@@ -150,7 +154,8 @@
         android:id="@+id/imcEdtTxt"
         android:layout_alignBaseline="@+id/imcTxt"
         android:layout_centerHorizontal="true"
-        android:background="@drawable/border"/>
+        android:background="@drawable/border"
+        android:padding="5dp"/>
 
     <ImageButton
         android:layout_width="70dp"

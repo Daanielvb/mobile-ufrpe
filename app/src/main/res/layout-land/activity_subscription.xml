@@ -27,6 +27,15 @@
     </android.support.v7.widget.Toolbar>
     -->
 
+    <ScrollView
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent">
+
+        <RelativeLayout
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent">
+
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -54,6 +63,7 @@
         android:id="@+id/membershipEdtTxt"
         android:layout_below="@+id/membershipTxt"
         android:layout_alignStart="@+id/membershipTxt"
+        android:layout_marginTop="10dp"
         android:background="@drawable/border"
         android:padding="5dp"/>
 
@@ -64,6 +74,7 @@
         android:id="@+id/membershipLstDayTxt"
         android:layout_centerVertical="true"
         android:layout_alignStart="@+id/membershipEdtTxt"
+        android:layout_below="@id/membershipEdtTxt"
         android:textSize="25sp"/>
 
     <TextView
@@ -82,7 +93,7 @@
         android:layout_height="wrap_content"
         android:text="@string/membership_renew_button_name"
         android:id="@+id/renewBtn"
-        android:layout_above="@+id/backBtn"
+        android:layout_below="@id/membershipLstDayEdtTxt"
         android:layout_alignEnd="@+id/membershipLstDayEdtTxt" />
 
     <ImageButton
@@ -90,9 +101,10 @@
         android:layout_height="50dp"
         android:id="@+id/backBtn"
         android:src="@drawable/ic_back_button"
-        android:layout_marginBottom="30dp"
         android:background="@color/mainOrange"
-        android:layout_alignParentBottom="true"/>
+        android:layout_below="@id/renewBtn" />
 
+            </RelativeLayout>
+    </ScrollView>
 
 </RelativeLayout>
