@@ -43,7 +43,7 @@
         android:layout_toEndOf="@+id/backBtn"
         android:layout_marginTop="54dp" />
 
-    <EditText
+    <TextView
         android:layout_width="180dp"
         android:layout_height="wrap_content"
         android:id="@+id/membershipEdtTxt"
@@ -60,7 +60,7 @@
         android:layout_centerVertical="true"
         android:layout_alignStart="@+id/membershipEdtTxt" />
 
-    <EditText
+    <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:inputType="date"
