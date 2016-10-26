@@ -11,6 +11,8 @@ public class Person {
     public Double height;
     public float weight;
     public double imc;
+    public String email;
+    public String password;
 
     public Membership membership;
 
@@ -20,6 +22,12 @@ public class Person {
         this.height = height;
         this.weight = weight;
         setImc();
+    }
+
+    public Person(String name,String email, String password){
+        this.name  = name;
+        this.email = email;
+        this.password = password;
     }
 
     public void setName(String name) {
@@ -67,4 +75,15 @@ public class Person {
         this.membership = m;
     }
 
+    public String getEmail() {
+        return email;
+    }
+
+    public String getPassword() {
+        return password;
+    }
+
+    public Membership getMembership() {
+        return membership;
+    }
 }
