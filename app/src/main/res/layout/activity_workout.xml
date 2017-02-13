@@ -35,10 +35,10 @@
         android:layout_gravity="center_horizontal"
         android:textAppearance="?android:attr/textAppearanceLarge"
         android:text="@string/workout_name"
-        android:layout_alignParentTop="true"
-        android:layout_centerHorizontal="true"
         android:textSize="40sp"
-        android:id="@+id/screenTxt"/>
+        android:id="@+id/screenTxt"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true" />
 
     <Spinner
         android:layout_width="200dp"

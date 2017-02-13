@@ -82,9 +82,10 @@
         android:layout_height="wrap_content"
         android:text="@string/membership_renew_button_name"
         android:id="@+id/renewBtn"
-        android:layout_above="@+id/backBtn"
-        android:layout_alignEnd="@+id/membershipLstDayEdtTxt"
-        android:layout_marginBottom="100dp"/>
+        android:layout_below="@+id/membershipLstDayEdtTxt"
+        android:layout_alignStart="@+id/membershipLstDayEdtTxt"
+        android:layout_marginTop="135dp"
+        android:layout_alignEnd="@+id/membershipTxt" />
 
     <ImageButton
         android:layout_width="70dp"
