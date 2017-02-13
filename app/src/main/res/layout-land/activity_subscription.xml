@@ -52,8 +52,8 @@
         android:layout_height="wrap_content"
         android:text="@string/membership_plan_name"
         android:id="@+id/membershipTxt"
+        android:layout_centerHorizontal="true"
         android:layout_below="@+id/screenTxt"
-        android:layout_toEndOf="@+id/backBtn"
         android:layout_marginTop="54dp"
         android:textSize="25sp"/>
 
@@ -64,6 +64,7 @@
         android:layout_below="@+id/membershipTxt"
         android:layout_alignStart="@+id/membershipTxt"
         android:layout_marginTop="10dp"
+        android:layout_marginRight="20dp"
         android:background="@drawable/border"
         android:padding="5dp"/>
 
@@ -94,7 +95,8 @@
         android:text="@string/membership_renew_button_name"
         android:id="@+id/renewBtn"
         android:layout_below="@id/membershipLstDayEdtTxt"
-        android:layout_alignEnd="@+id/membershipLstDayEdtTxt" />
+        android:layout_centerHorizontal="true"
+         />
 
     <ImageButton
         android:layout_width="70dp"
