@@ -103,4 +103,5 @@
 
     <string name="reset_mail_success">Success! We sent you an email to recover your password</string>
     <string name="reset_mail_error">Error. This email is not registered</string>
+    <string name="workout_finish">Finish Workout</string>
 </resources>
