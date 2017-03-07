@@ -2,8 +2,8 @@
 <resources>
     <string name="app_name">FitKeeper</string>
     <string name="home_name">Tela Inicial</string>
-    <string name="user_info_name">Informações do Usuário</string>
-    <string name="workout_name">Registro de atividades</string>
+    <string name="user_info_name">Usuário</string>
+    <string name="workout_name">Atividades</string>
     <string name="subscription_name">Matrícula</string>
     <string name="settings_name">Configurações</string>
     <string name="reset_password_name">Resetar Senha</string>
@@ -16,7 +16,7 @@
     <string name="prompt_email">Email</string>
     <string name="prompt_password">Senha</string>
     <string name="user_info_button">Informações do usuário</string>
-    <string name="workout_button">Registro de atividades</string>
+    <string name="workout_button">Atividades</string>
     <string name="subscription_button">Matrícula</string>
     <string name="login_button">Logar</string>
     <string name="send_button">Enviar</string>
@@ -33,8 +33,8 @@
     <string name="weight_name">Carga</string>
 
     <string name="membership_plan_name">Tipo de plano:</string>
-    <string name="membership_last_day_name">Data de expiração do plano:</string>
-    <string name="membership_renew_button_name">Renovar matriícula</string>
+    <string name="membership_last_day_name">Data de expiração:</string>
+    <string name="membership_renew_button_name">Renovar</string>
 
     <string name="current_password_name">Senha atual</string>
     <string name="new_password_name">Nova senha</string>

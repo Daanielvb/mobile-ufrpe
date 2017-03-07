@@ -1,28 +1,19 @@
 package com.example.daniel.fitkeeper;
 
-import android.content.Intent;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.util.Log;
+import android.support.v7.app.AppCompatActivity;
 import android.view.View;
-import android.widget.AdapterView;
-import android.widget.ArrayAdapter;
-import android.widget.Button;
 import android.widget.ImageButton;
-import android.widget.Spinner;
 import android.widget.TextView;
 
 import java.text.DecimalFormat;
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
 
 public class InfoActivity extends AppCompatActivity implements View.OnClickListener {
     public String name;
     public String age;
     public String height;
     public String weight;
-    public  String imc;
+    public String imc;
     public String currentMonth;
 
     private String[] months;
@@ -34,7 +25,8 @@ public class InfoActivity extends AppCompatActivity implements View.OnClickListe
     private ImageButton backBtn;
     private TextView currentMonthText;
 
-    Person person = new Person("Daniel", 25, 1.71,76);
+    Person person = new Person("Daniel", 25, 1.71, 76);
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -52,30 +44,29 @@ public class InfoActivity extends AppCompatActivity implements View.OnClickListe
             atualizaDados();
         }
 
-        List<String> spinnerArray =  new ArrayList<String>();
-        months = getResources().getStringArray(R.array.months);
-        spinnerArray.addAll(Arrays.asList(months));
-        ArrayAdapter<String> adapter = new ArrayAdapter<String>(
-                this, android.R.layout.simple_spinner_item, spinnerArray);
-
-        adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-        Spinner spinner = (Spinner) findViewById(R.id.spinner);
-        spinner.setAdapter(adapter);
-
-        spinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
-            @Override
-            public void onItemSelected(AdapterView<?> parentView, View selectedItemView, int position, long id) {
-                currentMonthText.setText(getString(R.string.current_month) + " " + months[position]);
-                person.setWeight(person.getWeight() - 2);
-                person.setImc();
-                setPerson(person);
-               }
-
-            @Override
-            public void onNothingSelected(AdapterView<?> parentView) {
-            }
-        });
-
+//        List<String> spinnerArray =  new ArrayList<String>();
+//        months = getResources().getStringArray(R.array.months);
+//        spinnerArray.addAll(Arrays.asList(months));
+//        ArrayAdapter<String> adapter = new ArrayAdapter<String>(
+//                this, android.R.layout.simple_spinner_item, spinnerArray);
+//
+//        adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+//        Spinner spinner = (Spinner) findViewById(R.id.spinner);
+//        spinner.setAdapter(adapter);
+//
+//        spinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+//            @Override
+//            public void onItemSelected(AdapterView<?> parentView, View selectedItemView, int position, long id) {
+//                currentMonthText.setText(getString(R.string.current_month) + " " + months[position]);
+//                person.setWeight(person.getWeight() - 2);
+//                person.setImc();
+//                setPerson(person);
+//               }
+//
+//            @Override
+//            public void onNothingSelected(AdapterView<?> parentView) {
+//            }
+//        });
 
 
     }
@@ -83,19 +74,19 @@ public class InfoActivity extends AppCompatActivity implements View.OnClickListe
     private void atualizaDados() {
         if (name != null)
             nameText.setText(name);
-        if(age != null)
+        if (age != null)
             ageText.setText(age);
-        if(height != null)
+        if (height != null)
             heightText.setText(height);
         if (weight != null)
             weightText.setText(weight);
-        if(imc != null)
+        if (imc != null)
             imcText.setText(imc);
-        if(currentMonth != null)
+        if (currentMonth != null)
             currentMonthText.setText(currentMonth);
     }
 
-    private void salvaDados(){
+    private void salvaDados() {
         currentMonth = currentMonthText.getText().toString();
         name = nameText.getText().toString();
         age = ageText.getText().toString();
@@ -115,7 +106,7 @@ public class InfoActivity extends AppCompatActivity implements View.OnClickListe
     }
 
     public void onClick(View view) {
-        switch(view.getId()){
+        switch (view.getId()) {
             case R.id.backBtn:
                 finish();
                 break;
@@ -123,7 +114,7 @@ public class InfoActivity extends AppCompatActivity implements View.OnClickListe
     }
 
 
-    public void setPerson(Person p){
+    public void setPerson(Person p) {
         nameText.setText(p.getName());
         heightText.setText(String.valueOf(p.getHeight()));
         weightText.setText(String.valueOf(p.getWeight()));
@@ -132,7 +123,7 @@ public class InfoActivity extends AppCompatActivity implements View.OnClickListe
     }
 
     public void setUI() {
-        currentMonthText = (TextView) findViewById(R.id.currentMonthTxt);
+        //currentMonthText = (TextView) findViewById(R.id.currentMonthTxt);
         backBtn = (ImageButton) findViewById(R.id.backBtn);
         nameText = (TextView) findViewById(R.id.nameEdtTxt);
         ageText = (TextView) findViewById(R.id.ageEdtTxt);

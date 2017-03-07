@@ -1,14 +1,13 @@
 package com.example.daniel.fitkeeper;
 
 import android.content.Intent;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageButton;
-import android.widget.TextView;
 
-public class HomeActivity extends AppCompatActivity implements View.OnClickListener{
+public class HomeActivity extends AppCompatActivity implements View.OnClickListener {
     private Button homeBtn;
     private Button workoutBtn;
     private Button subscriptionBtn;
@@ -24,31 +23,31 @@ public class HomeActivity extends AppCompatActivity implements View.OnClickListe
 
 
     public void onClick(View view) {
-        switch(view.getId()){
+        switch (view.getId()) {
             case R.id.btnHome:
-                Intent it = new Intent(HomeActivity.this,InfoActivity.class);
+                Intent it = new Intent(HomeActivity.this, InfoActivity.class);
                 startActivity(it);
                 break;
             case R.id.btnWorkout:
-                Intent it2 = new Intent(HomeActivity.this,WorkoutActivity.class);
+                Intent it2 = new Intent(HomeActivity.this, WorkoutActivity.class);
                 startActivity(it2);
                 break;
             case R.id.btnSubscription:
-                Intent it3 = new Intent(HomeActivity.this,SubscriptionActivity.class);
+                Intent it3 = new Intent(HomeActivity.this, SubscriptionActivity.class);
                 startActivity(it3);
                 break;
             case R.id.settingsButton:
-                Intent it4 = new Intent(HomeActivity.this,SettingsActivity.class);
+                Intent it4 = new Intent(HomeActivity.this, SettingsActivity.class);
                 startActivity(it4);
                 break;
         }
     }
 
-    public void setUI(){
+    public void setUI() {
         homeBtn = (Button) findViewById(R.id.btnHome);
         workoutBtn = (Button) findViewById(R.id.btnWorkout);
         subscriptionBtn = (Button) findViewById(R.id.btnSubscription);
-        settingsBtn = (ImageButton) findViewById(R.id.settingsButton) ;
+        settingsBtn = (ImageButton) findViewById(R.id.settingsButton);
         homeBtn.setOnClickListener(this);
         workoutBtn.setOnClickListener(this);
         subscriptionBtn.setOnClickListener(this);
