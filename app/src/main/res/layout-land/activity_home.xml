@@ -62,28 +62,34 @@
         android:layout_width="200dp"
         android:layout_height="wrap_content"
         android:text="@string/user_info_button"
+        android:textColor="@color/black"
         android:id="@+id/btnHome"
         android:layout_below="@+id/AppName"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="55dp" />
+        android:layout_marginTop="55dp"
+        android:background="@drawable/button_bg_rounded_corners"/>
 
     <Button
         android:layout_width="200dp"
         android:layout_height="wrap_content"
         android:text="@string/workout_button"
+        android:textColor="@color/black"
         android:id="@+id/btnWorkout"
         android:layout_below="@+id/btnHome"
         android:layout_alignStart="@+id/btnHome"
-        android:layout_marginTop="34dp" />
+        android:layout_marginTop="34dp"
+        android:background="@drawable/button_bg_rounded_corners"/>
 
     <Button
         android:layout_width="200dp"
         android:layout_height="wrap_content"
         android:text="@string/subscription_button"
+        android:textColor="@color/black"
         android:id="@+id/btnSubscription"
         android:layout_below="@+id/btnWorkout"
         android:layout_alignStart="@+id/btnWorkout"
-        android:layout_marginTop="33dp" />
+        android:layout_marginTop="33dp"
+        android:background="@drawable/button_bg_rounded_corners"/>
 
     <ImageButton
         android:layout_width="50dp"
@@ -94,7 +100,7 @@
         android:layout_marginRight="20dp"
         android:layout_below="@+id/btnSubscription"
         android:src="@drawable/ic_settings_icon"
-        android:background="@color/mainOrange"/>
+        android:background="@drawable/button_bg_rounded_corners"/>
 
     <!--<ImageButton
         android:layout_width="wrap_content"

@@ -4,11 +4,11 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/backgroundOrange"
     android:paddingBottom="0dp"
     android:paddingLeft="0dp"
     android:paddingRight="0dp"
     android:paddingTop="0dp"
-    android:background="@color/backgroundOrange"
     tools:context="com.example.daniel.fitkeeper.WorkoutActivity">
 
 
@@ -30,217 +30,222 @@
     -->
 
     <TextView
+        android:id="@+id/screenTxt"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_gravity="center_horizontal"
-        android:textAppearance="?android:attr/textAppearanceLarge"
-        android:text="@string/workout_name"
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
-        android:textSize="60sp"
-        android:id="@+id/screenTxt"/>
+        android:layout_gravity="center_horizontal"
+        android:text="@string/workout_name"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:textSize="60sp" />
 
     <Spinner
+        android:id="@+id/spinnerWeek"
         android:layout_width="200dp"
         android:layout_height="50dp"
-        android:id="@+id/spinnerWeek"
-        android:layout_below="@+id/screenTxt"
         android:layout_alignParentStart="true"
-        android:layout_marginTop="38dp"
-        android:layout_marginLeft="30dp"/>
+        android:layout_below="@+id/screenTxt"
+        android:layout_marginLeft="30dp"
+        android:layout_marginTop="38dp" />
 
     <TextView
+        android:id="@+id/currentDayTxt"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:textAppearance="?android:attr/textAppearanceSmall"
-        android:text=""
-        android:id="@+id/currentDayTxt"
         android:layout_below="@+id/spinnerWeek"
-        android:layout_toEndOf="@+id/backBtn" />
+        android:layout_toEndOf="@+id/backBtn"
+        android:text=""
+        android:textAppearance="?android:attr/textAppearanceSmall" />
 
     <TableLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:id="@+id/table"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="240dp"
-        android:background="#FFFFFF"
-        android:id="@+id/table">
+        android:background="#FFFFFF">
 
-        <TableRow
-            android:background="@color/lightGray">
+        <TableRow android:background="@color/lightGray">
 
             <TextView
+                android:background="@drawable/border2"
+                android:padding="3dip"
                 android:text="@string/exercise_name"
-                android:padding="3dip"
-                android:textSize="20dp"
                 android:textColor="@color/black"
-                android:background="@drawable/border2"/>
+                android:textSize="20dp" />
+
             <TextView
+                android:background="@drawable/border2"
+                android:padding="3dip"
                 android:text="@string/set_name"
-                android:padding="3dip"
-                android:textSize="20dp"
                 android:textColor="@color/black"
-                android:background="@drawable/border2"/>
+                android:textSize="20dp" />
 
             <TextView
+                android:background="@drawable/border2"
+                android:padding="3dip"
                 android:text="@string/reps_name"
-                android:padding="3dip"
-                android:textSize="20dp"
                 android:textColor="@color/black"
-                android:background="@drawable/border2"/>
+                android:textSize="20dp" />
+
             <TextView
+                android:background="@drawable/border2"
+                android:padding="3dip"
                 android:text="@string/weight_name"
-                android:padding="3dip"
-                android:textSize="20dp"
                 android:textColor="@color/black"
-                android:background="@drawable/border2"/>
+                android:textSize="20dp" />
         </TableRow>
 
         <TableRow>
+
             <TextView
+                android:id="@+id/exercise1"
+                android:background="@drawable/border2"
+                android:padding="3dip"
                 android:text="Chest"
-                android:padding="3dip"
-                android:textSize="20dp"
                 android:textColor="@color/black"
-                android:background="@drawable/border2"
-                android:id="@+id/exercise1"/>
+                android:textSize="20dp" />
 
             <TextView
+                android:id="@+id/set1"
+                android:background="@drawable/border2"
+                android:padding="3dip"
                 android:text="3"
-                android:padding="3dip"
-                android:textSize="20dp"
                 android:textColor="@color/black"
-                android:background="@drawable/border2"
-                android:id="@+id/set1"/>
+                android:textSize="20dp" />
 
             <TextView
+                android:id="@+id/reps1"
+                android:background="@drawable/border2"
+                android:padding="3dip"
                 android:text="8"
-                android:padding="3dip"
-                android:textSize="20dp"
                 android:textColor="@color/black"
-                android:background="@drawable/border2"
-                android:id="@+id/reps1"/>
+                android:textSize="20dp" />
 
             <TextView
-                android:text="20kg"
-                android:padding="3dip"
-                android:textSize="20dp"
-                android:textColor="@color/black"
+                android:id="@+id/weight1"
                 android:background="@drawable/border2"
-                android:id="@+id/weight1"/>
+                android:padding="3dip"
+                android:text="20kg"
+                android:textColor="@color/black"
+                android:textSize="20dp" />
         </TableRow>
 
         <TableRow>
+
             <TextView
+                android:id="@+id/exercise2"
+                android:background="@drawable/border2"
+                android:padding="3dip"
                 android:text="Biceps"
-                android:padding="3dip"
-                android:textSize="20dp"
                 android:textColor="@color/black"
-                android:background="@drawable/border2"
-                android:id="@+id/exercise2"/>
+                android:textSize="20dp" />
 
             <TextView
+                android:id="@+id/set2"
+                android:background="@drawable/border2"
+                android:padding="3dip"
                 android:text="3"
-                android:padding="3dip"
-                android:textSize="20dp"
                 android:textColor="@color/black"
-                android:background="@drawable/border2"
-                android:id="@+id/set2"/>
+                android:textSize="20dp" />
 
             <TextView
+                android:id="@+id/reps2"
+                android:background="@drawable/border2"
+                android:padding="3dip"
                 android:text="8"
-                android:padding="3dip"
-                android:textSize="20dp"
                 android:textColor="@color/black"
-                android:background="@drawable/border2"
-                android:id="@+id/reps2"/>
+                android:textSize="20dp" />
 
             <TextView
-                android:text="20kg"
-                android:padding="3dip"
-                android:textSize="20dp"
-                android:textColor="@color/black"
+                android:id="@+id/weight2"
                 android:background="@drawable/border2"
-                android:id="@+id/weight2"/>
+                android:padding="3dip"
+                android:text="20kg"
+                android:textColor="@color/black"
+                android:textSize="20dp" />
         </TableRow>
 
         <TableRow>
+
             <TextView
+                android:id="@+id/exercise3"
+                android:background="@drawable/border2"
+                android:padding="3dip"
                 android:text="Triceps"
-                android:padding="3dip"
-                android:textSize="20dp"
                 android:textColor="@color/black"
-                android:background="@drawable/border2"
-                android:id="@+id/exercise3"/>
+                android:textSize="20dp" />
 
             <TextView
+                android:id="@+id/set3"
+                android:background="@drawable/border2"
+                android:padding="3dip"
                 android:text="3"
-                android:padding="3dip"
-                android:textSize="20dp"
                 android:textColor="@color/black"
-                android:background="@drawable/border2"
-                android:id="@+id/set3"/>
+                android:textSize="20dp" />
 
             <TextView
+                android:id="@+id/reps3"
+                android:background="@drawable/border2"
+                android:padding="3dip"
                 android:text="8"
-                android:padding="3dip"
-                android:textSize="20dp"
                 android:textColor="@color/black"
-                android:background="@drawable/border2"
-                android:id="@+id/reps3"/>
+                android:textSize="20dp" />
 
             <TextView
-                android:text="20kg"
-                android:padding="3dip"
-                android:textSize="20dp"
-                android:textColor="@color/black"
+                android:id="@+id/weight3"
                 android:background="@drawable/border2"
-                android:id="@+id/weight3"/>
+                android:padding="3dip"
+                android:text="20kg"
+                android:textColor="@color/black"
+                android:textSize="20dp" />
         </TableRow>
 
         <TableRow>
+
             <TextView
+                android:id="@+id/exercise4"
+                android:background="@drawable/border2"
+                android:padding="3dip"
                 android:text="Back"
-                android:padding="3dip"
-                android:textSize="20dp"
                 android:textColor="@color/black"
-                android:background="@drawable/border2"
-                android:id="@+id/exercise4"/>
+                android:textSize="20dp" />
 
             <TextView
+                android:id="@+id/set4"
+                android:background="@drawable/border2"
+                android:padding="3dip"
                 android:text="3"
-                android:padding="3dip"
-                android:textSize="20dp"
                 android:textColor="@color/black"
-                android:background="@drawable/border2"
-                android:id="@+id/set4"/>
+                android:textSize="20dp" />
 
             <TextView
+                android:id="@+id/reps4"
+                android:background="@drawable/border2"
+                android:padding="3dip"
                 android:text="8"
-                android:padding="3dip"
-                android:textSize="20dp"
                 android:textColor="@color/black"
-                android:background="@drawable/border2"
-                android:id="@+id/reps4"/>
+                android:textSize="20dp" />
 
             <TextView
-                android:text="20kg"
-                android:padding="3dip"
-                android:textSize="20dp"
-                android:textColor="@color/black"
+                android:id="@+id/weight4"
                 android:background="@drawable/border2"
-                android:id="@+id/weight4"/>
+                android:padding="3dip"
+                android:text="20kg"
+                android:textColor="@color/black"
+                android:textSize="20dp" />
         </TableRow>
     </TableLayout>
 
     <ImageButton
+        android:id="@+id/backBtn"
         android:layout_width="70dp"
         android:layout_height="50dp"
-        android:id="@+id/backBtn"
-        android:src="@drawable/ic_back_button"
+        android:layout_alignParentBottom="true"
         android:layout_marginBottom="30dp"
-        android:background="@color/mainOrange"
-        android:layout_alignParentBottom="true" />
+        android:background="@drawable/button_bg_rounded_corners"
+        android:src="@drawable/ic_back_button" />
 
 
 </RelativeLayout>

@@ -92,13 +92,6 @@
             <TextView
                 android:background="@drawable/border2"
                 android:padding="3dip"
-                android:text="@string/weight_name"
-                android:textColor="@color/black"
-                android:textSize="20dp" />
-
-            <TextView
-                android:background="@drawable/border2"
-                android:padding="3dip"
                 android:text="  ✓ "
                 android:textColor="@color/black"
                 android:textSize="20dp" />
@@ -131,10 +124,8 @@
                 android:textSize="20dp" />
 
             <TextView
-                android:id="@+id/weight1"
-                android:background="@drawable/border2"
-                android:padding="3dip"
                 android:text="20kg"
+                android:padding="3dip"
                 android:textColor="@color/black"
                 android:textSize="20dp" />
 
@@ -179,6 +170,7 @@
                 android:padding="3dip"
                 android:text="20kg"
                 android:textColor="@color/black"
+                android:textSize="20dp" />
                 android:textSize="20dp" />
 
             <CheckBox
@@ -287,6 +279,8 @@
         android:layout_height="50dp"
         android:layout_alignParentBottom="true"
         android:layout_marginBottom="30dp"
+        android:background="@drawable/button_bg_rounded_corners"
+        android:src="@drawable/ic_back_button" />
         android:background="@color/mainOrange"
         android:src="@drawable/ic_back_button" />
 

@@ -3,11 +3,11 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/backgroundOrange"
     android:paddingBottom="0dp"
     android:paddingLeft="0dp"
     android:paddingRight="0dp"
     android:paddingTop="0dp"
-    android:background="@color/backgroundOrange"
     tools:context="com.example.daniel.fitkeeper.SettingsActivity">
 
     <!--
@@ -27,100 +27,103 @@
     </android.support.v7.widget.Toolbar>
     -->
 
-    <ScrollView
-        xmlns:android="http://schemas.android.com/apk/res/android"
+    <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
         android:layout_width="fill_parent"
         android:layout_height="fill_parent">
 
-        <RelativeLayout
-            xmlns:android="http://schemas.android.com/apk/res/android"
+        <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
             android:layout_width="fill_parent"
             android:layout_height="fill_parent">
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center_horizontal"
-        android:textAppearance="?android:attr/textAppearanceLarge"
-        android:text="@string/settings_name"
-        android:layout_alignParentTop="true"
-        android:layout_centerHorizontal="true"
-        android:textSize="40sp"
-        android:id="@+id/screenTxt"/>
+            <TextView
+                android:id="@+id/screenTxt"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentTop="true"
+                android:layout_centerHorizontal="true"
+                android:layout_gravity="center_horizontal"
+                android:text="@string/settings_name"
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:textSize="40sp" />
 
-    <EditText
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:hint="@string/prompt_email"
-        android:padding="5dp"
-        android:inputType="textEmailAddress"
-        android:id="@+id/emailEdtTxt"
-        android:layout_below="@+id/screenTxt"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="100dp"
-        android:background="@drawable/border"/>
+            <EditText
+                android:id="@+id/emailEdtTxt"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/screenTxt"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="100dp"
+                android:background="@drawable/border"
+                android:hint="@string/prompt_email"
+                android:inputType="textEmailAddress"
+                android:padding="5dp" />
 
-    <EditText
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:hint="@string/current_password_name"
-        android:padding="5dp"
-        android:inputType="textPassword"
-        android:id="@+id/crtPassEdtTxt"
-        android:layout_below="@+id/emailEdtTxt"
-        android:layout_centerHorizontal="true"
-        android:background="@drawable/border"
-        android:layout_marginTop="15dp"/>
+            <EditText
+                android:id="@+id/crtPassEdtTxt"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/emailEdtTxt"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="15dp"
+                android:background="@drawable/border"
+                android:hint="@string/current_password_name"
+                android:inputType="textPassword"
+                android:padding="5dp" />
 
-    <EditText
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:hint="@string/new_password_name"
-        android:padding="5dp"
-        android:inputType="textPassword"
-        android:id="@+id/newPassEdtTxt"
-        android:layout_below="@+id/crtPassEdtTxt"
-        android:layout_centerHorizontal="true"
-        android:background="@drawable/border"
-        android:layout_marginTop="15dp"/>
+            <EditText
+                android:id="@+id/newPassEdtTxt"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/crtPassEdtTxt"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="15dp"
+                android:background="@drawable/border"
+                android:hint="@string/new_password_name"
+                android:inputType="textPassword"
+                android:padding="5dp" />
 
-    <EditText
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:hint="@string/repeat_password_name"
-        android:padding="5dp"
-        android:inputType="textPassword"
-        android:id="@+id/rptPassEdtText"
-        android:layout_below="@+id/newPassEdtTxt"
-        android:layout_centerHorizontal="true"
-        android:background="@drawable/border"
-        android:layout_marginTop="15dp"/>
+            <EditText
+                android:id="@+id/rptPassEdtText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/newPassEdtTxt"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="15dp"
+                android:background="@drawable/border"
+                android:hint="@string/repeat_password_name"
+                android:inputType="textPassword"
+                android:padding="5dp" />
 
-    <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/save_button_name"
-        android:id="@+id/saveBtn"
-        android:layout_below="@id/rptPassEdtText"
-        android:layout_alignParentEnd="true"/>
+            <Button
+                android:id="@+id/saveBtn"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:layout_below="@id/rptPassEdtText"
+                android:background="@drawable/button_bg_rounded_corners"
+                android:text="@string/save_button_name"
+                android:textColor="@color/black" />
 
-    <Button
-        style="?android:attr/buttonStyleSmall"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/logout_button_name"
-        android:id="@+id/logoutBtn"
-        android:layout_below="@id/rptPassEdtText"/>
+            <Button
+                android:id="@+id/logoutBtn"
+                style="?android:attr/buttonStyleSmall"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/rptPassEdtText"
+                android:background="@drawable/button_bg_rounded_corners"
+                android:text="@string/logout_button_name"
+                android:textColor="@color/black" />
 
-    <ImageButton
-        android:layout_width="70dp"
-        android:layout_height="50dp"
-        android:id="@+id/backBtn"
-        android:src="@drawable/ic_back_button"
-        android:background="@color/mainOrange"
-        android:layout_below="@+id/logoutBtn"/>
+            <ImageButton
+                android:id="@+id/backBtn"
+                android:layout_width="70dp"
+                android:layout_height="50dp"
+                android:layout_below="@+id/logoutBtn"
+                android:layout_marginTop="15dp"
+                android:background="@drawable/button_bg_rounded_corners"
+                android:src="@drawable/ic_back_button" />
 
-            </RelativeLayout>
+        </RelativeLayout>
     </ScrollView>
 
 

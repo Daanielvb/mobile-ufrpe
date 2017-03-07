@@ -3,11 +3,11 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/backgroundOrange"
     android:paddingBottom="0dp"
     android:paddingLeft="0dp"
     android:paddingRight="0dp"
     android:paddingTop="0dp"
-    android:background="@color/backgroundOrange"
     tools:context="com.example.daniel.fitkeeper.InfoActivity">
 
     <!--
@@ -28,16 +28,17 @@
     -->
 
     <TextView
+        android:id="@+id/screenTxt"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_gravity="center_horizontal"
-        android:textAppearance="?android:attr/textAppearanceLarge"
-        android:text="@string/user_info_name"
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
-        android:textSize="60sp"
-        android:id="@+id/screenTxt"/>
+        android:layout_gravity="center_horizontal"
+        android:text="@string/user_info_name"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:textSize="60sp" />
 
+    <!--
     <Spinner
         android:layout_width="200dp"
         android:layout_height="50dp"
@@ -56,106 +57,100 @@
         android:layout_alignStart="@+id/nameTxt"
         android:layout_below="@+id/spinner"
         android:layout_above="@+id/nameEdtTxt" />
+        -->
 
     <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/name_user_info"
         android:id="@+id/nameTxt"
-        android:layout_below="@+id/spinner"
-        android:layout_alignStart="@+id/spinner"
-        android:layout_marginTop="57dp"
-        android:layout_marginLeft="18dp"/>
-
-    <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/age_user_info"
+        android:layout_marginLeft="68dp"
+        android:layout_marginTop="157dp"
+        android:text="@string/name_user_info" />
+
+    <TextView
         android:id="@+id/ageTxt"
-        android:layout_below="@+id/nameTxt"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:layout_alignStart="@+id/nameTxt"
-        android:layout_marginTop="33dp" />
+        android:layout_below="@+id/nameTxt"
+        android:layout_marginTop="33dp"
+        android:text="@string/age_user_info" />
 
     <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/height_user_info"
         android:id="@+id/heightTxt"
-        android:layout_below="@+id/ageTxt"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:layout_alignStart="@+id/ageTxt"
-        android:layout_marginTop="38dp" />
+        android:layout_below="@+id/ageTxt"
+        android:layout_marginTop="38dp"
+        android:text="@string/height_user_info" />
 
     <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/weight_user_info"
         android:id="@+id/weightTxt"
-        android:layout_below="@+id/heightTxt"
-        android:layout_alignStart="@+id/heightTxt"
-        android:layout_marginTop="27dp" />
-
-    <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/imc_user_info"
-        android:id="@+id/imcTxt"
-        android:layout_below="@+id/weightTxt"
-        android:layout_alignStart="@+id/weightTxt"
-        android:layout_marginTop="28dp" />
+        android:layout_alignStart="@+id/heightTxt"
+        android:layout_below="@+id/heightTxt"
+        android:layout_marginTop="27dp"
+        android:text="@string/weight_user_info" />
 
-    <EditText
+    <TextView
+        android:id="@+id/imcTxt"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignStart="@+id/weightTxt"
+        android:layout_below="@+id/weightTxt"
+        android:layout_marginTop="28dp"
+        android:text="@string/imc_user_info" />
+
+    <TextView
+        android:id="@+id/nameEdtTxt"
         android:layout_width="180dp"
         android:layout_height="wrap_content"
-        android:id="@+id/nameEdtTxt"
         android:layout_alignBaseline="@+id/nameTxt"
         android:layout_centerHorizontal="true"
-        android:background="@drawable/border"
-        android:padding="5dp"/>
+        android:padding="5dp" />
 
-    <EditText
+    <TextView
+        android:id="@+id/ageEdtTxt"
         android:layout_width="180dp"
         android:layout_height="wrap_content"
-        android:id="@+id/ageEdtTxt"
         android:layout_alignBaseline="@+id/ageTxt"
         android:layout_centerHorizontal="true"
-        android:background="@drawable/border"
-        android:padding="5dp"/>
+        android:padding="5dp" />
 
-    <EditText
+    <TextView
+        android:id="@+id/heightEdtTxt"
         android:layout_width="180dp"
         android:layout_height="wrap_content"
-        android:id="@+id/heightEdtTxt"
         android:layout_alignBaseline="@+id/heightTxt"
         android:layout_centerHorizontal="true"
-        android:background="@drawable/border"
-        android:padding="5dp"/>
+        android:padding="5dp" />
 
-    <EditText
+    <TextView
+        android:id="@+id/weightEdtTxt"
         android:layout_width="180dp"
         android:layout_height="wrap_content"
-        android:id="@+id/weightEdtTxt"
         android:layout_alignBaseline="@+id/weightTxt"
         android:layout_centerHorizontal="true"
-        android:background="@drawable/border"
-        android:padding="5dp"/>
+        android:padding="5dp" />
 
-    <EditText
+    <TextView
+        android:id="@+id/imcEdtTxt"
         android:layout_width="180dp"
         android:layout_height="wrap_content"
-        android:id="@+id/imcEdtTxt"
         android:layout_alignBaseline="@+id/imcTxt"
         android:layout_centerHorizontal="true"
-        android:background="@drawable/border"
-        android:padding="5dp"/>
+        android:padding="5dp" />
 
     <ImageButton
+        android:id="@+id/backBtn"
         android:layout_width="70dp"
         android:layout_height="50dp"
-        android:id="@+id/backBtn"
-        android:src="@drawable/ic_back_button"
-        android:layout_marginBottom="30dp"
-        android:background="@color/mainOrange"
-        android:layout_alignParentBottom="true" />
+        android:layout_alignParentBottom="true"
+        android:layout_alignStart="@+id/imcTxt"
+        android:background="@drawable/button_bg_rounded_corners"
+        android:src="@drawable/ic_back_button" />
 
 
 </RelativeLayout>
