@@ -58,13 +58,34 @@
         android:text=""
         android:textAppearance="?android:attr/textAppearanceSmall" />
 
-    <TableLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    <ImageButton
+        android:id="@+id/backBtn"
+        android:layout_width="70dp"
+        android:layout_height="50dp"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="30dp"
+        android:background="@drawable/button_bg_rounded_corners"
+        android:src="@drawable/ic_back_button" />
+
+    <Button
+        android:text="@string/workout_finish"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/finish_workout_btn"
+        android:layout_above="@+id/backBtn"
+        android:layout_centerHorizontal="true"
+        android:visibility="invisible"
+        android:background="@drawable/button_bg_rounded_corners"
+        android:textColor="@color/black"/>
+
+    <TableLayout
         android:id="@+id/table"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="240dp"
-        android:background="#FFFFFF">
+        android:background="#FFFFFF"
+        android:layout_marginBottom="43dp"
+        android:layout_above="@+id/finish_workout_btn"
+        android:layout_centerHorizontal="true">
 
         <TableRow android:background="@color/lightGray">
 
@@ -88,6 +109,14 @@
                 android:text="@string/reps_name"
                 android:textColor="@color/black"
                 android:textSize="20dp" />
+
+            <TextView
+                android:background="@drawable/border2"
+                android:padding="3dip"
+                android:text="@string/weight_name"
+                android:textColor="@color/black"
+                android:textSize="20dp"
+                android:id="@+id/textView" />
 
             <TextView
                 android:background="@drawable/border2"
@@ -124,6 +153,7 @@
                 android:textSize="20dp" />
 
             <TextView
+                android:background="@drawable/border2"
                 android:text="20kg"
                 android:padding="3dip"
                 android:textColor="@color/black"
@@ -135,7 +165,8 @@
                 android:onClick="onCheckboxClicked"
                 android:padding="3dp"
                 android:text=""
-                android:textColor="@color/black" />
+                android:textColor="@color/black"
+                android:textSize="20dp"/>
         </TableRow>
 
         <TableRow android:id="@+id/tablerow2">
@@ -170,8 +201,7 @@
                 android:padding="3dip"
                 android:text="20kg"
                 android:textColor="@color/black"
-                android:textSize="20dp" />
-                android:textSize="20dp" />
+                android:textSize="20dp" />/>
 
             <CheckBox
                 android:id="@+id/checkbox_2"
@@ -179,7 +209,8 @@
                 android:layout_height="wrap_content"
                 android:layout_centerHorizontal="true"
                 android:background="@drawable/border2"
-                android:onClick="onCheckboxClicked" />
+                android:onClick="onCheckboxClicked"
+                android:textSize="20dp"/>
         </TableRow>
 
 
@@ -225,7 +256,8 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:background="@drawable/border2"
-                android:onClick="onCheckboxClicked" />
+                android:onClick="onCheckboxClicked"
+                android:textSize="20dp"/>
         </TableRow>
 
         <TableRow android:id="@+id/tablerow4">
@@ -269,29 +301,10 @@
                 android:layout_height="wrap_content"
                 android:background="@drawable/border2"
                 android:onClick="onCheckboxClicked"
-                android:padding="3dip" />
+                android:padding="3dip"
+                android:textSize="20dp"/>
         </TableRow>
     </TableLayout>
-
-    <ImageButton
-        android:id="@+id/backBtn"
-        android:layout_width="70dp"
-        android:layout_height="50dp"
-        android:layout_alignParentBottom="true"
-        android:layout_marginBottom="30dp"
-        android:background="@drawable/button_bg_rounded_corners"
-        android:src="@drawable/ic_back_button" />
-        android:background="@color/mainOrange"
-        android:src="@drawable/ic_back_button" />
-
-    <Button
-        android:text="@string/workout_finish"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/finish_workout_btn"
-        android:layout_above="@+id/backBtn"
-        android:layout_centerHorizontal="true"
-        android:visibility="invisible"/>
 
 
 </RelativeLayout>
