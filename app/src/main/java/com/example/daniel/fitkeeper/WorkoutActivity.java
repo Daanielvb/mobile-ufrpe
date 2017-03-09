@@ -15,6 +15,13 @@ import android.widget.Spinner;
 import android.widget.TableRow;
 import android.widget.TextView;
 
+import com.example.daniel.fitkeeper.utils.Constants;
+import com.example.daniel.fitkeeper.utils.Controller;
+
+import org.json.JSONException;
+import org.json.JSONObject;
+
+import java.io.IOException;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -68,6 +75,9 @@ public class WorkoutActivity extends AppCompatActivity implements View.OnClickLi
         switch (view.getId()) {
             case R.id.backBtn:
                 finish();
+                break;
+            case R.id.finish_workout_btn:
+                saveWorkoutFinished();
                 break;
         }
     }
@@ -133,6 +143,17 @@ public class WorkoutActivity extends AppCompatActivity implements View.OnClickLi
         c4 = (CheckBox) findViewById(R.id.checkbox_4);
     }
 
+
+    public void saveWorkoutFinished(){
+        try{
+            JSONObject jsonObject = Controller.getJSONObjectFromURL(Controller.composeUserUrlPath,"POST");
+            // TODO: Do what i want with my json
+        } catch (IOException e) {
+            e.printStackTrace();
+        } catch (JSONException e) {
+            e.printStackTrace();
+        }
+    }
     public String getCurrentDay() {
         return dayFormat.format(calendar.getTime());
     }

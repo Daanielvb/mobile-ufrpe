@@ -9,6 +9,15 @@ import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.TextView;
 
+import com.example.daniel.fitkeeper.utils.Constants;
+import com.example.daniel.fitkeeper.utils.Controller;
+import com.example.daniel.fitkeeper.utils.RequestHelper;
+
+import org.json.JSONException;
+import org.json.JSONObject;
+
+import java.io.IOException;
+
 public class LoginActivity extends AppCompatActivity {
     private Button loginBtn;
     private TextView emailText;
@@ -66,13 +75,32 @@ public class LoginActivity extends AppCompatActivity {
     public void login(String email, String password){
             if(!email.equals("") && !password.equals("")){
                 errorText.setText("");
-                Intent it = new Intent(LoginActivity.this,HomeActivity.class);
-                startActivity(it);
+                //if(checkCredentials(email,password)) {
+                    Intent it = new Intent(LoginActivity.this, HomeActivity.class);
+                    startActivity(it);
+                //}
+//                else{
+//                    errorText.setText(R.string.error_incorrect_password);
+//                }
             }
             else if(email.equals(""))
                 errorText.setText(R.string.error_invalid_email);
             else if(password.equals(""))
                 errorText.setText(R.string.error_invalid_password);
+    }
+
+    public boolean checkCredentials(String email, String password){
+        try {
+            JSONObject response = Controller.getJSONObjectFromURL(
+                    RequestHelper.composeUrlPathWithParam("persons","username", email), Constants.GET_REQUEST);
+            System.out.println(response);
+            return true;
+        } catch (IOException e) {
+            e.printStackTrace();
+        } catch (JSONException e) {
+            e.printStackTrace();
+        }
+        return false;
     }
 
     public void setUI(){

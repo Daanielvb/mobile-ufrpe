@@ -8,6 +8,8 @@ import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.TextView;
 
+import model.Person;
+
 /**
  * Created by Rodrigo on 25/10/2016.
  */

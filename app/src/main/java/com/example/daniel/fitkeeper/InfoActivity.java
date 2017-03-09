@@ -8,6 +8,8 @@ import android.widget.TextView;
 
 import java.text.DecimalFormat;
 
+import model.Person;
+
 public class InfoActivity extends AppCompatActivity implements View.OnClickListener {
     public String name;
     public String age;

@@ -1,0 +1,42 @@
+{
+  "Persons": [
+    {
+      "id": 1,
+      "username": "daanielvb@gmail.com",
+      "name": "Daniel",
+      "age": 26,
+      "password": "123456",
+      "Membership": 1,
+      "Workouts": [10,11,12,13,15],
+      "counter": 0
+    }
+  ],
+
+  "Memberships": [
+    {
+      "id": 1,
+      "created_at": "10/10/2016",
+      "expire_at": "10/10/2017",
+      "type": "anual"
+    }
+  ],
+
+  "Workouts": [
+    {
+      "id": 1,
+      "Exercises": [2,3,4,5],
+      "expire_at": "10/10/2017",
+      "weekday" : "Monday",
+      "type": "anual"
+    }
+  ],
+
+  "Exercises": [
+    {
+      "id": 2,
+      "name": "Press chest",
+      "series": 3,
+      "reps": 10
+    }
+  ]
+}

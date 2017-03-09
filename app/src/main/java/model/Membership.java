@@ -1,4 +1,4 @@
-package com.example.daniel.fitkeeper;
+package model;
 
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
@@ -10,10 +10,10 @@ import java.util.Date;
 public class Membership {
     private Date createdAt;
     private Date expirationAt;
-    private int type;
+    private String type;
     SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");
 
-    public Membership(int type){
+    public Membership(String type){
         this.createdAt = new Date();
         this.type = type;
         try {
@@ -32,7 +32,7 @@ public class Membership {
         return sdf.format(expirationAt);
     }
 
-    public int getType() {
+    public String getType() {
         return type;
     }
 
@@ -44,7 +44,7 @@ public class Membership {
         this.expirationAt = expirationAt;
     }
 
-    public void setType(int type) {
+    public void setType(String type) {
         this.type = type;
     }
 }
