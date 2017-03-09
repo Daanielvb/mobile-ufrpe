@@ -2,10 +2,7 @@
   "Persons": [
     {
       "id": 1,
-      "age": 26,
-      "height": 1.71,
-      "weight": 75,
-      "username": "daanielvb@gmail.com",
+      "username": " daanielvb@gmail.com",
       "name" : "Daniel Vias-Boas",
       "password": "123456",
       "membership" : 1,

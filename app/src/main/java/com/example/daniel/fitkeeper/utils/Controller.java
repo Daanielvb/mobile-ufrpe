@@ -1,5 +1,6 @@
 package com.example.daniel.fitkeeper.utils;
 
+import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
@@ -21,7 +22,7 @@ public class Controller {
 
 
 
-    public static JSONObject getJSONObjectFromURL(String urlString, String requestMethod) throws IOException, JSONException {
+    public static JSONArray getJSONObjectFromURL(String urlString, String requestMethod) throws IOException, JSONException {
         HttpURLConnection urlConnection = null;
         URL url = new URL(urlString);
         urlConnection = (HttpURLConnection) url.openConnection();
@@ -41,8 +42,7 @@ public class Controller {
         }
         br.close();
         jsonString = sb.toString();
-
-        System.out.println("JSON: " + jsonString);
-        return new JSONObject(jsonString);
+        JSONArray jObj = new JSONArray(jsonString);
+        return jObj;
     }
 }

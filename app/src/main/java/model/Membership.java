@@ -2,6 +2,7 @@ package model;
 
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
+import java.util.Calendar;
 import java.util.Date;
 
 /**
@@ -16,12 +17,14 @@ public class Membership {
     public Membership(int type){
         this.createdAt = new Date();
         this.type = type;
-        try {
-            this.expirationAt = sdf.parse("31/12/2016");
-        } catch (ParseException e) {
-            e.printStackTrace();
-        }
+        this.expirationAt = addYearPlan(this.createdAt);
+    }
 
+    public Date addYearPlan(Date createdAt){
+        Calendar c = Calendar.getInstance();
+        c.setTime(createdAt);
+        c.add(Calendar.YEAR, 1);
+        return c.getTime();
     }
 
     public Date getCreatedAt() {

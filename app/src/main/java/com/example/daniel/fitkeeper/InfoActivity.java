@@ -6,6 +6,8 @@ import android.view.View;
 import android.widget.ImageButton;
 import android.widget.TextView;
 
+import com.example.daniel.fitkeeper.utils.Controller;
+
 import java.text.DecimalFormat;
 
 import model.Person;
@@ -27,7 +29,7 @@ public class InfoActivity extends AppCompatActivity implements View.OnClickListe
     private ImageButton backBtn;
     private TextView currentMonthText;
 
-    Person person = new Person("Daniel", 25, 1.71, 76);
+    Person person = Controller.currentUser;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

@@ -10,13 +10,16 @@ public class Person {
     private String name;
     private int age;
     private Double height;
-    private float weight;
+    private Double weight;
     private double imc;
     private String email;
     private String password;
     private int workoutCounter;
 
-    public Person(String name, int age, double height, float weight) {
+
+    public Person(){}
+
+    public Person(String name, int age, Double height, Double weight) {
         this.name = name;
         this.age = age;
         this.height = height;
@@ -28,6 +31,24 @@ public class Person {
         this.name = name;
         this.email = email;
         this.password = password;
+    }
+
+    public Person(String name, String email, int membership, int workoutCounter) {
+        this.name = name;
+        this.email = email;
+        this.membership = new Membership(membership);
+        this.workoutCounter = workoutCounter;
+    }
+
+    public Person(String name, String email, int membership, int workoutCounter, int age, Double height, Double weight) {
+        this.name = name;
+        this.email = email;
+        this.membership = new Membership(membership);
+        this.workoutCounter = workoutCounter;
+        this.age = age;
+        this.height = height;
+        this.weight = weight;
+        this.setImc();
     }
 
     public void setImc() {
@@ -88,11 +109,11 @@ public class Person {
         return imc;
     }
 
-    public float getWeight() {
+    public Double getWeight() {
         return weight;
     }
 
-    public void setWeight(float weight) {
+    public void setWeight(Double weight) {
         this.weight = weight;
     }
 

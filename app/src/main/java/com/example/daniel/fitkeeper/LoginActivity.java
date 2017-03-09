@@ -1,10 +1,9 @@
 package com.example.daniel.fitkeeper;
 
 import android.content.Intent;
+import android.os.Bundle;
 import android.os.StrictMode;
 import android.support.v7.app.AppCompatActivity;
-import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageButton;
@@ -13,11 +12,14 @@ import android.widget.TextView;
 import com.example.daniel.fitkeeper.utils.Constants;
 import com.example.daniel.fitkeeper.utils.Controller;
 import com.example.daniel.fitkeeper.utils.RequestHelper;
+import com.google.gson.Gson;
 
 import org.json.JSONException;
 import org.json.JSONObject;
 
 import java.io.IOException;
+
+import model.Person;
 
 public class LoginActivity extends AppCompatActivity {
     private Button loginBtn;
@@ -27,6 +29,7 @@ public class LoginActivity extends AppCompatActivity {
     private String email;
     private String password;
     private ImageButton forgotPassBtn;
+    private Gson gson = new Gson();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -37,27 +40,26 @@ public class LoginActivity extends AppCompatActivity {
             StrictMode.setThreadPolicy(policy);
         }
         setUI();
-            if (savedInstanceState != null) {
-                email = savedInstanceState.getString("email");
-                password = savedInstanceState.getString("password");
-                atualizaDados();
-            }
+        if (savedInstanceState != null) {
+            email = savedInstanceState.getString("email");
+            password = savedInstanceState.getString("password");
+            atualizaDados();
+        }
 
-        loginBtn.setOnClickListener(new View.OnClickListener(){
-            public void onClick(View v){
+        loginBtn.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
                 salvaDados();
-                login(email,password);
+                login(email, password);
             }
         });
 
-        forgotPassBtn.setOnClickListener(new View.OnClickListener(){
-            public void onClick(View v){
-                Intent it = new Intent(LoginActivity.this,ResetPasswordActivity.class);
+        forgotPassBtn.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+                Intent it = new Intent(LoginActivity.this, ResetPasswordActivity.class);
                 startActivity(it);
             }
         });
     }
-
 
 
     @Override
@@ -70,38 +72,41 @@ public class LoginActivity extends AppCompatActivity {
     private void atualizaDados() {
         if (email != null)
             emailText.setText(email);
-        if(password != null)
+        if (password != null)
             passwordtText.setText(password);
     }
 
-    private void salvaDados(){
+    private void salvaDados() {
         email = emailText.getText().toString();
         password = passwordtText.getText().toString();
     }
 
-    public void login(String email, String password){
-            if(!email.equals("") && !password.equals("")){
-                errorText.setText("");
-//                if(checkCredentials(email,password)) {
-//                    Intent it = new Intent(LoginActivity.this, HomeActivity.class);
-//                    startActivity(it);
-//                }
-//               else{
-//                   errorText.setText(R.string.error_incorrect_password);
-//                }
+    public void login(String email, String password) {
+        if (!email.equals("") && !password.equals("")) {
+            errorText.setText("");
+            if (checkCredentials(email, password)) {
+                Intent it = new Intent(LoginActivity.this, HomeActivity.class);
+                startActivity(it);
+            } else {
+                errorText.setText(R.string.error_incorrect_password);
             }
-            else if(email.equals(""))
-                errorText.setText(R.string.error_invalid_email);
-            else if(password.equals(""))
-                errorText.setText(R.string.error_invalid_password);
+        } else if (email.equals(""))
+            errorText.setText(R.string.error_invalid_email);
+        else if (password.equals(""))
+            errorText.setText(R.string.error_invalid_password);
     }
 
-    public boolean checkCredentials(String email, String password){
+    public boolean checkCredentials(String email, String password) {
         try {
             JSONObject response = Controller.getJSONObjectFromURL(
-                    RequestHelper.composeUrlPathWithParam("Persons","username", email), Constants.GET_REQUEST);
-            System.out.println(response);
-            return true;
+                    RequestHelper.composeUrlPathWithParam(Constants.PERSON_ENTITY, "username", email), Constants.GET_REQUEST).getJSONObject(0);
+            if (response.getString("password").equals(password)) {
+                Person user = new Person(response.getString("name"), response.getString("username"),
+                        response.getInt("membership"), response.getInt("workoutCount"),response.getInt("age"),
+                        response.getDouble("height"),response.getDouble("weight"));
+                Controller.currentUser = user;
+                return true;
+            }
         } catch (IOException e) {
             e.printStackTrace();
         } catch (JSONException e) {
@@ -110,14 +115,13 @@ public class LoginActivity extends AppCompatActivity {
         return false;
     }
 
-    public void setUI(){
+    public void setUI() {
         emailText = (TextView) findViewById(R.id.editTextMail);
         passwordtText = (TextView) findViewById(R.id.editTextPassword);
         forgotPassBtn = (ImageButton) findViewById(R.id.forgotPassBtn);
         loginBtn = (Button) findViewById(R.id.loginBtn);
         errorText = (TextView) findViewById(R.id.errorTxt);
     }
-
 
 
 }

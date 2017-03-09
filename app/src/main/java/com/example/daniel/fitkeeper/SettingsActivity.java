@@ -8,6 +8,8 @@ import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.TextView;
 
+import com.example.daniel.fitkeeper.utils.Controller;
+
 import model.Person;
 
 /**
@@ -58,6 +60,7 @@ public class SettingsActivity extends AppCompatActivity implements View.OnClickL
                 finish();
                 break;
             case R.id.logoutBtn:
+                Controller.currentUser = null;
                 Intent it = new Intent(SettingsActivity.this,LoginActivity.class);
                 startActivity(it);
                 break;
