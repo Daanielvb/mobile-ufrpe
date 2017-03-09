@@ -17,6 +17,7 @@ import android.widget.TextView;
 
 import com.example.daniel.fitkeeper.utils.Constants;
 import com.example.daniel.fitkeeper.utils.Controller;
+import com.example.daniel.fitkeeper.utils.RequestHelper;
 
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -146,7 +147,8 @@ public class WorkoutActivity extends AppCompatActivity implements View.OnClickLi
 
     public void saveWorkoutFinished(){
         try{
-            JSONObject jsonObject = Controller.getJSONObjectFromURL(Controller.composeUserUrlPath,"POST");
+            JSONObject jsonObject = Controller.getJSONObjectFromURL(
+                    RequestHelper.composeUrlPath("person",String.valueOf(Controller.currentUser.getId())),"POST");
             // TODO: Do what i want with my json
         } catch (IOException e) {
             e.printStackTrace();

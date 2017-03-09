@@ -1,6 +1,7 @@
 package com.example.daniel.fitkeeper;
 
 import android.content.Intent;
+import android.os.StrictMode;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
@@ -31,6 +32,10 @@ public class LoginActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
+        if (android.os.Build.VERSION.SDK_INT > 9) {
+            StrictMode.ThreadPolicy policy = new StrictMode.ThreadPolicy.Builder().permitAll().build();
+            StrictMode.setThreadPolicy(policy);
+        }
         setUI();
             if (savedInstanceState != null) {
                 email = savedInstanceState.getString("email");
@@ -52,6 +57,8 @@ public class LoginActivity extends AppCompatActivity {
             }
         });
     }
+
+
 
     @Override
     protected void onSaveInstanceState(Bundle outState) {
@@ -75,12 +82,12 @@ public class LoginActivity extends AppCompatActivity {
     public void login(String email, String password){
             if(!email.equals("") && !password.equals("")){
                 errorText.setText("");
-                //if(checkCredentials(email,password)) {
-                    Intent it = new Intent(LoginActivity.this, HomeActivity.class);
-                    startActivity(it);
-                //}
-//                else{
-//                    errorText.setText(R.string.error_incorrect_password);
+//                if(checkCredentials(email,password)) {
+//                    Intent it = new Intent(LoginActivity.this, HomeActivity.class);
+//                    startActivity(it);
+//                }
+//               else{
+//                   errorText.setText(R.string.error_incorrect_password);
 //                }
             }
             else if(email.equals(""))
@@ -92,7 +99,7 @@ public class LoginActivity extends AppCompatActivity {
     public boolean checkCredentials(String email, String password){
         try {
             JSONObject response = Controller.getJSONObjectFromURL(
-                    RequestHelper.composeUrlPathWithParam("persons","username", email), Constants.GET_REQUEST);
+                    RequestHelper.composeUrlPathWithParam("Persons","username", email), Constants.GET_REQUEST);
             System.out.println(response);
             return true;
         } catch (IOException e) {

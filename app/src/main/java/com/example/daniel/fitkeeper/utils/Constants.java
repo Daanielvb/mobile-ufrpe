@@ -6,7 +6,7 @@ package com.example.daniel.fitkeeper.utils;
 
 public class Constants {
 
-    public static final String API_URL = "localhost:3000/";
+    public static final String API_URL = "http://localhost:3000/";
 
     public static final String GET_REQUEST = "GET";
 

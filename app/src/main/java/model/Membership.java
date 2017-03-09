@@ -10,10 +10,10 @@ import java.util.Date;
 public class Membership {
     private Date createdAt;
     private Date expirationAt;
-    private String type;
+    private int type;
     SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");
 
-    public Membership(String type){
+    public Membership(int type){
         this.createdAt = new Date();
         this.type = type;
         try {
@@ -32,7 +32,7 @@ public class Membership {
         return sdf.format(expirationAt);
     }
 
-    public String getType() {
+    public int getType() {
         return type;
     }
 
@@ -44,7 +44,7 @@ public class Membership {
         this.expirationAt = expirationAt;
     }
 
-    public void setType(String type) {
+    public void setType(int type) {
         this.type = type;
     }
 }
