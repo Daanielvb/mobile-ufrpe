@@ -2,6 +2,9 @@ package com.example.daniel.fitkeeper.utils;
 
 import android.util.Log;
 
+import com.google.gson.Gson;
+import com.google.gson.GsonBuilder;
+
 import org.apache.http.HttpResponse;
 import org.apache.http.client.HttpClient;
 import org.apache.http.client.methods.HttpPut;
@@ -26,6 +29,8 @@ import model.Person;
 public class Controller {
 
     public static Person currentUser;
+
+    public static Gson gson = new GsonBuilder().excludeFieldsWithoutExposeAnnotation().create();
 
     public static boolean putRequestWithJson(String... params) {
         String path = params[0];

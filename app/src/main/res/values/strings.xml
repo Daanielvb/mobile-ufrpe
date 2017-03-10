@@ -25,6 +25,7 @@
     <string name="height_user_info">Height:</string>
     <string name="weight_user_info">Weight:</string>
     <string name="imc_user_info">IMC:</string>
+    <string name="workouts_user_info">Workouts done:</string>
 
     <string name="exercise_name">Exercise</string>
     <string name="set_name">Sets</string>

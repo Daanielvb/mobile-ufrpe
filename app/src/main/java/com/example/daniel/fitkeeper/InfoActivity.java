@@ -13,23 +13,24 @@ import java.text.DecimalFormat;
 import model.Person;
 
 public class InfoActivity extends AppCompatActivity implements View.OnClickListener {
-    public String name;
-    public String age;
-    public String height;
-    public String weight;
-    public String imc;
-    public String currentMonth;
-
+    Person person = Controller.currentUser;
+    private String name;
+    private String age;
+    private String height;
+    private String weight;
+    private String imc;
+    private String workoutCounter;
+    private String currentMonth;
+    //workoutsTxtValue
     private String[] months;
     private TextView nameText;
     private TextView ageText;
     private TextView heightText;
     private TextView weightText;
+    private TextView workoutCounterText;
     private TextView imcText;
     private ImageButton backBtn;
     private TextView currentMonthText;
-
-    Person person = Controller.currentUser;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -88,6 +89,8 @@ public class InfoActivity extends AppCompatActivity implements View.OnClickListe
             imcText.setText(imc);
         if (currentMonth != null)
             currentMonthText.setText(currentMonth);
+        if (workoutCounter != null)
+            workoutCounterText.setText(workoutCounter);
     }
 
     private void salvaDados() {
@@ -97,6 +100,7 @@ public class InfoActivity extends AppCompatActivity implements View.OnClickListe
         height = heightText.getText().toString();
         weight = weightText.getText().toString();
         imc = imcText.getText().toString();
+        workoutCounter = workoutCounterText.getText().toString();
     }
 
     @Override
@@ -107,6 +111,7 @@ public class InfoActivity extends AppCompatActivity implements View.OnClickListe
         outState.putString("weight", weight);
         outState.putString("height", height);
         outState.putString("imc", imc);
+        outState.putString("workoutCounter", workoutCounter);
     }
 
     public void onClick(View view) {
@@ -120,10 +125,11 @@ public class InfoActivity extends AppCompatActivity implements View.OnClickListe
 
     public void setPerson(Person p) {
         nameText.setText(p.getName());
-        heightText.setText(String.valueOf(p.getHeight()));
+        heightText.setText(String.valueOf(p.getHeight()) + "cm");
         weightText.setText(String.valueOf(p.getWeight()));
         imcText.setText(new DecimalFormat("##.##").format(p.getImc()));
         ageText.setText(String.valueOf(p.getAge()));
+        workoutCounterText.setText(String.valueOf(p.getWorkoutCounter()));
     }
 
     public void setUI() {
@@ -134,6 +140,7 @@ public class InfoActivity extends AppCompatActivity implements View.OnClickListe
         heightText = (TextView) findViewById(R.id.heightEdtTxt);
         weightText = (TextView) findViewById(R.id.weightEdtTxt);
         imcText = (TextView) findViewById(R.id.imcEdtTxt);
+        workoutCounterText = (TextView) findViewById(R.id.workoutsTxtValue);
     }
 
 }
