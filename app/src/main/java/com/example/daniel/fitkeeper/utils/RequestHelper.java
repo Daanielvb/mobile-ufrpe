@@ -6,11 +6,12 @@ package com.example.daniel.fitkeeper.utils;
 
 public class RequestHelper {
 
-    public static String composeUrlPath(String entity, String id){
+    public static String composeUrlPath(String entity, String id) {
         return Constants.API_URL + entity + "/" + id;
     }
 
-    public static String composeUrlPathWithParam(String entity, String param, String value){
-        return Constants.API_URL + entity +  "?" + param + "=" + value;
+    public static String composeUrlPathWithParam(String entity, String param, String value) {
+        return Constants.API_URL + entity + "?" + param + "=" + value;
     }
+
 }

@@ -35,6 +35,10 @@ public class LoginActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
+        if (Controller.currentUser != null) {
+            Intent it = new Intent(LoginActivity.this, HomeActivity.class);
+            startActivity(it);
+        }
         if (android.os.Build.VERSION.SDK_INT > 9) {
             StrictMode.ThreadPolicy policy = new StrictMode.ThreadPolicy.Builder().permitAll().build();
             StrictMode.setThreadPolicy(policy);
@@ -99,11 +103,14 @@ public class LoginActivity extends AppCompatActivity {
     public boolean checkCredentials(String email, String password) {
         try {
             JSONObject response = Controller.getJSONObjectFromURL(
-                    RequestHelper.composeUrlPathWithParam(Constants.PERSON_ENTITY, "username", email), Constants.GET_REQUEST).getJSONObject(0);
+                    RequestHelper.composeUrlPathWithParam(Constants.PERSON_ENTITY, "email", email), Constants.GET_REQUEST).getJSONObject(0);
             if (response.getString("password").equals(password)) {
-                Person user = new Person(response.getString("name"), response.getString("username"),
-                        response.getInt("membership"), response.getInt("workoutCount"),response.getInt("age"),
-                        response.getDouble("height"),response.getDouble("weight"));
+                //TODO: Inserir lista de workouts
+                //response.getJSONArray("workouts")
+                Person user = new Person(response.getInt("id"), response.getString("name"),
+                        response.getString("username"), response.getString("password"),
+                        response.getInt("membership"), response.getInt("workoutCounter"), response.getInt("age"),
+                        response.getInt("height"), response.getInt("weight"));
                 Controller.currentUser = user;
                 return true;
             }
