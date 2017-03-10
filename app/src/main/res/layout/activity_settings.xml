@@ -40,7 +40,7 @@
 
     <EditText
         android:id="@+id/emailEdtTxt"
-        android:layout_width="match_parent"
+        android:layout_width="298dp"
         android:layout_height="wrap_content"
         android:layout_below="@+id/screenTxt"
         android:layout_centerHorizontal="true"
@@ -52,7 +52,7 @@
 
     <EditText
         android:id="@+id/crtPassEdtTxt"
-        android:layout_width="match_parent"
+        android:layout_width="298dp"
         android:layout_height="wrap_content"
         android:layout_below="@+id/emailEdtTxt"
         android:layout_centerHorizontal="true"
@@ -64,7 +64,7 @@
 
     <EditText
         android:id="@+id/newPassEdtTxt"
-        android:layout_width="match_parent"
+        android:layout_width="298dp"
         android:layout_height="wrap_content"
         android:layout_below="@+id/crtPassEdtTxt"
         android:layout_centerHorizontal="true"
@@ -76,7 +76,7 @@
 
     <EditText
         android:id="@+id/rptPassEdtText"
-        android:layout_width="match_parent"
+        android:layout_width="298dp"
         android:layout_height="wrap_content"
         android:layout_below="@+id/newPassEdtTxt"
         android:layout_centerHorizontal="true"
@@ -85,15 +85,6 @@
         android:hint="@string/repeat_password_name"
         android:inputType="textPassword"
         android:padding="5dp" />
-
-    <ImageButton
-        android:id="@+id/backBtn"
-        android:layout_width="70dp"
-        android:layout_height="50dp"
-        android:layout_alignParentBottom="true"
-        android:layout_alignParentStart="true"
-        android:background="@drawable/button_bg_rounded_corners"
-        android:src="@drawable/ic_back_button" />
 
     <Button
         android:id="@+id/saveBtn"
@@ -116,7 +107,20 @@
         android:text="@string/logout_button_name"
         android:textColor="@color/black"
         android:layout_alignTop="@+id/backBtn"
-        android:layout_alignParentEnd="true" />
+        android:layout_alignParentEnd="true"
+        android:layout_marginRight="10dp"/>
+
+    <ImageButton
+        android:id="@+id/backBtn"
+        android:layout_width="70dp"
+        android:layout_height="50dp"
+        android:background="@drawable/button_bg_rounded_corners"
+        android:src="@drawable/ic_back_button"
+        android:layout_marginLeft="10dp"
+        android:layout_marginBottom="65dp"
+        android:layout_marginStart="9dp"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentStart="true" />
 
 
 </RelativeLayout>

@@ -58,15 +58,6 @@
         android:text="@string/membership_renew_button_name"
         android:textColor="@color/black" />
 
-    <ImageButton
-        android:id="@+id/backBtn"
-        android:layout_width="70dp"
-        android:layout_height="50dp"
-        android:layout_alignParentBottom="true"
-        android:layout_marginBottom="30dp"
-        android:background="@drawable/button_bg_rounded_corners"
-        android:src="@drawable/ic_back_button" />
-
     <TextView
         android:id="@+id/membershipEdtTxt"
         android:layout_width="250dp"
@@ -98,6 +89,16 @@
         android:layout_below="@+id/membershipLstDayTxt"
         android:layout_alignStart="@+id/membershipLstDayTxt"
         android:layout_marginTop="13dp" />
+
+    <ImageButton
+        android:id="@+id/backBtn"
+        android:layout_width="70dp"
+        android:layout_height="50dp"
+        android:layout_marginBottom="30dp"
+        android:background="@drawable/button_bg_rounded_corners"
+        android:src="@drawable/ic_back_button"
+        android:layout_alignParentBottom="true"
+        android:layout_toStartOf="@+id/screenTxt" />
 
 
 </RelativeLayout>

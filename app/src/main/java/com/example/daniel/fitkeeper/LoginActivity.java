@@ -103,7 +103,7 @@ public class LoginActivity extends AppCompatActivity {
     public boolean checkCredentials(String email, String password) {
         try {
             JSONObject response = Controller.getJSONObjectFromURL(
-                    RequestHelper.composeUrlPathWithParam(Constants.PERSON_ENTITY, "email", email), Constants.GET_REQUEST).getJSONObject(0);
+                    RequestHelper.composeUrlPathWithParam(Constants.PERSON_ENTITY, "username", email), Constants.GET_REQUEST).getJSONObject(0);
             if (response.getString("password").equals(password)) {
                 //TODO: Inserir lista de workouts
                 //response.getJSONArray("workouts")
