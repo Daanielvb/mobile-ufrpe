@@ -9,8 +9,6 @@ import android.widget.ImageButton;
 import android.widget.TextView;
 
 import com.example.daniel.fitkeeper.utils.Controller;
-import com.google.gson.Gson;
-import com.google.gson.GsonBuilder;
 
 import model.Person;
 
@@ -19,7 +17,7 @@ import model.Person;
  */
 public class SettingsActivity extends AppCompatActivity implements View.OnClickListener {
     Person p = Controller.currentUser;
-    Gson gson = new GsonBuilder().excludeFieldsWithoutExposeAnnotation().create();
+
     private String password;
     private String email;
     private String newPassword;
@@ -88,7 +86,8 @@ public class SettingsActivity extends AppCompatActivity implements View.OnClickL
             System.out.println("Mostrar error");
         } else {
             Controller.currentUser.setPassword(newPasswordText.getText().toString());
-            String jsonStringPerson = gson.toJson(Controller.currentUser);
+            Controller.currentUser.setUsername(emailText.getText().toString());
+            String jsonStringPerson = Controller.gson.toJson(Controller.currentUser);
             if (Controller.checkCredentials(jsonStringPerson)) {
                 System.out.println("Senha alterada com sucesso");
                 updateUI();

@@ -12,13 +12,10 @@ import android.widget.Spinner;
 import android.widget.TableRow;
 import android.widget.TextView;
 
+import com.example.daniel.fitkeeper.utils.Constants;
 import com.example.daniel.fitkeeper.utils.Controller;
 import com.example.daniel.fitkeeper.utils.RequestHelper;
 
-import org.json.JSONArray;
-import org.json.JSONException;
-
-import java.io.IOException;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -131,6 +128,7 @@ public class WorkoutActivity extends AppCompatActivity implements View.OnClickLi
         backBtn = (ImageButton) findViewById(R.id.backBtn);
         finishWorkoutBtn = (Button) findViewById(R.id.finish_workout_btn);
         backBtn.setOnClickListener(this);
+        finishWorkoutBtn.setOnClickListener(this);
         c1 = (CheckBox) findViewById(R.id.checkbox_1);
         c2 = (CheckBox) findViewById(R.id.checkbox_2);
         c3 = (CheckBox) findViewById(R.id.checkbox_3);
@@ -140,15 +138,27 @@ public class WorkoutActivity extends AppCompatActivity implements View.OnClickLi
 
     public void saveWorkoutFinished() {
         try {
-            JSONArray jsonObject = Controller.getJSONObjectFromURL(
-                    RequestHelper.composeUrlPath("person", String.valueOf(Controller.currentUser.getId())), "POST");
-            // TODO: Send post request to PersonId
-        } catch (IOException e) {
-            e.printStackTrace();
-        } catch (JSONException e) {
+            Controller.currentUser.increaseWorkoutCounter();
+            String jsonStringPerson = Controller.gson.toJson(Controller.currentUser);
+            if (Controller.putRequestWithJson(
+                    RequestHelper.composeUrlPath(Constants.PERSON_ENTITY, String.valueOf(Controller.currentUser.getId())),
+                    jsonStringPerson)) {
+                //TODO:
+                //Mostrar mensagem de sucesso
+                //Usar strings.xml para mensagens
+                //Desmarcar checkbox
+                System.out.println("Treino salvo");
+            } else {
+                //TODO:
+                //Mostrar mensagem de erro
+                //Usar strings.xml para mensagens
+                System.out.println("Falha ao salvar o treino. Tente novamente depois");
+            }
+        } catch (Exception e) {
             e.printStackTrace();
         }
     }
+
 
     public String getCurrentDay() {
         return dayFormat.format(calendar.getTime());
