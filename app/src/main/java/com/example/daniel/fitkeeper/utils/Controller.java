@@ -28,7 +28,7 @@ import model.Person;
 
 public class Controller {
 
-    public static Person currentUser;
+    //public static Person currentUser;
 
     public static Gson gson = new GsonBuilder().excludeFieldsWithoutExposeAnnotation().create();
 
@@ -89,7 +89,8 @@ public class Controller {
     public static boolean checkCredentials(String jsonStringPerson) {
         try {
             return putRequestWithJson(
-                    RequestHelper.composeUrlPath(Constants.PERSON_ENTITY, String.valueOf(Controller.currentUser.getId())),
+                    RequestHelper.composeUrlPath(Constants.PERSON_ENTITY, String.valueOf(
+                            Session.getInstance().getUser().getId())),
                     jsonStringPerson);
         } catch (Exception e) {
             e.printStackTrace();

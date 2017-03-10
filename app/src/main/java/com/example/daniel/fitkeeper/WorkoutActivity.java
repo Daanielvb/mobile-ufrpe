@@ -15,6 +15,7 @@ import android.widget.TextView;
 import com.example.daniel.fitkeeper.utils.Constants;
 import com.example.daniel.fitkeeper.utils.Controller;
 import com.example.daniel.fitkeeper.utils.RequestHelper;
+import com.example.daniel.fitkeeper.utils.Session;
 
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
@@ -138,10 +139,10 @@ public class WorkoutActivity extends AppCompatActivity implements View.OnClickLi
 
     public void saveWorkoutFinished() {
         try {
-            Controller.currentUser.increaseWorkoutCounter();
-            String jsonStringPerson = Controller.gson.toJson(Controller.currentUser);
+            Session.getInstance().getUser().increaseWorkoutCounter();
+            String jsonStringPerson = Controller.gson.toJson(Session.getInstance().getUser());
             if (Controller.putRequestWithJson(
-                    RequestHelper.composeUrlPath(Constants.PERSON_ENTITY, String.valueOf(Controller.currentUser.getId())),
+                    RequestHelper.composeUrlPath(Constants.PERSON_ENTITY, String.valueOf(Session.getInstance().getUser().getId())),
                     jsonStringPerson)) {
                 //TODO:
                 //Mostrar mensagem de sucesso

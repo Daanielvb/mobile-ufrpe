@@ -7,6 +7,7 @@ import android.widget.ImageButton;
 import android.widget.TextView;
 
 import com.example.daniel.fitkeeper.utils.Controller;
+import com.example.daniel.fitkeeper.utils.Session;
 
 import model.Membership;
 
@@ -18,7 +19,7 @@ public class SubscriptionActivity extends AppCompatActivity implements View.OnCl
     private TextView membershipType;
     private TextView membershipExpiration;
 
-    Membership m = Controller.currentUser.getMembership();
+    Membership m = Session.getInstance().getUser().getMembership();
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
