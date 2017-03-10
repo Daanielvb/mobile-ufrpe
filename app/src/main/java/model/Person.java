@@ -2,6 +2,9 @@ package model;
 
 import com.google.gson.annotations.Expose;
 
+import java.util.ArrayList;
+import java.util.List;
+
 /**
  * Created by Daniel on 24/10/2016.
  */
@@ -27,6 +30,8 @@ public class Person {
     @Expose
     private int workoutCounter;
 
+
+    private transient List<String> workouts = new ArrayList<String>();
     private transient double imc;
 
     public Person() {
@@ -65,6 +70,7 @@ public class Person {
         this.height = height;
         this.weight = weight;
         this.setImc();
+
     }
 
     public void setImc() {
@@ -158,5 +164,13 @@ public class Person {
 
     public void increaseWorkoutCounter(){
         this.workoutCounter++;
+    }
+
+    public List<String> getWorkouts() {
+        return workouts;
+    }
+
+    public void setWorkouts(List<String> workouts) {
+        this.workouts = workouts;
     }
 }

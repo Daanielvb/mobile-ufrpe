@@ -18,9 +18,7 @@ public class HomeActivity extends AppCompatActivity implements View.OnClickListe
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home);
         setUI();
-
     }
-
 
     public void onClick(View view) {
         switch (view.getId()) {

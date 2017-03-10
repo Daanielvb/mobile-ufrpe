@@ -9,6 +9,7 @@ import android.widget.ImageButton;
 import android.widget.TextView;
 
 import com.example.daniel.fitkeeper.utils.Controller;
+import com.example.daniel.fitkeeper.utils.Session;
 
 import model.Person;
 
@@ -16,7 +17,7 @@ import model.Person;
  * Created by Rodrigo on 25/10/2016.
  */
 public class SettingsActivity extends AppCompatActivity implements View.OnClickListener {
-    Person p = Controller.currentUser;
+    Person p = Session.getInstance().getUser();
 
     private String password;
     private String email;
@@ -60,7 +61,7 @@ public class SettingsActivity extends AppCompatActivity implements View.OnClickL
     }
 
     public void updateUI() {
-        passwordText.setText(Controller.currentUser.getPassword());
+        passwordText.setText(Session.getInstance().getUser().getPassword());
         newPasswordText.setText("");
         confirmPasswordText.setText("");
     }
@@ -71,7 +72,7 @@ public class SettingsActivity extends AppCompatActivity implements View.OnClickL
                 finish();
                 break;
             case R.id.logoutBtn:
-                Controller.currentUser = null;
+                Session.getInstance().setUser(null);
                 Intent it = new Intent(SettingsActivity.this, LoginActivity.class);
                 startActivity(it);
                 break;
@@ -82,12 +83,13 @@ public class SettingsActivity extends AppCompatActivity implements View.OnClickL
     }
 
     public void changePassword() {
-        if (!newPasswordText.getText().toString().equals(confirmPasswordText.getText().toString())) {
+        if (!newPasswordText.getText().toString().equals(confirmPasswordText.getText().toString())
+                || newPasswordText.getText().toString().equals("")) {
             System.out.println("Mostrar error");
         } else {
-            Controller.currentUser.setPassword(newPasswordText.getText().toString());
-            Controller.currentUser.setUsername(emailText.getText().toString());
-            String jsonStringPerson = Controller.gson.toJson(Controller.currentUser);
+            Session.getInstance().getUser().setPassword(newPasswordText.getText().toString());
+            Session.getInstance().getUser().setUsername(emailText.getText().toString());
+            String jsonStringPerson = Controller.gson.toJson(Session.getInstance().getUser());
             if (Controller.checkCredentials(jsonStringPerson)) {
                 System.out.println("Senha alterada com sucesso");
                 updateUI();

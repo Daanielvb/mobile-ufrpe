@@ -12,12 +12,16 @@ import android.widget.TextView;
 import com.example.daniel.fitkeeper.utils.Constants;
 import com.example.daniel.fitkeeper.utils.Controller;
 import com.example.daniel.fitkeeper.utils.RequestHelper;
+import com.example.daniel.fitkeeper.utils.Session;
 import com.google.gson.Gson;
 
+import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
 import java.io.IOException;
+import java.util.ArrayList;
+import java.util.List;
 
 import model.Person;
 
@@ -35,7 +39,7 @@ public class LoginActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
-        if (Controller.currentUser != null) {
+        if (Session.getInstance().getUser() != null) {
             Intent it = new Intent(LoginActivity.this, HomeActivity.class);
             startActivity(it);
         }
@@ -105,13 +109,21 @@ public class LoginActivity extends AppCompatActivity {
             JSONObject response = Controller.getJSONObjectFromURL(
                     RequestHelper.composeUrlPathWithParam(Constants.PERSON_ENTITY, "username", email), Constants.GET_REQUEST).getJSONObject(0);
             if (response.getString("password").equals(password)) {
-                //TODO: Inserir lista de workouts
-                //response.getJSONArray("workouts")
+                List<String> workoutList = new ArrayList<String>();
+                try {
+                    JSONArray workouts = response.getJSONArray("workouts");
+                    for (int i = 0; i < workouts.length(); i++) {
+                        workoutList.add(workouts.get(i).toString());
+                    }
+                } catch (JSONException ex) {
+                    //ex.printStackTrace();
+                }
                 Person user = new Person(response.getInt("id"), response.getString("name"),
                         response.getString("username"), response.getString("password"),
                         response.getInt("membership"), response.getInt("workoutCounter"), response.getInt("age"),
                         response.getInt("height"), response.getInt("weight"));
-                Controller.currentUser = user;
+                user.setWorkouts(workoutList);
+                Session.getInstance().setUser(user);
                 return true;
             }
         } catch (IOException e) {

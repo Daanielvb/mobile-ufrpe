@@ -7,13 +7,14 @@ import android.widget.ImageButton;
 import android.widget.TextView;
 
 import com.example.daniel.fitkeeper.utils.Controller;
+import com.example.daniel.fitkeeper.utils.Session;
 
 import java.text.DecimalFormat;
 
 import model.Person;
 
 public class InfoActivity extends AppCompatActivity implements View.OnClickListener {
-    Person person = Controller.currentUser;
+    Person person = Session.getInstance().getUser();
     private String name;
     private String age;
     private String height;
