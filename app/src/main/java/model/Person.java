@@ -1,25 +1,38 @@
 package model;
 
+import com.google.gson.annotations.Expose;
+
 /**
  * Created by Daniel on 24/10/2016.
  */
 public class Person {
 
-    public Membership membership;
-    private long id;
+    public Membership memberships;
+    @Expose
+    public int membership;
+    @Expose
+    private int id;
+    @Expose
     private String name;
+    @Expose
     private int age;
-    private Double height;
-    private Double weight;
-    private double imc;
-    private String email;
+    @Expose
+    private int height;
+    @Expose
+    private int weight;
+    @Expose
+    private String username;
+    @Expose
     private String password;
+    @Expose
     private int workoutCounter;
 
+    private transient double imc;
 
-    public Person(){}
+    public Person() {
+    }
 
-    public Person(String name, int age, Double height, Double weight) {
+    public Person(String name, int age, int height, int weight) {
         this.name = name;
         this.age = age;
         this.height = height;
@@ -27,23 +40,26 @@ public class Person {
         setImc();
     }
 
-    public Person(String name, String email, String password) {
+    public Person(String name, String username, String password) {
         this.name = name;
-        this.email = email;
+        this.username = username;
         this.password = password;
     }
 
-    public Person(String name, String email, int membership, int workoutCounter) {
+    public Person(String name, String username, int membership, int workoutCounter) {
         this.name = name;
-        this.email = email;
-        this.membership = new Membership(membership);
+        this.username = username;
+        this.memberships = new Membership(membership);
         this.workoutCounter = workoutCounter;
     }
 
-    public Person(String name, String email, int membership, int workoutCounter, int age, Double height, Double weight) {
+    public Person(int id, String name, String username, String password, int membership, int workoutCounter, int age, int height, int weight) {
+        this.id = id;
         this.name = name;
-        this.email = email;
-        this.membership = new Membership(membership);
+        this.username = username;
+        this.password = password;
+        this.membership = membership;
+        this.memberships = new Membership(membership);
         this.workoutCounter = workoutCounter;
         this.age = age;
         this.height = height;
@@ -60,16 +76,8 @@ public class Person {
         return height;
     }
 
-    public void setImc(double imc) {
-        this.imc = imc;
-    }
-
-    public void setEmail(String email) {
-        this.email = email;
-    }
-
-    public void setPassword(String password) {
-        this.password = password;
+    public void setHeight(int height) {
+        this.height = height;
     }
 
     public int getWorkoutCounter() {
@@ -78,15 +86,6 @@ public class Person {
 
     public void setWorkoutCounter(int workoutCounter) {
         this.workoutCounter = workoutCounter;
-    }
-
-    public void setHeight(Double height) {
-
-        this.height = height;
-    }
-
-    public void setHeight(double height) {
-        this.height = height;
     }
 
     public int getAge() {
@@ -109,35 +108,51 @@ public class Person {
         return imc;
     }
 
-    public Double getWeight() {
+    public void setImc(double imc) {
+        this.imc = imc;
+    }
+
+    public int getWeight() {
         return weight;
     }
 
-    public void setWeight(Double weight) {
+    public void setWeight(int weight) {
         this.weight = weight;
     }
 
-    public String getEmail() {
-        return email;
+    public String getUsername() {
+        return username;
+    }
+
+    public void setUsername(String username) {
+        this.username = username;
     }
 
     public String getPassword() {
         return password;
     }
 
+    public void setPassword(String password) {
+        this.password = password;
+    }
+
     public Membership getMembership() {
-        return membership;
+        return memberships;
+    }
+
+    public void setMembership(int membership) {
+        this.membership = membership;
     }
 
     public void setMembership(Membership m) {
-        this.membership = m;
+        this.memberships = m;
     }
 
-    public long getId() {
+    public int getId() {
         return id;
     }
 
-    public void setId(long id) {
+    public void setId(int id) {
         this.id = id;
     }
 }

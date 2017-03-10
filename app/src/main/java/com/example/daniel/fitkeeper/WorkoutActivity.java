@@ -1,10 +1,7 @@
 package com.example.daniel.fitkeeper;
 
-import android.content.Intent;
-
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.util.Log;
+import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
@@ -15,13 +12,11 @@ import android.widget.Spinner;
 import android.widget.TableRow;
 import android.widget.TextView;
 
-import com.example.daniel.fitkeeper.utils.Constants;
 import com.example.daniel.fitkeeper.utils.Controller;
 import com.example.daniel.fitkeeper.utils.RequestHelper;
 
 import org.json.JSONArray;
 import org.json.JSONException;
-import org.json.JSONObject;
 
 import java.io.IOException;
 import java.text.SimpleDateFormat;
@@ -30,18 +25,16 @@ import java.util.Arrays;
 import java.util.Calendar;
 import java.util.List;
 import java.util.Locale;
-import java.util.logging.Logger;
 
 public class WorkoutActivity extends AppCompatActivity implements View.OnClickListener {
+    public static int checkCount = 0;
+    SimpleDateFormat dayFormat = new SimpleDateFormat("EEEE", Locale.getDefault());
+    Calendar calendar = Calendar.getInstance();
+    CheckBox c1, c2, c3, c4;
     private String[] days;
     private ImageButton backBtn;
     private Button finishWorkoutBtn;
     private TextView currentDayText;
-    SimpleDateFormat dayFormat = new SimpleDateFormat("EEEE", Locale.getDefault());
-    Calendar calendar = Calendar.getInstance();
-    CheckBox c1, c2, c3, c4;
-    public static int checkCount = 0;
-
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -119,8 +112,7 @@ public class WorkoutActivity extends AppCompatActivity implements View.OnClickLi
         if (flag) {
             checkCount++;
             tr.setBackgroundColor(getResources().getColor(R.color.lightGray));
-        }
-        else {
+        } else {
             tr.setBackgroundColor(getResources().getColor(R.color.white));
             checkCount--;
         }
@@ -128,7 +120,7 @@ public class WorkoutActivity extends AppCompatActivity implements View.OnClickLi
     }
 
     private void releaseEndWorkoutButton() {
-        if(checkCount > 3)
+        if (checkCount > 3)
             finishWorkoutBtn.setVisibility(View.VISIBLE);
         else
             finishWorkoutBtn.setVisibility(View.GONE);
@@ -146,17 +138,18 @@ public class WorkoutActivity extends AppCompatActivity implements View.OnClickLi
     }
 
 
-    public void saveWorkoutFinished(){
-        try{
+    public void saveWorkoutFinished() {
+        try {
             JSONArray jsonObject = Controller.getJSONObjectFromURL(
-                    RequestHelper.composeUrlPath("person",String.valueOf(Controller.currentUser.getId())),"POST");
-            // TODO: Do what i want with my json
+                    RequestHelper.composeUrlPath("person", String.valueOf(Controller.currentUser.getId())), "POST");
+            // TODO: Send post request to PersonId
         } catch (IOException e) {
             e.printStackTrace();
         } catch (JSONException e) {
             e.printStackTrace();
         }
     }
+
     public String getCurrentDay() {
         return dayFormat.format(calendar.getTime());
     }
