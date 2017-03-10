@@ -39,25 +39,6 @@
         android:textSize="40sp" />
 
     <TextView
-        android:id="@+id/membershipTxt"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/screenTxt"
-        android:layout_marginTop="54dp"
-        android:layout_toEndOf="@+id/backBtn"
-        android:text="@string/membership_plan_name"
-        android:textSize="25sp" />
-
-    <TextView
-        android:id="@+id/membershipEdtTxt"
-        android:layout_width="250dp"
-        android:layout_height="30dp"
-        android:layout_alignStart="@+id/membershipTxt"
-        android:layout_below="@+id/membershipTxt"
-        android:background="@drawable/border"
-        android:padding="5dp" />
-
-    <TextView
         android:id="@+id/membershipLstDayTxt"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -66,20 +47,9 @@
         android:text="@string/membership_last_day_name"
         android:textSize="25sp" />
 
-    <TextView
-        android:id="@+id/membershipLstDayEdtTxt"
-        android:layout_width="250dp"
-        android:layout_height="30dp"
-        android:layout_alignStart="@+id/membershipLstDayTxt"
-        android:layout_below="@+id/membershipLstDayTxt"
-        android:background="@drawable/border"
-        android:ems="10"
-        android:inputType="date"
-        android:padding="5dp" />
-
     <Button
         android:id="@+id/renewBtn"
-        android:layout_width="wrap_content"
+        android:layout_width="100dp"
         android:layout_height="wrap_content"
         android:layout_above="@+id/backBtn"
         android:layout_centerHorizontal="true"
@@ -96,6 +66,38 @@
         android:layout_marginBottom="30dp"
         android:background="@drawable/button_bg_rounded_corners"
         android:src="@drawable/ic_back_button" />
+
+    <TextView
+        android:id="@+id/membershipEdtTxt"
+        android:layout_width="250dp"
+        android:layout_height="30dp"
+        android:background="@drawable/border"
+        android:padding="5dp"
+        android:layout_above="@+id/membershipLstDayTxt"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="35dp" />
+
+    <TextView
+        android:id="@+id/membershipTxt"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/membership_plan_name"
+        android:textSize="25sp"
+        android:layout_marginBottom="11dp"
+        android:layout_above="@+id/membershipEdtTxt"
+        android:layout_alignStart="@+id/membershipEdtTxt" />
+
+    <TextView
+        android:id="@+id/membershipLstDayEdtTxt"
+        android:layout_width="250dp"
+        android:layout_height="30dp"
+        android:background="@drawable/border"
+        android:ems="10"
+        android:inputType="date"
+        android:padding="5dp"
+        android:layout_below="@+id/membershipLstDayTxt"
+        android:layout_alignStart="@+id/membershipLstDayTxt"
+        android:layout_marginTop="13dp" />
 
 
 </RelativeLayout>
