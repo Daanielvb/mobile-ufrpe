@@ -86,29 +86,6 @@
         android:inputType="textPassword"
         android:padding="5dp" />
 
-    <Button
-        android:id="@+id/saveBtn"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_above="@+id/backBtn"
-        android:layout_alignParentEnd="true"
-        android:layout_marginBottom="49dp"
-        android:background="@drawable/button_bg_rounded_corners"
-        android:text="@string/save_button_name"
-        android:textColor="@color/black" />
-
-    <Button
-        android:id="@+id/logoutBtn"
-        style="?android:attr/buttonStyleSmall"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignEnd="@+id/backBtn"
-        android:layout_alignParentStart="true"
-        android:layout_alignTop="@+id/saveBtn"
-        android:background="@drawable/button_bg_rounded_corners"
-        android:text="@string/logout_button_name"
-        android:textColor="@color/black" />
-
     <ImageButton
         android:id="@+id/backBtn"
         android:layout_width="70dp"
@@ -117,6 +94,29 @@
         android:layout_alignParentStart="true"
         android:background="@drawable/button_bg_rounded_corners"
         android:src="@drawable/ic_back_button" />
+
+    <Button
+        android:id="@+id/saveBtn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/button_bg_rounded_corners"
+        android:text="@string/save_button_name"
+        android:textColor="@color/black"
+        android:layout_below="@+id/rptPassEdtText"
+        android:layout_marginTop="45dp"
+        android:layout_alignStart="@+id/screenTxt"
+        android:layout_alignEnd="@+id/screenTxt" />
+
+    <Button
+        android:id="@+id/logoutBtn"
+        style="?android:attr/buttonStyleSmall"
+        android:layout_width="70dp"
+        android:layout_height="wrap_content"
+        android:background="@drawable/button_bg_rounded_corners"
+        android:text="@string/logout_button_name"
+        android:textColor="@color/black"
+        android:layout_alignTop="@+id/backBtn"
+        android:layout_alignParentEnd="true" />
 
 
 </RelativeLayout>

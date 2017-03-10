@@ -102,7 +102,7 @@ public class LoginActivity extends AppCompatActivity {
                     RequestHelper.composeUrlPathWithParam(Constants.PERSON_ENTITY, "username", email), Constants.GET_REQUEST).getJSONObject(0);
             if (response.getString("password").equals(password)) {
                 Person user = new Person(response.getString("name"), response.getString("username"),
-                        response.getInt("membership"), response.getInt("workoutCount"),response.getInt("age"),
+                        response.getInt("membership"), response.getInt("workoutCounter"),response.getInt("age"),
                         response.getDouble("height"),response.getDouble("weight"));
                 Controller.currentUser = user;
                 return true;
