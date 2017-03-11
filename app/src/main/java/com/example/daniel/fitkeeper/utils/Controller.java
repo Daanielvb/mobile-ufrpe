@@ -20,6 +20,7 @@ import java.io.InputStreamReader;
 import java.net.HttpURLConnection;
 import java.net.URL;
 
+import model.Membership;
 import model.Person;
 
 /**
@@ -92,6 +93,18 @@ public class Controller {
                     RequestHelper.composeUrlPath(Constants.PERSON_ENTITY, String.valueOf(
                             Session.getInstance().getUser().getId())),
                     jsonStringPerson);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return false;
+    }
+
+    public static boolean updateMembership(String jsonMembership, int membershipId) {
+        try {
+            return putRequestWithJson(
+                    RequestHelper.composeUrlPath(Constants.MEMBERSHIP_ENTITY, String.valueOf(
+                            membershipId)),
+                    jsonMembership);
         } catch (Exception e) {
             e.printStackTrace();
         }

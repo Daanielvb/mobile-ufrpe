@@ -15,4 +15,6 @@ public class Constants {
     public static final String PUT_REQUEST = "PUT";
 
     public static final String PERSON_ENTITY = "Persons";
+
+    public static final String MEMBERSHIP_ENTITY = "Memberships";
 }

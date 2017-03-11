@@ -33,8 +33,11 @@
     <string name="weight_name">Weight</string>
 
     <string name="membership_plan_name">Membership plan:</string>
-    <string name="membership_last_day_name">Membership expiration date:</string>
+    <string name="membership_last_day_name">Membership expiration:</string>
     <string name="membership_renew_button_name">Renew membership</string>
+    <string name="membership_renew_label_name">Renew</string>
+
+
 
     <string name="current_password_name">Current password</string>
     <string name="new_password_name">New password</string>
@@ -105,4 +108,9 @@
     <string name="reset_mail_success">Success! We sent you an email to recover your password</string>
     <string name="reset_mail_error">Error. This email is not registered</string>
     <string name="workout_finish">Finish Workout</string>
+
+    <string name="card_label">Card number:</string>
+    <string name="default_price">U$ 800 </string>
+    <string name="semester_price">U$ 500 </string>
+    <string name="month_price">U$ 90 </string>
 </resources>

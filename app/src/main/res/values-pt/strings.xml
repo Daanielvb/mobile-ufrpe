@@ -35,8 +35,9 @@
 
     <string name="membership_plan_name">Tipo de plano:</string>
     <string name="membership_last_day_name">Data de expiração:</string>
-    <string name="membership_renew_button_name">Renovar</string>
+    <string name="membership_renew_button_name">Renovação</string>
 
+    <string name="membership_renew_label_name">Renew</string>
     <string name="current_password_name">Senha atual</string>
     <string name="new_password_name">Nova senha</string>
     <string name="repeat_password_name">Repita a nova senha</string>
@@ -104,4 +105,9 @@
     <string name="reset_mail_success">Enviamos para seu email um link para recuperar sua senha</string>
     <string name="reset_mail_error">Erro. Esse email não está cadastrado</string>
     <string name="workout_finish">Concluir Treino</string>
+
+    <string name="card_label">Número do cartão:</string>
+    <string name="default_price">R$ 1200,00 </string>
+    <string name="semester_price">R$ 800,00 </string>
+    <string name="month_price">R$ 150,00</string>
 </resources>
