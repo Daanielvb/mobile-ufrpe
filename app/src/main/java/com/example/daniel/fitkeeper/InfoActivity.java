@@ -1,5 +1,6 @@
 package com.example.daniel.fitkeeper;
 
+import android.graphics.Color;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
@@ -8,6 +9,10 @@ import android.widget.TextView;
 
 import com.example.daniel.fitkeeper.utils.Controller;
 import com.example.daniel.fitkeeper.utils.Session;
+import com.jjoe64.graphview.GraphView;
+import com.jjoe64.graphview.series.BarGraphSeries;
+import com.jjoe64.graphview.series.DataPoint;
+import com.jjoe64.graphview.series.LineGraphSeries;
 
 import java.text.DecimalFormat;
 
@@ -49,6 +54,28 @@ public class InfoActivity extends AppCompatActivity implements View.OnClickListe
             currentMonth = savedInstanceState.getString("currentMonth");
             atualizaDados();
         }
+
+        GraphView weightGraph = (GraphView) findViewById(R.id.weightGraph);
+        LineGraphSeries<DataPoint> series = new LineGraphSeries<>(new DataPoint[] {
+                new DataPoint(1, 80),
+                new DataPoint(2, 77),
+                new DataPoint(3, 75),
+                new DataPoint(4, 73),
+                new DataPoint(5, 72)
+        });
+
+        GraphView imcGraph = (GraphView) findViewById(R.id.imcGraph);
+        LineGraphSeries<DataPoint> series2 = new LineGraphSeries<>(new DataPoint[] {
+                new DataPoint(1, 80),
+                new DataPoint(2, 77),
+                new DataPoint(3, 75),
+                new DataPoint(4, 73),
+                new DataPoint(5, 72)
+        });
+
+
+        weightGraph.addSeries(series);
+        imcGraph.addSeries(series2);
 
 //        List<String> spinnerArray =  new ArrayList<String>();
 //        months = getResources().getStringArray(R.array.months);

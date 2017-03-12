@@ -120,7 +120,7 @@ public class SubscriptionActivity extends AppCompatActivity implements View.OnCl
     private void renewSubscription(int plan) {
         String newDate = updateSubscriptionExpiration(setPlanDays(plan));
         Membership m = new Membership(plan);
-        m.setExpiration_at(newDate);
+        m.setExpireAt(newDate);
         c.setTime(m.getCreatedAt());
         m.setCreated_at(format.format(c.getTime()));
         m.setId(Session.getInstance().getUser().membership);

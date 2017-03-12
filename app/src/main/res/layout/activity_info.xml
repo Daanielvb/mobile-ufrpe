@@ -69,8 +69,7 @@
         android:layout_below="@+id/spinner"
         android:layout_marginLeft="18dp"
         android:layout_marginTop="137dp"
-        android:text="@string/name_user_info"
-        android:textSize="15dp"/>
+        android:text="@string/name_user_info"/>
 
     <TextView
         android:id="@+id/ageTxt"
@@ -79,8 +78,7 @@
         android:layout_alignStart="@+id/nameTxt"
         android:layout_below="@+id/nameTxt"
         android:layout_marginTop="33dp"
-        android:text="@string/age_user_info"
-        android:textSize="15dp"/>
+        android:text="@string/age_user_info"/>
 
     <TextView
         android:id="@+id/heightTxt"
@@ -89,8 +87,7 @@
         android:layout_alignStart="@+id/ageTxt"
         android:layout_below="@+id/ageTxt"
         android:layout_marginTop="38dp"
-        android:text="@string/height_user_info"
-        android:textSize="15dp"/>
+        android:text="@string/height_user_info"/>
 
     <TextView
         android:id="@+id/weightTxt"
@@ -99,18 +96,16 @@
         android:layout_alignStart="@+id/heightTxt"
         android:layout_below="@+id/heightTxt"
         android:layout_marginTop="27dp"
-        android:text="@string/weight_user_info"
-        android:textSize="15dp"/>
+        android:text="@string/weight_user_info"/>
 
     <TextView
         android:id="@+id/imcTxt"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignStart="@+id/weightTxt"
-        android:layout_below="@+id/weightTxt"
+        android:layout_below="@+id/weightGraph"
         android:layout_marginTop="28dp"
-        android:text="@string/imc_user_info"
-        android:textSize="15dp"/>
+        android:text="@string/imc_user_info"/>
 
     <TextView
         android:id="@+id/nameEdtTxt"
@@ -119,8 +114,7 @@
         android:layout_alignBaseline="@+id/nameTxt"
         android:layout_alignBottom="@+id/nameTxt"
         android:layout_alignStart="@+id/ageEdtTxt"
-        android:padding="5dp"
-        android:textSize="15dp"/>
+        android:padding="5dp"/>
 
     <TextView
         android:id="@+id/ageEdtTxt"
@@ -128,17 +122,7 @@
         android:layout_height="wrap_content"
         android:layout_alignBaseline="@+id/ageTxt"
         android:layout_centerHorizontal="true"
-        android:padding="5dp"
-        android:textSize="15dp"/>
-
-    <TextView
-        android:id="@+id/heightEdtTxt"
-        android:layout_width="180dp"
-        android:layout_height="wrap_content"
-        android:layout_alignBaseline="@+id/heightTxt"
-        android:layout_centerHorizontal="true"
-        android:padding="5dp"
-        android:textSize="15dp"/>
+        android:padding="5dp"/>
 
     <TextView
         android:id="@+id/weightEdtTxt"
@@ -146,8 +130,7 @@
         android:layout_height="wrap_content"
         android:layout_alignBaseline="@+id/weightTxt"
         android:layout_centerHorizontal="true"
-        android:padding="5dp"
-        android:textSize="15dp"/>
+        android:padding="5dp"/>
 
     <TextView
         android:id="@+id/imcEdtTxt"
@@ -155,18 +138,7 @@
         android:layout_height="wrap_content"
         android:layout_alignBaseline="@+id/imcTxt"
         android:layout_centerHorizontal="true"
-        android:padding="5dp"
-        android:textSize="15dp"/>
-
-    <ImageButton
-        android:id="@+id/backBtn"
-        android:layout_width="70dp"
-        android:layout_height="50dp"
-        android:layout_alignParentBottom="true"
-        android:layout_alignStart="@+id/imcTxt"
-        android:layout_marginBottom="47dp"
-        android:background="@drawable/button_bg_rounded_corners"
-        android:src="@drawable/ic_back_button" />
+        android:padding="5dp"/>
 
     <TextView
         android:id="@+id/workoutsTxtValue"
@@ -184,8 +156,39 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="17dp"
         android:text="@string/workouts_user_info"
-        android:layout_below="@+id/imcEdtTxt"
+        android:layout_below="@+id/imcGraph"
         android:layout_alignStart="@+id/imcTxt" />
+
+    <com.jjoe64.graphview.GraphView
+        android:layout_width="match_parent"
+        android:layout_height="100dip"
+        android:id="@+id/weightGraph"
+        android:layout_below="@+id/weightTxt"/>
+
+    <com.jjoe64.graphview.GraphView
+        android:layout_width="match_parent"
+        android:layout_height="100dip"
+        android:id="@+id/imcGraph"
+        android:layout_below="@+id/imcTxt"/>
+
+    <ImageButton
+        android:id="@+id/backBtn"
+        android:layout_width="70dp"
+        android:layout_height="50dp"
+        android:background="@drawable/button_bg_rounded_corners"
+        android:src="@drawable/ic_back_button"
+        android:layout_below="@+id/workoutCounterTxt"
+        android:layout_alignStart="@+id/workoutCounterTxt"
+        android:layout_marginTop="13dp" />
+
+    <TextView
+        android:id="@+id/heightEdtTxt"
+        android:layout_width="180dp"
+        android:layout_height="wrap_content"
+        android:padding="5dp"
+        android:layout_alignBaseline="@+id/heightTxt"
+        android:layout_alignBottom="@+id/heightTxt"
+        android:layout_toEndOf="@+id/workoutCounterTxt" />
 
 
 </RelativeLayout>

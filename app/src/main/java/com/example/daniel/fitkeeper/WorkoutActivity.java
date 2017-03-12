@@ -36,6 +36,7 @@ public class WorkoutActivity extends AppCompatActivity implements View.OnClickLi
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+        checkCount = 0;
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_workout);
         setUI();
@@ -118,10 +119,14 @@ public class WorkoutActivity extends AppCompatActivity implements View.OnClickLi
     }
 
     private void releaseEndWorkoutButton() {
-        if (checkCount > 3)
-            finishWorkoutBtn.setVisibility(View.VISIBLE);
-        else
-            finishWorkoutBtn.setVisibility(View.GONE);
+        if (checkCount > 3) {
+            if(finishWorkoutBtn.getVisibility() != View.VISIBLE)
+                finishWorkoutBtn.setVisibility(View.VISIBLE);
+        }
+        else {
+            if(finishWorkoutBtn.getVisibility() == View.VISIBLE)
+                finishWorkoutBtn.setVisibility(View.GONE);
+        }
     }
 
     public void setUI() {
