@@ -21,9 +21,6 @@ import java.io.InputStreamReader;
 import java.net.HttpURLConnection;
 import java.net.URL;
 
-import model.Membership;
-import model.Person;
-
 /**
  * Created by DANIEL on 08/03/2017.
  */

@@ -2,7 +2,6 @@ package model;
 
 import com.google.gson.annotations.Expose;
 
-import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.Date;
@@ -12,76 +11,72 @@ import java.util.Date;
  */
 public class Membership {
 
+    SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");
     @Expose
     private int id;
-
     private Date createdAt;
-
     private Date expirationAt;
-
     @Expose
     private String creationAt;
-
     @Expose
     private String expireAt;
-
     @Expose
     private int type;
-    SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");
 
-    public Membership(){}
+    public Membership() {
+    }
 
-    public Membership(int type){
+    public Membership(int type) {
         this.createdAt = new Date();
         this.type = type;
         this.expirationAt = addYearPlan(this.createdAt);
     }
 
-    public Date addYearPlan(Date createdAt){
+    public Membership(int id, String creationAt, String expireAt) {
+        this.id = id;
+        this.creationAt = creationAt;
+        this.expireAt = expireAt;
+    }
+
+    public Membership(int id, String creationAt, String expireAt, int type) {
+        this.id = id;
+        this.creationAt = creationAt;
+        this.expireAt = expireAt;
+        this.type = type;
+    }
+
+    public Date addYearPlan(Date createdAt) {
         Calendar c = Calendar.getInstance();
         c.setTime(createdAt);
         c.add(Calendar.YEAR, 1);
         return c.getTime();
     }
 
-    public Date addDays(Date initialDate, int days){
+    public Date addDays(Date initialDate, int days) {
         Calendar c = Calendar.getInstance();
         c.setTime(initialDate);
-        c.add(Calendar.DATE,days);
+        c.add(Calendar.DATE, days);
         return c.getTime();
-    }
-
-    public Membership (int id, String creationAt, String expireAt){
-        this.id = id;
-        this.creationAt = creationAt;
-        this.expireAt = expireAt;
-    }
-
-    public Membership (int id, String creationAt, String expireAt, int type){
-        this.id = id;
-        this.creationAt = creationAt;
-        this.expireAt = expireAt;
-        this.type = type;
     }
 
     public Date getCreatedAt() {
         return createdAt;
     }
 
-    public String getExpirationAt() {
-        return sdf.format(expirationAt);
-    }
-
-    public int getType() {
-        return type;
-    }
-
     public void setCreatedAt(Date createdAt) {
         this.createdAt = createdAt;
     }
 
+    public String getExpirationAt() {
+        return sdf.format(expirationAt);
+    }
+
     public void setExpirationAt(Date expirationAt) {
         this.expirationAt = expirationAt;
+    }
+
+    public int getType() {
+        return type;
     }
 
     public void setType(int type) {

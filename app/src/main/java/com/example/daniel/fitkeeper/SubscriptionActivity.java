@@ -1,6 +1,5 @@
 package com.example.daniel.fitkeeper;
 
-import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
@@ -20,7 +19,6 @@ import org.json.JSONException;
 import org.json.JSONObject;
 
 import java.io.IOException;
-import java.lang.reflect.Member;
 import java.text.DateFormat;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
@@ -36,6 +34,8 @@ import model.Membership;
 import static java.lang.String.valueOf;
 
 public class SubscriptionActivity extends AppCompatActivity implements View.OnClickListener {
+    DateFormat format = new SimpleDateFormat("MM/dd/yyyy", Locale.ENGLISH);
+    Calendar c = Calendar.getInstance();
     private ImageButton backBtn;
     private Button renewBtn;
     private String type;
@@ -43,9 +43,6 @@ public class SubscriptionActivity extends AppCompatActivity implements View.OnCl
     private TextView membershipType;
     private TextView membershipExpiration;
     private TextView finalPrice;
-
-    DateFormat format = new SimpleDateFormat("MM/dd/yyyy", Locale.ENGLISH);
-    Calendar c = Calendar.getInstance();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -148,23 +145,23 @@ public class SubscriptionActivity extends AppCompatActivity implements View.OnCl
             String oldDate = Session.getInstance().getUser().getMembership().getExpirationAt();
             Date date = format.parse(oldDate);
             c.setTime(date);
-            c.add(Calendar.DATE,days);
+            c.add(Calendar.DATE, days);
             //return c.getTime();
             return format.format(c.getTime());
-        }catch (ParseException e){
+        } catch (ParseException e) {
             e.printStackTrace();
         }
         return null;
     }
 
 
-    private Membership getCurrentMembership(){
+    private Membership getCurrentMembership() {
         try {
             JSONObject response = Controller.getJSONRealObjectFromURL(
                     RequestHelper.composeUrlPath(Constants.MEMBERSHIP_ENTITY, valueOf(
                             Session.getInstance().getUser().membership)), Constants.GET_REQUEST);
-            Membership m  = new Membership((Integer) response.get("id") ,String.valueOf(response.get("creationAt")),
-                    String.valueOf(response.get("expireAt")),(Integer) response.get("type"));
+            Membership m = new Membership((Integer) response.get("id"), String.valueOf(response.get("creationAt")),
+                    String.valueOf(response.get("expireAt")), (Integer) response.get("type"));
             setMembership(m);
             return m;
         } catch (IOException e) {
@@ -176,21 +173,18 @@ public class SubscriptionActivity extends AppCompatActivity implements View.OnCl
     }
 
 
-    public String convertPlanIndextToName(int plan){
+    public String convertPlanIndextToName(int plan) {
         return getResources().getStringArray(R.array.plans)[plan];
     }
 
-    private int setPlanDays(int plan){
-        if(plan == 0){
+    private int setPlanDays(int plan) {
+        if (plan == 0) {
             return 365;
-        }
-        else if(plan == 1){
+        } else if (plan == 1) {
             return 180;
-        }
-        else if(plan == 2){
+        } else if (plan == 2) {
             return 30;
-        }
-        else
+        } else
             return 1;
     }
 }
