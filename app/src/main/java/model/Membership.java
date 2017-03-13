@@ -25,8 +25,11 @@ public class Membership {
     @Expose
     private String expireAt;
 
+    @Expose
     private int type;
     SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");
+
+    public Membership(){}
 
     public Membership(int type){
         this.createdAt = new Date();
@@ -46,6 +49,19 @@ public class Membership {
         c.setTime(initialDate);
         c.add(Calendar.DATE,days);
         return c.getTime();
+    }
+
+    public Membership (int id, String creationAt, String expireAt){
+        this.id = id;
+        this.creationAt = creationAt;
+        this.expireAt = expireAt;
+    }
+
+    public Membership (int id, String creationAt, String expireAt, int type){
+        this.id = id;
+        this.creationAt = creationAt;
+        this.expireAt = expireAt;
+        this.type = type;
     }
 
     public Date getCreatedAt() {
@@ -80,11 +96,11 @@ public class Membership {
         this.id = id;
     }
 
-    public String getcreationAt() {
+    public String getCreationAt() {
         return creationAt;
     }
 
-    public void setCreated_at(String creationAt) {
+    public void setCreationAt(String creationAt) {
         this.creationAt = creationAt;
     }
 
@@ -95,4 +111,5 @@ public class Membership {
     public void setExpireAt(String expireAt) {
         this.expireAt = expireAt;
     }
+
 }

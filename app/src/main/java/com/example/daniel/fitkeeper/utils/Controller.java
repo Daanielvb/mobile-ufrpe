@@ -12,6 +12,7 @@ import org.apache.http.entity.StringEntity;
 import org.apache.http.impl.client.DefaultHttpClient;
 import org.json.JSONArray;
 import org.json.JSONException;
+import org.json.JSONObject;
 
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -86,6 +87,29 @@ public class Controller {
         return jObj;
     }
 
+    public static JSONObject getJSONRealObjectFromURL(String urlString, String requestMethod) throws IOException, JSONException {
+        HttpURLConnection urlConnection = null;
+        URL url = new URL(urlString);
+        urlConnection = (HttpURLConnection) url.openConnection();
+        urlConnection.setRequestMethod(requestMethod);
+        urlConnection.setReadTimeout(10000);
+        urlConnection.setConnectTimeout(15000);
+        urlConnection.setDoOutput(true);
+        urlConnection.connect();
+
+        BufferedReader br = new BufferedReader(new InputStreamReader(url.openStream()));
+        char[] buffer = new char[1024];
+        String jsonString = new String();
+        StringBuilder sb = new StringBuilder();
+        String line;
+        while ((line = br.readLine()) != null) {
+            sb.append(line + "\n");
+        }
+        br.close();
+        jsonString = sb.toString();
+        JSONObject jObj = new JSONObject(jsonString);
+        return jObj;
+    }
 
     public static boolean checkCredentials(String jsonStringPerson) {
         try {

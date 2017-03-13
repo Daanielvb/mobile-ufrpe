@@ -6,7 +6,7 @@
       "id": 1,
       "membership": 1,
       "name": "Daniel Vias-Boas",
-      "password": "",
+      "password": "123456",
       "username": "daanielvb@gmail.com",
       "weight": 75,
       "workoutCounter": 2
@@ -73,22 +73,21 @@
   ],
   "Memberships": [
     {
-      "id": 1,
-      "createdAt": "10/10/2016",
-      "expireAt": "10/10/2017",
-      "type": "anual"
+      "creationAt": "03/13/2017",
+      "expireAt": "01/03/2020",
+      "id": 1
     },
     {
       "id": 2,
-      "createdAt": "10/10/2016",
+      "creationAt": "10/10/2016",
       "expireAt": "10/4/2017",
-      "type": "semester"
+      "type": 1
     },
     {
       "id": 3,
-      "createdAt": "10/10/2016",
+      "creationAt": "10/10/2016",
       "expireAt": "10/1/2017",
-      "type": "quartely"
+      "type": 2
     }
   ],
   "Workouts": [

@@ -1,5 +1,6 @@
 package com.example.daniel.fitkeeper;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
@@ -10,9 +11,16 @@ import android.widget.ImageButton;
 import android.widget.Spinner;
 import android.widget.TextView;
 
+import com.example.daniel.fitkeeper.utils.Constants;
 import com.example.daniel.fitkeeper.utils.Controller;
+import com.example.daniel.fitkeeper.utils.RequestHelper;
 import com.example.daniel.fitkeeper.utils.Session;
 
+import org.json.JSONException;
+import org.json.JSONObject;
+
+import java.io.IOException;
+import java.lang.reflect.Member;
 import java.text.DateFormat;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
@@ -25,8 +33,9 @@ import java.util.Locale;
 
 import model.Membership;
 
+import static java.lang.String.valueOf;
+
 public class SubscriptionActivity extends AppCompatActivity implements View.OnClickListener {
-    Membership m = Session.getInstance().getUser().getMembership();
     private ImageButton backBtn;
     private Button renewBtn;
     private String type;
@@ -43,7 +52,7 @@ public class SubscriptionActivity extends AppCompatActivity implements View.OnCl
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_subscription);
         setUi();
-        setMembership(m);
+
 
         List<String> spinnerArray = new ArrayList<String>();
 
@@ -110,10 +119,11 @@ public class SubscriptionActivity extends AppCompatActivity implements View.OnCl
         renewBtn = (Button) findViewById(R.id.renewBtn);
         backBtn.setOnClickListener(this);
         renewBtn.setOnClickListener(this);
+        getCurrentMembership();
     }
 
     public void setMembership(Membership m) {
-        membershipExpiration.setText(m.getExpirationAt());
+        membershipExpiration.setText(m.getExpireAt());
         membershipType.setText(getResources().getStringArray(R.array.plans)[m.getType()].toString());
     }
 
@@ -122,12 +132,13 @@ public class SubscriptionActivity extends AppCompatActivity implements View.OnCl
         Membership m = new Membership(plan);
         m.setExpireAt(newDate);
         c.setTime(m.getCreatedAt());
-        m.setCreated_at(format.format(c.getTime()));
+        m.setType(plan);
+        m.setCreationAt(format.format(c.getTime()));
         m.setId(Session.getInstance().getUser().membership);
         String jsonMembership = Controller.gson.toJson(m);
         if (Controller.updateMembership(jsonMembership, m.getId())) {
             System.out.println("Matricula alterada com sucesso");
-            //updateUI();
+            setMembership(m);
         } else
             System.out.println("Erro ao alterar a senha");
     }
@@ -144,6 +155,29 @@ public class SubscriptionActivity extends AppCompatActivity implements View.OnCl
             e.printStackTrace();
         }
         return null;
+    }
+
+
+    private Membership getCurrentMembership(){
+        try {
+            JSONObject response = Controller.getJSONRealObjectFromURL(
+                    RequestHelper.composeUrlPath(Constants.MEMBERSHIP_ENTITY, valueOf(
+                            Session.getInstance().getUser().membership)), Constants.GET_REQUEST);
+            Membership m  = new Membership((Integer) response.get("id") ,String.valueOf(response.get("creationAt")),
+                    String.valueOf(response.get("expireAt")),(Integer) response.get("type"));
+            setMembership(m);
+            return m;
+        } catch (IOException e) {
+            e.printStackTrace();
+        } catch (JSONException e) {
+            e.printStackTrace();
+        }
+        return null;
+    }
+
+
+    public String convertPlanIndextToName(int plan){
+        return getResources().getStringArray(R.array.plans)[plan];
     }
 
     private int setPlanDays(int plan){
