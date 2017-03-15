@@ -110,10 +110,11 @@ public class LoginActivity extends AppCompatActivity {
                     RequestHelper.composeUrlPathWithParam(Constants.PERSON_ENTITY, "username", email), Constants.GET_REQUEST).getJSONObject(0);
             if (response.getString("password").equals(password)) {
                 List<String> workoutList = new ArrayList<String>();
+                int[] workouts = {};
                 try {
-                    JSONArray workouts = response.getJSONArray("workouts");
-                    for (int i = 0; i < workouts.length(); i++) {
-                        workoutList.add(workouts.get(i).toString());
+                    JSONArray workoutsList = response.getJSONArray("workouts");
+                    for (int i = 0; i < workoutsList.length(); i++) {
+                        workouts[i] = Integer.valueOf(workoutsList.get(i).toString());
                     }
                 } catch (JSONException ex) {
                     //ex.printStackTrace();
@@ -122,7 +123,8 @@ public class LoginActivity extends AppCompatActivity {
                         response.getString("username"), response.getString("password"),
                         response.getInt("membership"), response.getInt("workoutCounter"), response.getInt("age"),
                         response.getInt("height"), response.getInt("weight"));
-                user.setWorkouts(workoutList);
+
+                user.setWorkouts(workouts);
                 Session.getInstance().setUser(user);
                 return true;
             }

@@ -29,9 +29,11 @@ public class Person {
     private String password;
     @Expose
     private int workoutCounter;
+    @Expose
+    private int[] workouts;
 
 
-    private transient List<String> workouts = new ArrayList<String>();
+    //private transient List<String> workouts = new ArrayList<String>();
     private transient double imc;
 
     public Person() {
@@ -166,11 +168,19 @@ public class Person {
         this.workoutCounter++;
     }
 
-    public List<String> getWorkouts() {
+//    public List<String> getWorkouts() {
+//        return workouts;
+//    }
+//
+//    public void setWorkouts(List<String> workouts) {
+//        this.workouts = workouts;
+//    }
+
+    public int[] getWorkouts() {
         return workouts;
     }
 
-    public void setWorkouts(List<String> workouts) {
-        this.workouts = workouts;
+    public void setWorkouts(int[] workoutss) {
+        this.workouts = workoutss;
     }
 }
