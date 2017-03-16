@@ -110,7 +110,7 @@ public class LoginActivity extends AppCompatActivity {
                     RequestHelper.composeUrlPathWithParam(Constants.PERSON_ENTITY, "username", email), Constants.GET_REQUEST).getJSONObject(0);
             if (response.getString("password").equals(password)) {
                 List<String> workoutList = new ArrayList<String>();
-                int[] workouts = {};
+                int[] workouts = new int[3];
                 try {
                     JSONArray workoutsList = response.getJSONArray("workouts");
                     for (int i = 0; i < workoutsList.length(); i++) {
