@@ -33,6 +33,7 @@ public class WorkoutActivity extends AppCompatActivity implements View.OnClickLi
     private ImageButton backBtn;
     private Button finishWorkoutBtn;
     private TextView currentDayText;
+    private TextView workoutInfoMessage;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -120,11 +121,10 @@ public class WorkoutActivity extends AppCompatActivity implements View.OnClickLi
 
     private void releaseEndWorkoutButton() {
         if (checkCount > 3) {
-            if(finishWorkoutBtn.getVisibility() != View.VISIBLE)
+            if (finishWorkoutBtn.getVisibility() != View.VISIBLE)
                 finishWorkoutBtn.setVisibility(View.VISIBLE);
-        }
-        else {
-            if(finishWorkoutBtn.getVisibility() == View.VISIBLE)
+        } else {
+            if (finishWorkoutBtn.getVisibility() == View.VISIBLE)
                 finishWorkoutBtn.setVisibility(View.GONE);
         }
     }
@@ -133,6 +133,8 @@ public class WorkoutActivity extends AppCompatActivity implements View.OnClickLi
         currentDayText = (TextView) findViewById(R.id.currentDayTxt);
         backBtn = (ImageButton) findViewById(R.id.backBtn);
         finishWorkoutBtn = (Button) findViewById(R.id.finish_workout_btn);
+        workoutInfoMessage = (TextView) findViewById(R.id.workout_info_message);
+        workoutInfoMessage.setVisibility(View.INVISIBLE);
         backBtn.setOnClickListener(this);
         finishWorkoutBtn.setOnClickListener(this);
         c1 = (CheckBox) findViewById(R.id.checkbox_1);
@@ -149,22 +151,22 @@ public class WorkoutActivity extends AppCompatActivity implements View.OnClickLi
             if (Controller.putRequestWithJson(
                     RequestHelper.composeUrlPath(Constants.PERSON_ENTITY, String.valueOf(Session.getInstance().getUser().getId())),
                     jsonStringPerson)) {
-                //TODO:
-                //Mostrar mensagem de sucesso
-                //Usar strings.xml para mensagens
-                //Desmarcar checkbox
-                System.out.println("Treino salvo");
-            } else {
-                //TODO:
-                //Mostrar mensagem de erro
-                //Usar strings.xml para mensagens
-                System.out.println("Falha ao salvar o treino. Tente novamente depois");
-            }
+                setErrorMessage(true);
+            } else
+                setErrorMessage(false);
         } catch (Exception e) {
             e.printStackTrace();
         }
     }
 
+
+    public void setErrorMessage(boolean success) {
+        workoutInfoMessage.setVisibility(View.VISIBLE);
+        if (success)
+            workoutInfoMessage.setText(getResources().getString(R.string.finish_workout_success));
+        else
+            workoutInfoMessage.setText(getResources().getString(R.string.finish_workout_error));
+    }
 
     public String getCurrentDay() {
         return dayFormat.format(calendar.getTime());

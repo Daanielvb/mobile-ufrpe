@@ -104,6 +104,8 @@
 
     <string name="reset_mail_success">Enviamos para seu email um link para recuperar sua senha</string>
     <string name="reset_mail_error">Erro. Esse email não está cadastrado</string>
+    <string name="finish_workout_success">Seu treino foi concluído e contabilizado</string>
+    <string name="finish_workout_error">Erro. Não foi possível salvar seu treino</string>
     <string name="workout_finish">Concluir Treino</string>
 
     <string name="card_label">Número do cartão:</string>

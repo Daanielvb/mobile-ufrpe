@@ -296,6 +296,16 @@
         android:layout_alignParentBottom="true"
         android:layout_alignStart="@+id/spinnerWeek" />
 
+    <TextView
+        android:text=""
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="12dp"
+        android:visibility="invisible"
+        android:id="@+id/workout_info_message"
+        android:layout_below="@+id/finish_workout_btn"
+        android:layout_centerHorizontal="true" />
+
     <Button
         android:text="@string/workout_finish"
         android:layout_width="100dp"
@@ -304,9 +314,9 @@
         android:visibility="invisible"
         android:background="@drawable/button_bg_rounded_corners"
         android:textColor="@color/black"
-        android:layout_above="@+id/backBtn"
-        android:layout_centerHorizontal="true"
-        android:layout_marginBottom="59dp" />
+        android:layout_marginTop="15dp"
+        android:layout_below="@+id/table"
+        android:layout_centerHorizontal="true" />
 
 
 </RelativeLayout>

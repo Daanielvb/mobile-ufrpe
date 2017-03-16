@@ -107,6 +107,8 @@
 
     <string name="reset_mail_success">Success! We sent you an email to recover your password</string>
     <string name="reset_mail_error">Error. This email is not registered</string>
+    <string name="finish_workout_success">Your workout was finished and counted</string>
+    <string name="finish_workout_error">Error. Your workout could not be saved</string>
     <string name="workout_finish">Finish Workout</string>
 
     <string name="card_label">Card number:</string>

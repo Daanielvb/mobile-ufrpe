@@ -2,6 +2,7 @@ package com.example.daniel.fitkeeper;
 
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.text.InputFilter;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
@@ -38,11 +39,10 @@ public class SubscriptionActivity extends AppCompatActivity implements View.OnCl
     Calendar c = Calendar.getInstance();
     private ImageButton backBtn;
     private Button renewBtn;
-    private String type;
-    private String expiration;
     private TextView membershipType;
     private TextView membershipExpiration;
     private TextView finalPrice;
+    private TextView editTextCard;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -116,6 +116,9 @@ public class SubscriptionActivity extends AppCompatActivity implements View.OnCl
         renewBtn = (Button) findViewById(R.id.renewBtn);
         backBtn.setOnClickListener(this);
         renewBtn.setOnClickListener(this);
+        editTextCard = (TextView) findViewById(R.id.editTextCard);
+        //limit to 11 card numbers
+        editTextCard.setFilters(new InputFilter[] { new InputFilter.LengthFilter(11) });
         getCurrentMembership();
     }
 
