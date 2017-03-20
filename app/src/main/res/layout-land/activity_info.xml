@@ -105,15 +105,6 @@
                 android:text="@string/weight_user_info" />
 
             <TextView
-                android:id="@+id/imcTxt"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_alignStart="@+id/weightTxt"
-                android:layout_below="@+id/weightTxt"
-                android:layout_marginTop="28dp"
-                android:text="@string/imc_user_info" />
-
-            <TextView
                 android:id="@+id/nameEdtTxt"
                 android:layout_width="180dp"
                 android:layout_height="wrap_content"
@@ -146,22 +137,57 @@
                 android:padding="5dp" />
 
             <TextView
+                android:id="@+id/workoutsTxtValue"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignBaseline="@+id/workoutCounterTxt"
+                android:layout_alignBottom="@+id/workoutCounterTxt"
+                android:layout_marginStart="33dp"
+                android:layout_toEndOf="@+id/workoutCounterTxt"
+                android:text="" />
+
+            <com.jjoe64.graphview.GraphView
+                android:layout_width="match_parent"
+                android:layout_height="100dip"
+                android:id="@+id/weightGraph"
+                android:layout_below="@+id/weightTxt"/>
+
+            <TextView
+                android:id="@+id/workoutCounterTxt"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/workouts_user_info"
+                android:layout_alignTop="@+id/weightEdtTxt"
+                android:layout_toEndOf="@+id/screenTxt" />
+
+            <TextView
+                android:id="@+id/imcTxt"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/imc_user_info"
+                android:layout_alignBaseline="@+id/heightEdtTxt"
+                android:layout_alignBottom="@+id/heightEdtTxt"
+                android:layout_alignStart="@+id/workoutCounterTxt" />
+
+            <TextView
                 android:id="@+id/imcEdtTxt"
                 android:layout_width="180dp"
                 android:layout_height="wrap_content"
+                android:padding="5dp"
                 android:layout_alignBaseline="@+id/imcTxt"
-                android:layout_centerHorizontal="true"
-                android:padding="5dp" />
+                android:layout_alignBottom="@+id/imcTxt"
+                android:layout_alignParentEnd="true" />
 
             <ImageButton
                 android:id="@+id/backBtn"
                 android:layout_width="70dp"
                 android:layout_height="50dp"
-                android:layout_alignStart="@+id/imcTxt"
-                android:layout_below="@+id/imcEdtTxt"
-                android:layout_marginTop="17dp"
                 android:background="@drawable/button_bg_rounded_corners"
-                android:src="@drawable/ic_back_button" />
+                android:src="@drawable/ic_back_button"
+                android:layout_below="@+id/weightGraph"
+                android:layout_alignStart="@+id/weightTxt"
+                android:layout_marginTop="21dp"
+                android:layout_marginBottom="10dp"/>
 
         </RelativeLayout>
     </ScrollView>
