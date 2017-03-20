@@ -128,6 +128,10 @@ public class SubscriptionActivity extends AppCompatActivity implements View.OnCl
     }
 
     private void renewSubscription(int plan) {
+        if(editTextCard.getText().equals("") || editTextCard.length() < 8) {
+            //editTextCard.setText(getResources().getString(R.string.card_error_message));
+        }
+        else{
         String newDate = updateSubscriptionExpiration(setPlanDays(plan));
         Membership m = new Membership(plan);
         m.setExpireAt(newDate);
@@ -141,6 +145,7 @@ public class SubscriptionActivity extends AppCompatActivity implements View.OnCl
             setMembership(m);
         } else
             System.out.println("Erro ao alterar a senha");
+        }
     }
 
     private String updateSubscriptionExpiration(int days) {
