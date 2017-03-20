@@ -112,6 +112,7 @@
     <string name="workout_finish">Finish Workout</string>
 
     <string name="card_label">Card number:</string>
+    <string name="card_error_message">Invalid card number</string>
     <string name="default_price">U$ 800 </string>
     <string name="semester_price">U$ 500 </string>
     <string name="month_price">U$ 90 </string>

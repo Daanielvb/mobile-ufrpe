@@ -109,6 +109,7 @@
     <string name="workout_finish">Concluir Treino</string>
 
     <string name="card_label">Número do cartão:</string>
+    <string name="card_error_message">Cartão inválido</string>
     <string name="default_price">R$ 1200,00 </string>
     <string name="semester_price">R$ 800,00 </string>
     <string name="month_price">R$ 150,00</string>
