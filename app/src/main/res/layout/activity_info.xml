@@ -114,16 +114,6 @@
         android:id="@+id/weightGraph"
         android:layout_below="@+id/weightTxt"/>
 
-    <ImageButton
-        android:id="@+id/backBtn"
-        android:layout_width="70dp"
-        android:layout_height="50dp"
-        android:background="@drawable/button_bg_rounded_corners"
-        android:src="@drawable/ic_back_button"
-        android:layout_below="@+id/workoutCounterTxt"
-        android:layout_alignStart="@+id/workoutCounterTxt"
-        android:layout_marginTop="13dp" />
-
     <TextView
         android:id="@+id/heightEdtTxt"
         android:layout_width="180dp"
@@ -142,12 +132,12 @@
         android:layout_above="@+id/weightGraph"
         android:layout_alignStart="@+id/heightEdtTxt" />
 
-    <com.jjoe64.graphview.GraphView
+    <!--<com.jjoe64.graphview.GraphView
         android:layout_width="match_parent"
         android:layout_height="100dip"
         android:id="@+id/imcGraph"
         android:layout_below="@+id/imcEdtTxt"
-        android:layout_alignParentStart="true" />
+        android:layout_alignParentStart="true" />-->
 
     <TextView
         android:id="@+id/imcTxt"
@@ -165,7 +155,9 @@
         android:text="@string/workouts_user_info"
         android:layout_marginBottom="16dp"
         android:layout_alignParentBottom="true"
-        android:layout_toStartOf="@+id/imcEdtTxt" />
+        android:layout_below="@+id/imcEdtTxt"
+        android:layout_toStartOf="@+id/imcEdtTxt"
+        android:layout_marginTop="20dp"/>
 
     <TextView
         android:id="@+id/ageTxt"
@@ -197,6 +189,16 @@
         android:padding="5dp"
         android:layout_alignBottom="@+id/ageTxt"
         android:layout_alignStart="@+id/imcEdtTxt" />
+
+    <ImageButton
+        android:id="@+id/backBtn"
+        android:layout_width="70dp"
+        android:layout_height="50dp"
+        android:background="@drawable/button_bg_rounded_corners"
+        android:src="@drawable/ic_back_button"
+        android:layout_alignBottom="@+id/workoutCounterTxt"
+        android:layout_alignStart="@+id/weightTxt"
+        android:layout_marginBottom="30dp" />
 
 
 </RelativeLayout>

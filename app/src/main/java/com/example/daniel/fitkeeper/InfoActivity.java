@@ -15,6 +15,7 @@ import com.jjoe64.graphview.series.DataPoint;
 import com.jjoe64.graphview.series.LineGraphSeries;
 
 import java.text.DecimalFormat;
+import java.util.Random;
 
 import model.Person;
 
@@ -54,28 +55,8 @@ public class InfoActivity extends AppCompatActivity implements View.OnClickListe
             currentMonth = savedInstanceState.getString("currentMonth");
             atualizaDados();
         }
-
-        GraphView weightGraph = (GraphView) findViewById(R.id.weightGraph);
-        LineGraphSeries<DataPoint> series = new LineGraphSeries<>(new DataPoint[] {
-                new DataPoint(1, 80),
-                new DataPoint(2, 77),
-                new DataPoint(3, 75),
-                new DataPoint(4, 73),
-                new DataPoint(5, 72)
-        });
-
-        GraphView imcGraph = (GraphView) findViewById(R.id.imcGraph);
-        LineGraphSeries<DataPoint> series2 = new LineGraphSeries<>(new DataPoint[] {
-                new DataPoint(1, 80),
-                new DataPoint(2, 77),
-                new DataPoint(3, 75),
-                new DataPoint(4, 73),
-                new DataPoint(5, 72)
-        });
-
-
-        weightGraph.addSeries(series);
-        imcGraph.addSeries(series2);
+        setWeightGraph(person);
+        //setIMCGraph(person);
 
 //        List<String> spinnerArray =  new ArrayList<String>();
 //        months = getResources().getStringArray(R.array.months);
@@ -159,6 +140,35 @@ public class InfoActivity extends AppCompatActivity implements View.OnClickListe
         ageText.setText(String.valueOf(p.getAge()));
         workoutCounterText.setText(String.valueOf(p.getWorkoutCounter()));
     }
+
+    public void setWeightGraph(Person p){
+        Random rand = new Random();
+        int currentWeight = p.getWeight();
+        GraphView weightGraph = (GraphView) findViewById(R.id.weightGraph);
+        LineGraphSeries<DataPoint> series = new LineGraphSeries<>(new DataPoint[] {
+                new DataPoint(1, currentWeight + rand.nextInt(3)),
+                new DataPoint(2, currentWeight + rand.nextInt(3)),
+                new DataPoint(3, currentWeight + rand.nextInt(3)),
+                new DataPoint(4, currentWeight + rand.nextInt(3)),
+                new DataPoint(5, currentWeight)
+        });
+
+        weightGraph.addSeries(series);
+    }
+
+    /*public void setIMCGraph(Person p){
+        Random rand = new Random();
+        double currentICM = p.getImc();
+        GraphView imcGraph = (GraphView) findViewById(R.id.imcGraph);
+        LineGraphSeries<DataPoint> series2 = new LineGraphSeries<>(new DataPoint[] {
+                new DataPoint(1, currentICM + rand.nextInt()),
+                new DataPoint(2, currentICM + rand.nextInt()),
+                new DataPoint(3, currentICM + rand.nextInt()),
+                new DataPoint(4, currentICM + rand.nextInt()),
+                new DataPoint(5, currentICM + rand.nextInt())
+        });
+        imcGraph.addSeries(series2);
+    }*/
 
     public void setUI() {
         //currentMonthText = (TextView) findViewById(R.id.currentMonthTxt);

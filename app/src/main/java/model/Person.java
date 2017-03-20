@@ -76,7 +76,7 @@ public class Person {
     }
 
     public void setImc() {
-        this.imc = this.weight / Math.pow(this.height, 2);
+        this.imc = ((this.weight*100) / Math.pow(this.height, 2))*100;
     }
 
     public double getHeight() {
