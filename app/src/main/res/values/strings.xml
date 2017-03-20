@@ -38,7 +38,6 @@
     <string name="membership_renew_label_name">Renew</string>
 
 
-
     <string name="current_password_name">Current password</string>
     <string name="new_password_name">New password</string>
     <string name="repeat_password_name">Repeat new password</string>
@@ -112,7 +111,7 @@
     <string name="workout_finish">Finish Workout</string>
 
     <string name="card_label">Card number:</string>
-    <string name="card_error_message">Invalid card number</string>
+    <string name="card_error_message">Invalid card</string>
     <string name="default_price">U$ 800 </string>
     <string name="semester_price">U$ 500 </string>
     <string name="month_price">U$ 90 </string>
