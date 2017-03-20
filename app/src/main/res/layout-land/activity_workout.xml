@@ -309,6 +309,16 @@
                 android:layout_centerHorizontal="true"
                 android:layout_marginTop="16dp" />
 
+            <TextView
+                android:text=""
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="12dp"
+                android:visibility="invisible"
+                android:id="@+id/workout_info_message"
+                android:layout_below="@+id/finish_workout_btn"
+                android:layout_centerHorizontal="true" />
+
 
         </RelativeLayout>
     </ScrollView>

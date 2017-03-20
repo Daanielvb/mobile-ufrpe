@@ -108,6 +108,54 @@
                 android:background="@drawable/button_bg_rounded_corners"
                 android:src="@drawable/ic_back_button" />
 
+            <TextView
+                android:text="@string/membership_renew_button_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/renewMbshpLabel"
+                android:textSize="25sp"
+                android:layout_below="@+id/membershipLstDayEdtTxt"
+                android:layout_alignEnd="@+id/screenTxt"
+                android:layout_marginTop="13dp" />
+
+            <Spinner
+                android:id="@+id/payment_spinner"
+                android:layout_width="200dp"
+                android:layout_height="50dp"
+                android:layout_marginLeft="30dp"
+                android:layout_above="@+id/cardNumberLabel"
+                android:layout_alignStart="@+id/renewMbshpLabel"
+                android:layout_below="@+id/renewMbshpLabel"/>
+
+            <EditText
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:inputType="textPersonName"
+                android:text="@string/card_label"
+                android:ems="10"
+                android:id="@+id/cardNumberLabel"
+                android:layout_above="@+id/editTextCard"
+                android:layout_alignStart="@+id/editTextCard" />
+
+            <TextView
+                android:text="@string/default_price"
+                android:textSize="20sp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="12dp"
+                android:id="@+id/totalTxtLabel"
+                android:layout_above="@+id/renewBtn"
+                android:layout_centerHorizontal="true" />
+
+            <EditText
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:inputType="number"
+                android:ems="10"
+                android:layout_above="@+id/totalTxtLabel"
+                android:layout_alignStart="@+id/screenTxt"
+                android:id="@+id/editTextCard" />
+
         </RelativeLayout>
     </ScrollView>
 
