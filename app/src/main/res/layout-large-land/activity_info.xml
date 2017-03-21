@@ -36,7 +36,7 @@
         android:layout_gravity="center_horizontal"
         android:text="@string/user_info_name"
         android:textAppearance="?android:attr/textAppearanceLarge"
-        android:textSize="60sp" />
+        android:textSize="80sp" />
 
     <!--
     <Spinner
@@ -64,7 +64,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginLeft="68dp"
-        android:layout_marginTop="157dp"
+        android:layout_marginTop="100dp"
         android:text="@string/name_user_info" />
 
     <TextView
@@ -99,7 +99,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignStart="@+id/weightTxt"
-        android:layout_below="@+id/weightTxt"
+        android:layout_below="@+id/weightGraph"
         android:layout_marginTop="28dp"
         android:text="@string/imc_user_info" />
 
@@ -151,6 +151,33 @@
         android:layout_alignStart="@+id/imcTxt"
         android:background="@drawable/button_bg_rounded_corners"
         android:src="@drawable/ic_back_button" />
+
+    <com.jjoe64.graphview.GraphView
+        android:layout_width="match_parent"
+        android:layout_height="100dip"
+        android:id="@+id/weightGraph"
+        android:layout_alignTop="@+id/weightEdtTxt"
+        android:layout_toEndOf="@+id/backBtn" />
+
+    <TextView
+        android:id="@+id/workoutCounterTxt"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/workouts_user_info"
+        android:layout_alignParentBottom="true"
+        android:layout_alignStart="@+id/imcTxt"
+        android:layout_below="@+id/imcTxt"
+        android:layout_marginTop="23dp"/>
+
+    <TextView
+        android:id="@+id/workoutsTxtValue"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/workoutCounterTxt"
+        android:layout_alignBottom="@+id/workoutCounterTxt"
+        android:layout_marginStart="33dp"
+        android:layout_toEndOf="@+id/workoutCounterTxt"
+        android:text="" />
 
 
 </RelativeLayout>
