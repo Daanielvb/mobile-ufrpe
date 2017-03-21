@@ -117,8 +117,8 @@ public class SubscriptionActivity extends AppCompatActivity implements View.OnCl
         backBtn.setOnClickListener(this);
         renewBtn.setOnClickListener(this);
         editTextCard = (TextView) findViewById(R.id.editTextCard);
-        //limit to 11 card numbers
-        editTextCard.setFilters(new InputFilter[] { new InputFilter.LengthFilter(11) });
+        //limit to 15 card numbers
+        editTextCard.setFilters(new InputFilter[]{new InputFilter.LengthFilter(15)});
         getCurrentMembership();
     }
 
@@ -128,23 +128,22 @@ public class SubscriptionActivity extends AppCompatActivity implements View.OnCl
     }
 
     private void renewSubscription(int plan) {
-        if(editTextCard.getText().equals("") || editTextCard.length() < 8) {
-            //editTextCard.setText(getResources().getString(R.string.card_error_message));
-        }
-        else{
-        String newDate = updateSubscriptionExpiration(setPlanDays(plan));
-        Membership m = new Membership(plan);
-        m.setExpireAt(newDate);
-        c.setTime(m.getCreatedAt());
-        m.setType(plan);
-        m.setCreationAt(format.format(c.getTime()));
-        m.setId(Session.getInstance().getUser().membership);
-        String jsonMembership = Controller.gson.toJson(m);
-        if (Controller.updateMembership(jsonMembership, m.getId())) {
-            System.out.println("Matricula alterada com sucesso");
-            setMembership(m);
-        } else
-            System.out.println("Erro ao alterar a senha");
+        if (editTextCard.getText().equals("") || editTextCard.length() < 8) {
+            editTextCard.setText(getResources().getString(R.string.card_error_message));
+        } else {
+            String newDate = updateSubscriptionExpiration(setPlanDays(plan));
+            Membership m = new Membership(plan);
+            m.setExpireAt(newDate);
+            c.setTime(m.getCreatedAt());
+            m.setType(plan);
+            m.setCreationAt(format.format(c.getTime()));
+            m.setId(Session.getInstance().getUser().membership);
+            String jsonMembership = Controller.gson.toJson(m);
+            if (Controller.updateMembership(jsonMembership, m.getId())) {
+                System.out.println("Matricula alterada com sucesso");
+                setMembership(m);
+            } else
+                System.out.println("Erro ao alterar a senha");
         }
     }
 
