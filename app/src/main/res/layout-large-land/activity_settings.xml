@@ -36,23 +36,11 @@
         android:layout_gravity="center_horizontal"
         android:text="@string/settings_name"
         android:textAppearance="?android:attr/textAppearanceLarge"
-        android:textSize="60sp" />
-
-    <EditText
-        android:id="@+id/emailEdtTxt"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/screenTxt"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="100dp"
-        android:background="@drawable/border"
-        android:hint="@string/prompt_email"
-        android:inputType="textEmailAddress"
-        android:padding="5dp" />
+        android:textSize="90sp" />
 
     <EditText
         android:id="@+id/crtPassEdtTxt"
-        android:layout_width="match_parent"
+        android:layout_width="500dp"
         android:layout_height="wrap_content"
         android:layout_below="@+id/emailEdtTxt"
         android:layout_centerHorizontal="true"
@@ -64,7 +52,7 @@
 
     <EditText
         android:id="@+id/newPassEdtTxt"
-        android:layout_width="match_parent"
+        android:layout_width="500dp"
         android:layout_height="wrap_content"
         android:layout_below="@+id/crtPassEdtTxt"
         android:layout_centerHorizontal="true"
@@ -76,7 +64,7 @@
 
     <EditText
         android:id="@+id/rptPassEdtText"
-        android:layout_width="match_parent"
+        android:layout_width="500dp"
         android:layout_height="wrap_content"
         android:layout_below="@+id/newPassEdtTxt"
         android:layout_centerHorizontal="true"
@@ -86,37 +74,53 @@
         android:inputType="textPassword"
         android:padding="5dp" />
 
-    <Button
-        android:id="@+id/saveBtn"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_above="@+id/backBtn"
-        android:layout_alignParentEnd="true"
-        android:layout_marginBottom="49dp"
-        android:background="@drawable/button_bg_rounded_corners"
-        android:text="@string/save_button_name"
-        android:textColor="@color/black" />
-
-    <Button
-        android:id="@+id/logoutBtn"
-        style="?android:attr/buttonStyleSmall"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignEnd="@+id/backBtn"
-        android:layout_alignParentStart="true"
-        android:layout_alignTop="@+id/saveBtn"
-        android:background="@drawable/button_bg_rounded_corners"
-        android:text="@string/logout_button_name"
-        android:textColor="@color/black" />
-
     <ImageButton
         android:id="@+id/backBtn"
         android:layout_width="70dp"
         android:layout_height="50dp"
+        android:background="@drawable/button_bg_rounded_corners"
+        android:src="@drawable/ic_back_button"
         android:layout_alignParentBottom="true"
         android:layout_alignParentStart="true"
+        android:layout_marginStart="57dp"
+        android:layout_marginBottom="25dp" />
+
+    <EditText
+        android:id="@+id/emailEdtTxt"
+        android:layout_width="500dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="62dp"
+        android:background="@drawable/border"
+        android:hint="@string/prompt_email"
+        android:inputType="textEmailAddress"
+        android:padding="5dp"
+        android:layout_below="@+id/screenTxt"
+        android:layout_alignStart="@+id/crtPassEdtTxt" />
+
+    <Button
+        android:id="@+id/logoutBtn"
+        style="?android:attr/buttonStyleSmall"
+        android:layout_width="80dp"
+        android:layout_height="wrap_content"
         android:background="@drawable/button_bg_rounded_corners"
-        android:src="@drawable/ic_back_button" />
+        android:text="@string/logout_button_name"
+        android:textColor="@color/black"
+        android:layout_marginStart="42dp"
+        android:layout_marginBottom="22dp"
+        android:layout_above="@+id/backBtn"
+        android:layout_alignStart="@+id/screenTxt" />
+
+    <Button
+        android:id="@+id/saveBtn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/button_bg_rounded_corners"
+        android:text="@string/save_button_name"
+        android:textColor="@color/black"
+        android:layout_marginEnd="51dp"
+        android:layout_alignBaseline="@+id/logoutBtn"
+        android:layout_alignBottom="@+id/logoutBtn"
+        android:layout_alignEnd="@+id/screenTxt" />
 
 
 </RelativeLayout>

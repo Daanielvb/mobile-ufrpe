@@ -150,14 +150,8 @@
         android:layout_alignParentBottom="true"
         android:layout_alignStart="@+id/imcTxt"
         android:background="@drawable/button_bg_rounded_corners"
-        android:src="@drawable/ic_back_button" />
-
-    <com.jjoe64.graphview.GraphView
-        android:layout_width="match_parent"
-        android:layout_height="100dip"
-        android:id="@+id/weightGraph"
-        android:layout_alignTop="@+id/weightEdtTxt"
-        android:layout_toEndOf="@+id/backBtn" />
+        android:src="@drawable/ic_back_button"
+        android:layout_marginBottom="10dp"/>
 
     <TextView
         android:id="@+id/workoutCounterTxt"
@@ -178,6 +172,13 @@
         android:layout_marginStart="33dp"
         android:layout_toEndOf="@+id/workoutCounterTxt"
         android:text="" />
+
+    <com.jjoe64.graphview.GraphView
+        android:layout_width="match_parent"
+        android:layout_height="100dip"
+        android:id="@+id/weightGraph"
+        android:layout_below="@+id/weightEdtTxt"
+        android:layout_alignStart="@+id/imcTxt" />
 
 
 </RelativeLayout>
