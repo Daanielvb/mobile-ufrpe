@@ -58,14 +58,46 @@
         android:text=""
         android:textAppearance="?android:attr/textAppearanceSmall" />
 
+    <ImageButton
+        android:id="@+id/backBtn"
+        android:layout_width="70dp"
+        android:layout_height="50dp"
+        android:layout_marginBottom="31dp"
+        android:background="@drawable/button_bg_rounded_corners"
+        android:src="@drawable/ic_back_button"
+        android:layout_alignParentBottom="true"
+        android:layout_alignStart="@+id/spinnerWeek" />
+
+    <TextView
+        android:text=""
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="12dp"
+        android:visibility="invisible"
+        android:id="@+id/workout_info_message"
+        android:layout_below="@+id/finish_workout_btn"
+        android:layout_centerHorizontal="true" />
+
+    <Button
+        android:text="@string/workout_finish"
+        android:layout_width="100dp"
+        android:layout_height="wrap_content"
+        android:id="@+id/finish_workout_btn"
+        android:visibility="invisible"
+        android:background="@drawable/button_bg_rounded_corners"
+        android:textColor="@color/black"
+        android:layout_marginTop="15dp"
+        android:layout_below="@+id/table"
+        android:layout_centerHorizontal="true" />
+
     <TableLayout
         android:id="@+id/table"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:background="#FFFFFF"
-        android:layout_below="@+id/spinnerWeek"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="80dp">
+        android:layout_marginTop="62dp"
+        android:layout_below="@+id/currentDayTxt"
+        android:layout_centerHorizontal="true">
 
         <TableRow android:background="@color/lightGray">
 
@@ -285,38 +317,6 @@
                 android:textSize="20dp"/>
         </TableRow>
     </TableLayout>
-
-    <ImageButton
-        android:id="@+id/backBtn"
-        android:layout_width="70dp"
-        android:layout_height="50dp"
-        android:layout_marginBottom="31dp"
-        android:background="@drawable/button_bg_rounded_corners"
-        android:src="@drawable/ic_back_button"
-        android:layout_alignParentBottom="true"
-        android:layout_alignStart="@+id/spinnerWeek" />
-
-    <TextView
-        android:text=""
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="12dp"
-        android:visibility="invisible"
-        android:id="@+id/workout_info_message"
-        android:layout_below="@+id/finish_workout_btn"
-        android:layout_centerHorizontal="true" />
-
-    <Button
-        android:text="@string/workout_finish"
-        android:layout_width="100dp"
-        android:layout_height="wrap_content"
-        android:id="@+id/finish_workout_btn"
-        android:visibility="invisible"
-        android:background="@drawable/button_bg_rounded_corners"
-        android:textColor="@color/black"
-        android:layout_marginTop="15dp"
-        android:layout_below="@+id/table"
-        android:layout_centerHorizontal="true" />
 
 
 </RelativeLayout>
