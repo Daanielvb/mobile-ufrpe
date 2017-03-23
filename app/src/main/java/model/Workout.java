@@ -22,6 +22,12 @@ public class Workout {
         this.exercises = exercises;
     }
 
+    public Workout(ArrayList<Exercise> exercises, String weekDay){
+        this.exercises = exercises;
+        this.weekDay = weekDay;
+    }
+
+
     public Person getOwner() {
         return owner;
     }

@@ -17,4 +17,8 @@ public class Constants {
     public static final String PERSON_ENTITY = "Persons";
 
     public static final String MEMBERSHIP_ENTITY = "Memberships";
+
+    public static final String WORKOUT_ENTITY = "Workouts";
+
+    public static final String EXERCISE_ENTITY = "Exercises";
 }
