@@ -53,7 +53,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_above="@+id/totalTxtLabel"
-        android:layout_alignStart="@+id/screenTxt"
+        android:layout_alignStart="@+id/textView2"
         android:ems="10"
         android:inputType="number" />
 
@@ -61,10 +61,11 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_above="@+id/editTextCard"
-        android:layout_alignStart="@+id/editTextCard"
+        android:layout_alignStart="@+id/payment_spinner"
         android:ems="10"
         android:inputType="textPersonName"
-        android:text="@string/card_label" />
+        android:text="@string/card_label"
+        android:id="@+id/textView2" />
 
     <TextView
         android:id="@+id/totalTxtLabel"
@@ -76,16 +77,6 @@
         android:text="@string/default_price"
         android:textSize="20sp" />
 
-    <ImageButton
-        android:id="@+id/backBtn"
-        android:layout_width="70dp"
-        android:layout_height="50dp"
-        android:layout_alignParentBottom="true"
-        android:layout_marginBottom="16dp"
-        android:layout_toStartOf="@+id/renewMbshpLabel"
-        android:background="@drawable/button_bg_rounded_corners"
-        android:src="@drawable/ic_back_button" />
-
     <Button
         android:id="@+id/renewBtn"
         android:layout_width="100dp"
@@ -96,24 +87,6 @@
         android:background="@drawable/button_bg_rounded_corners"
         android:text="@string/membership_renew_button_name"
         android:textColor="@color/black" />
-
-    <TextView
-        android:id="@+id/renewMbshpLabel"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignEnd="@+id/screenTxt"
-        android:layout_below="@+id/membershipLstDayEdtTxt"
-        android:layout_marginTop="13dp"
-        android:text="@string/membership_renew_button_name"
-        android:textSize="25sp" />
-
-    <Spinner
-        android:id="@+id/payment_spinner"
-        android:layout_width="200dp"
-        android:layout_height="50dp"
-        android:layout_above="@+id/cardNumberLabel"
-        android:layout_alignStart="@+id/renewMbshpLabel"
-        android:layout_marginLeft="30dp" />
 
     <TextView
         android:id="@+id/membershipLstDayTxt"
@@ -137,14 +110,45 @@
         android:inputType="date"
         android:padding="5dp" />
 
+    <ImageButton
+        android:id="@+id/backBtn"
+        android:layout_width="70dp"
+        android:layout_height="50dp"
+        android:layout_marginBottom="22dp"
+        android:background="@drawable/button_bg_rounded_corners"
+        android:src="@drawable/ic_back_button"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginStart="28dp" />
+
+    <TextView
+        android:id="@+id/renewMbshpLabel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/membership_renew_button_name"
+        android:textSize="25sp"
+        android:layout_centerVertical="true"
+        android:layout_centerHorizontal="true" />
+
+    <Spinner
+        android:id="@+id/payment_spinner"
+        android:layout_width="200dp"
+        android:layout_height="50dp"
+        android:layout_marginLeft="30dp"
+        android:layout_below="@+id/renewMbshpLabel"
+        android:layout_marginTop="11dp"
+        android:layout_centerVertical="true"
+        android:layout_centerHorizontal="true"/>
+
     <TextView
         android:id="@+id/membershipTxt"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignStart="@+id/renewMbshpLabel"
-        android:layout_below="@+id/screenTxt"
         android:text="@string/membership_plan_name"
-        android:textSize="25sp" />
+        android:textSize="25sp"
+        android:layout_below="@+id/screenTxt"
+        android:layout_alignStart="@+id/membershipEdtTxt"
+        android:layout_marginTop="11dp" />
 
     <!--<ImageButton-->
     <!--android:id="@+id/backBtn"-->

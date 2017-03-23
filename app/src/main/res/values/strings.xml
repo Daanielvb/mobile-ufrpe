@@ -34,7 +34,7 @@
 
     <string name="membership_plan_name">Membership plan:</string>
     <string name="membership_last_day_name">Membership expiration:</string>
-    <string name="membership_renew_button_name">Renew membership</string>
+    <string name="membership_renew_button_name">Renew</string>
     <string name="membership_renew_label_name">Renew</string>
 
 
