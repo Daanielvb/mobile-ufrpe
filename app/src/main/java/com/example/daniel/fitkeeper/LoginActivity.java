@@ -61,12 +61,12 @@ public class LoginActivity extends AppCompatActivity {
             }
         });
 
-        forgotPassBtn.setOnClickListener(new View.OnClickListener() {
+        /*forgotPassBtn.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
                 Intent it = new Intent(LoginActivity.this, ResetPasswordActivity.class);
                 startActivity(it);
             }
-        });
+        });*/
     }
 
 
@@ -139,7 +139,7 @@ public class LoginActivity extends AppCompatActivity {
     public void setUI() {
         emailText = (TextView) findViewById(R.id.editTextMail);
         passwordtText = (TextView) findViewById(R.id.editTextPassword);
-        forgotPassBtn = (ImageButton) findViewById(R.id.forgotPassBtn);
+        //forgotPassBtn = (ImageButton) findViewById(R.id.forgotPassBtn);
         loginBtn = (Button) findViewById(R.id.loginBtn);
         errorText = (TextView) findViewById(R.id.errorTxt);
     }

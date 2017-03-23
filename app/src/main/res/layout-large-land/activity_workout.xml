@@ -38,7 +38,7 @@
         android:layout_gravity="center_horizontal"
         android:text="@string/workout_name"
         android:textAppearance="?android:attr/textAppearanceLarge"
-        android:textSize="60sp" />
+        android:textSize="90sp" />
 
     <Spinner
         android:id="@+id/spinnerWeek"
@@ -95,9 +95,16 @@
                 android:text="@string/weight_name"
                 android:textColor="@color/black"
                 android:textSize="20dp" />
+
+            <TextView
+                android:background="@drawable/border2"
+                android:padding="3dip"
+                android:text="  ✓ "
+                android:textColor="@color/black"
+                android:textSize="20dp" />
         </TableRow>
 
-        <TableRow>
+        <TableRow android:id="@+id/tablerow1">
 
             <TextView
                 android:id="@+id/exercise1"
@@ -130,9 +137,18 @@
                 android:text="20kg"
                 android:textColor="@color/black"
                 android:textSize="20dp" />
+
+            <CheckBox
+                android:id="@+id/checkbox_1"
+                android:background="@drawable/border2"
+                android:onClick="onCheckboxClicked"
+                android:padding="3dp"
+                android:text=""
+                android:textColor="@color/black"
+                android:textSize="20dp"/>
         </TableRow>
 
-        <TableRow>
+        <TableRow android:id="@+id/tablerow2">
 
             <TextView
                 android:id="@+id/exercise2"
@@ -165,9 +181,18 @@
                 android:text="20kg"
                 android:textColor="@color/black"
                 android:textSize="20dp" />
+
+            <CheckBox
+                android:id="@+id/checkbox_2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:background="@drawable/border2"
+                android:onClick="onCheckboxClicked"
+                android:textSize="20dp"/>
         </TableRow>
 
-        <TableRow>
+        <TableRow android:id="@+id/tablerow3">
 
             <TextView
                 android:id="@+id/exercise3"
@@ -200,9 +225,17 @@
                 android:text="20kg"
                 android:textColor="@color/black"
                 android:textSize="20dp" />
+
+            <CheckBox
+                android:id="@+id/checkbox_3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/border2"
+                android:onClick="onCheckboxClicked"
+                android:textSize="20dp"/>
         </TableRow>
 
-        <TableRow>
+        <TableRow android:id="@+id/tablerow4">
 
             <TextView
                 android:id="@+id/exercise4"
@@ -235,17 +268,48 @@
                 android:text="20kg"
                 android:textColor="@color/black"
                 android:textSize="20dp" />
+
+            <CheckBox
+                android:id="@+id/checkbox_4"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/border2"
+                android:onClick="onCheckboxClicked"
+                android:padding="3dip"
+                android:textSize="20dp"/>
         </TableRow>
     </TableLayout>
+
+    <Button
+        android:text="@string/workout_finish"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/finish_workout_btn"
+        android:visibility="invisible"
+        android:background="@drawable/button_bg_rounded_corners"
+        android:textColor="@color/black"
+        android:layout_below="@+id/table"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="16dp" />
+
+    <TextView
+        android:text=""
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="12dp"
+        android:visibility="invisible"
+        android:id="@+id/workout_info_message"
+        android:layout_below="@+id/finish_workout_btn"
+        android:layout_centerHorizontal="true" />
 
     <ImageButton
         android:id="@+id/backBtn"
         android:layout_width="70dp"
         android:layout_height="50dp"
-        android:layout_alignParentBottom="true"
-        android:layout_marginBottom="30dp"
         android:background="@drawable/button_bg_rounded_corners"
-        android:src="@drawable/ic_back_button" />
+        android:src="@drawable/ic_back_button"
+        android:layout_below="@+id/finish_workout_btn"
+        android:layout_alignStart="@+id/spinnerWeek" />
 
 
 </RelativeLayout>

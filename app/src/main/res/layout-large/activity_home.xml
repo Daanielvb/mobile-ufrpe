@@ -3,6 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:background="@color/backgroundOrange"
     android:paddingBottom="0dp"
     android:paddingLeft="0dp"
@@ -42,30 +43,8 @@
     <RelativeLayout
         android:layout_width="fill_parent"
         android:layout_height="fill_parent"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentTop="true">
-
-        <TextView
-            android:id="@+id/AppName"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_centerHorizontal="true"
-            android:layout_marginTop="200dp"
-            android:text="@string/app_name"
-            android:textAppearance="?android:attr/textAppearanceLarge"
-            android:textSize="70sp" />
-
-        <Button
-            android:id="@+id/btnHome"
-            android:layout_width="200dp"
-            android:layout_height="wrap_content"
-            android:layout_alignEnd="@+id/AppName"
-            android:layout_alignStart="@+id/AppName"
-            android:layout_below="@+id/AppName"
-            android:layout_marginTop="95dp"
-            android:background="@drawable/button_bg_rounded_corners"
-            android:text="@string/user_info_button"
-            android:textColor="@color/black" />
+        android:layout_alignParentTop="true"
+        android:layout_alignParentStart="true">
 
         <Button
             android:id="@+id/btnWorkout"
@@ -102,6 +81,26 @@
             android:layout_marginRight="20dp"
             android:background="@drawable/button_bg_rounded_corners"
             android:src="@drawable/ic_settings_icon" />
+
+        <Button
+            android:id="@+id/btnHome"
+            android:layout_width="200dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="57dp"
+            android:background="@drawable/button_bg_rounded_corners"
+            android:text="@string/user_info_button"
+            android:textColor="@color/black"
+            android:layout_below="@+id/imageView2"
+            android:layout_centerHorizontal="true" />
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="80dp"
+            app:srcCompat="@drawable/fitkeeper_logo"
+            android:id="@+id/imageView2"
+            android:layout_marginTop="242dp"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentStart="true" />
 
         <!--<ImageButton
             android:layout_width="wrap_content"

@@ -47,20 +47,8 @@
                 android:textSize="40sp" />
 
             <EditText
-                android:id="@+id/emailEdtTxt"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_below="@+id/screenTxt"
-                android:layout_centerHorizontal="true"
-                android:layout_marginTop="100dp"
-                android:background="@drawable/border"
-                android:hint="@string/prompt_email"
-                android:inputType="textEmailAddress"
-                android:padding="5dp" />
-
-            <EditText
                 android:id="@+id/crtPassEdtTxt"
-                android:layout_width="match_parent"
+                android:layout_width="300dp"
                 android:layout_height="wrap_content"
                 android:layout_below="@+id/emailEdtTxt"
                 android:layout_centerHorizontal="true"
@@ -72,7 +60,7 @@
 
             <EditText
                 android:id="@+id/newPassEdtTxt"
-                android:layout_width="match_parent"
+                android:layout_width="300dp"
                 android:layout_height="wrap_content"
                 android:layout_below="@+id/crtPassEdtTxt"
                 android:layout_centerHorizontal="true"
@@ -84,7 +72,7 @@
 
             <EditText
                 android:id="@+id/rptPassEdtText"
-                android:layout_width="match_parent"
+                android:layout_width="300dp"
                 android:layout_height="wrap_content"
                 android:layout_below="@+id/newPassEdtTxt"
                 android:layout_centerHorizontal="true"
@@ -94,34 +82,51 @@
                 android:inputType="textPassword"
                 android:padding="5dp" />
 
-            <Button
-                android:id="@+id/saveBtn"
-                android:layout_width="wrap_content"
+            <EditText
+                android:id="@+id/emailEdtTxt"
+                android:layout_width="300dp"
                 android:layout_height="wrap_content"
-                android:layout_alignParentEnd="true"
-                android:layout_below="@id/rptPassEdtText"
-                android:background="@drawable/button_bg_rounded_corners"
-                android:text="@string/save_button_name"
-                android:textColor="@color/black" />
+                android:layout_marginTop="39dp"
+                android:background="@drawable/border"
+                android:hint="@string/prompt_email"
+                android:inputType="textEmailAddress"
+                android:padding="5dp"
+                android:layout_below="@+id/screenTxt"
+                android:layout_alignStart="@+id/crtPassEdtTxt" />
 
             <Button
                 android:id="@+id/logoutBtn"
                 style="?android:attr/buttonStyleSmall"
-                android:layout_width="wrap_content"
+                android:layout_width="90dp"
                 android:layout_height="wrap_content"
-                android:layout_below="@id/rptPassEdtText"
                 android:background="@drawable/button_bg_rounded_corners"
                 android:text="@string/logout_button_name"
-                android:textColor="@color/black" />
+                android:textColor="@color/black"
+                android:layout_below="@+id/rptPassEdtText"
+                android:layout_alignStart="@+id/screenTxt"
+                android:layout_marginTop="25dp" />
+
+            <Button
+                android:id="@+id/saveBtn"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/button_bg_rounded_corners"
+                android:text="@string/save_button_name"
+                android:textColor="@color/black"
+                android:layout_alignBaseline="@+id/logoutBtn"
+                android:layout_alignBottom="@+id/logoutBtn"
+                android:layout_toEndOf="@+id/logoutBtn"
+                android:layout_marginStart="14dp" />
 
             <ImageButton
                 android:id="@+id/backBtn"
                 android:layout_width="70dp"
                 android:layout_height="50dp"
-                android:layout_below="@+id/logoutBtn"
-                android:layout_marginTop="15dp"
                 android:background="@drawable/button_bg_rounded_corners"
-                android:src="@drawable/ic_back_button" />
+                android:src="@drawable/ic_back_button"
+                android:layout_marginStart="34dp"
+                android:layout_alignParentBottom="true"
+                android:layout_alignParentStart="true" />
 
         </RelativeLayout>
     </ScrollView>
