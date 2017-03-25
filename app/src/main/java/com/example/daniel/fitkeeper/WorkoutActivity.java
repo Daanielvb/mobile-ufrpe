@@ -16,13 +16,25 @@ import com.example.daniel.fitkeeper.utils.Constants;
 import com.example.daniel.fitkeeper.utils.Controller;
 import com.example.daniel.fitkeeper.utils.RequestHelper;
 import com.example.daniel.fitkeeper.utils.Session;
+import com.google.gson.JsonArray;
+import com.google.gson.JsonElement;
 
+import org.json.JSONArray;
+import org.json.JSONException;
+import org.json.JSONObject;
+
+import java.io.IOException;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Calendar;
 import java.util.List;
 import java.util.Locale;
+
+import model.Membership;
+import model.Workout;
+
+import static java.lang.String.valueOf;
 
 public class WorkoutActivity extends AppCompatActivity implements View.OnClickListener {
     public static int checkCount = 0;
@@ -141,8 +153,40 @@ public class WorkoutActivity extends AppCompatActivity implements View.OnClickLi
         c2 = (CheckBox) findViewById(R.id.checkbox_2);
         c3 = (CheckBox) findViewById(R.id.checkbox_3);
         c4 = (CheckBox) findViewById(R.id.checkbox_4);
+        getCurrentWorkout();
     }
 
+    private void getCurrentWorkout() {
+        try {
+            JSONArray response = Controller.getJSONObjectFromURL(
+                    RequestHelper.composeUrlPathWithParam(Constants.WORKOUT_ENTITY, "weekday",
+                            valueOf(getCurrentDay())), Constants.GET_REQUEST);
+            JSONArray exercises = response.getJSONObject(0).getJSONArray("exercises");
+            getCurrentExercises(exercises);
+        } catch (IOException e) {
+            e.printStackTrace();
+        } catch (JSONException e) {
+            e.printStackTrace();
+        }
+    }
+
+    private void getCurrentExercises(JSONArray exercises){
+        List<Integer> workoutIds = new ArrayList<>();
+        try {
+            for(int i = 0; i < exercises.length(); i++){
+                 workoutIds.add((Integer) exercises.get(i));
+                }
+            JSONObject response = Controller.getJSONRealObjectFromURL(RequestHelper.composeUrlPathWithMultipleParams
+                    (Constants.EXERCISE_ENTITY, "id", workoutIds), Constants.GET_REQUEST);
+        }
+        catch (JSONException e) {
+            e.printStackTrace();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
+
+    }
 
     public void saveWorkoutFinished() {
         try {
