@@ -24,6 +24,14 @@ public class Person {
     @Expose
     private int weight;
     @Expose
+    private int weightMonth1;
+    @Expose
+    private int weightMonth2;
+    @Expose
+    private int weightMonth3;
+    @Expose
+    private int weightMonth4;
+    @Expose
     private String username;
     @Expose
     private String password;
@@ -39,11 +47,15 @@ public class Person {
     public Person() {
     }
 
-    public Person(String name, int age, int height, int weight) {
+    public Person(String name, int age, int height, int weight, int weightMonth1, int weightMonth2, int weightMonth3, int weightMonth4) {
         this.name = name;
         this.age = age;
         this.height = height;
         this.weight = weight;
+        this.weightMonth1 = weightMonth1;
+        this.weightMonth2 = weightMonth2;
+        this.weightMonth3 = weightMonth3;
+        this.weightMonth4 = weightMonth4;
         setImc();
     }
 
@@ -60,7 +72,7 @@ public class Person {
         this.workoutCounter = workoutCounter;
     }
 
-    public Person(int id, String name, String username, String password, int membership, int workoutCounter, int age, int height, int weight) {
+    public Person(int id, String name, String username, String password, int membership, int workoutCounter, int age, int height, int weight, int weightMonth1, int weightMonth2, int weightMonth3, int weightMonth4) {
         this.id = id;
         this.name = name;
         this.username = username;
@@ -71,6 +83,10 @@ public class Person {
         this.age = age;
         this.height = height;
         this.weight = weight;
+        this.weightMonth1 = weightMonth1;
+        this.weightMonth2 = weightMonth2;
+        this.weightMonth3 = weightMonth3;
+        this.weightMonth4 = weightMonth4;
         this.setImc();
 
     }
@@ -124,8 +140,40 @@ public class Person {
         return weight;
     }
 
+    public int getWeightMonth1() {
+        return weightMonth1;
+    }
+
+    public int getWeightMonth2() {
+        return weightMonth2;
+    }
+
+    public int getWeightMonth3() {
+        return weightMonth3;
+    }
+
+    public int getWeightMonth4() {
+        return weightMonth4;
+    }
+
     public void setWeight(int weight) {
         this.weight = weight;
+    }
+
+    public void setWeightMonth1(int weightMonth1) {
+        this.weightMonth1 = weightMonth1;
+    }
+
+    public void setWeightMonth2(int weightMonth2) {
+        this.weightMonth2 = weightMonth2;
+    }
+
+    public void setWeightMonth3(int weightMonth3) {
+        this.weightMonth3 = weightMonth3;
+    }
+
+    public void setWeightMonth4(int weightMonth4) {
+        this.weightMonth4 = weightMonth4;
     }
 
     public String getUsername() {

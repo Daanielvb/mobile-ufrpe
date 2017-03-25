@@ -122,7 +122,7 @@ public class LoginActivity extends AppCompatActivity {
                 Person user = new Person(response.getInt("id"), response.getString("name"),
                         response.getString("username"), response.getString("password"),
                         response.getInt("membership"), response.getInt("workoutCounter"), response.getInt("age"),
-                        response.getInt("height"), response.getInt("weight"));
+                        response.getInt("height"), response.getInt("weight"), response.getInt("weightMonth1"), response.getInt("weightMonth2"), response.getInt("weightMonth3"), response.getInt("weightMonth4"));
 
                 user.setWorkouts(workouts);
                 Session.getInstance().setUser(user);
