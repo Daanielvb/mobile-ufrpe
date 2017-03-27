@@ -156,6 +156,17 @@
       ],
       "expireAt": "10/10/2017",
       "weekday": "Friday"
+    },
+    {
+      "id": 6,
+      "exercises": [
+        1,
+        2,
+        3,
+        4
+      ],
+      "expireAt": "10/10/2017",
+      "weekday": "Sunday"
     }
   ],
   "Exercises": [
@@ -163,73 +174,85 @@
       "id": 1,
       "name": "Squat",
       "series": 3,
-      "reps": 10
+      "reps": 10,
+      "weight": 5
     },
     {
       "id": 2,
       "name": "Leg press",
       "series": 3,
-      "reps": 8
+      "reps": 8,
+      "weight": 25
     },
     {
       "id": 3,
       "name": "Deadlift",
       "series": 3,
-      "reps": 12
+      "reps": 12,
+      "weight": 12
     },
     {
       "id": 4,
       "name": "Leg extension",
       "series": 3,
-      "reps": 9
+      "reps": 9,
+      "weight": 50
     },
     {
       "id": 5,
       "name": "Wall Sit",
       "series": 3,
-      "reps": 10
+      "reps": 10,
+      "weight": 12
     },
     {
       "id": 6,
       "name": "Pectorals (chest)",
       "series": 3,
-      "reps": 12
+      "reps": 12,
+      "weight": 16
     },
     {
       "id": 7,
       "name": "Lats (mid back)",
       "series": 3,
-      "reps": 10
+      "reps": 10,
+      "weight": 8
     },
     {
       "id": 8,
       "name": "Deltoids (shoulders)",
       "series": 4,
-      "reps": 7
+      "reps": 7,
+      "weight": 5
     },
     {
       "id": 9,
       "name": "Triceps (back of arms)",
       "series": 5,
-      "reps": 6
+      "reps": 6,
+      "weight": 5
     },
     {
       "id": 10,
       "name": "Biceps (front of arms)",
       "series": 3,
-      "reps": 12
+      "reps": 12,
+      "weight": 12
     },
     {
       "id": 11,
       "name": "Abdominals",
       "series": 2,
-      "reps": 16
+      "reps": 16,
+      "weight": 0
     },
     {
       "id": 12,
       "name": "Back extension",
       "series": 3,
-      "reps": 8
+      "reps": 8,
+      "weight": 16
     }
   ]
 }

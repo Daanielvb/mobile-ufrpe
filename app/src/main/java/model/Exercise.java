@@ -9,10 +9,27 @@ public class Exercise {
     private String description;
     private int series;
     private int reps;
+    private int id;
+    private int weigth;
 
     public String getName() {
         return name;
     }
+
+    public Exercise(String name, int series, int reps){
+        this.name = name;
+        this.series = series;
+        this.reps = reps;
+    }
+
+    public Exercise(String name, int series, int reps, int weigth){
+        this.name = name;
+        this.series = series;
+        this.reps = reps;
+        this.weigth = weigth;
+    }
+
+    public Exercise(){}
 
     public void setName(String name) {
         this.name = name;
@@ -41,4 +58,22 @@ public class Exercise {
     public void setSeries(int series) {
         this.series = series;
     }
+
+    public int getWeigth() {
+        return weigth;
+    }
+
+    public void setWeigth(int weigth) {
+        this.weigth = weigth;
+    }
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
+
+
 }
