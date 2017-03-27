@@ -143,13 +143,17 @@ public class InfoActivity extends AppCompatActivity implements View.OnClickListe
 
     public void setWeightGraph(Person p){
         Random rand = new Random();
+        int weightMonth1 = p.getWeightMonth1();
+        int weightMonth2 = p.getWeightMonth2();
+        int weightMonth3 = p.getWeightMonth3();
+        int weightMonth4 = p.getWeightMonth4();
         int currentWeight = p.getWeight();
         GraphView weightGraph = (GraphView) findViewById(R.id.weightGraph);
         LineGraphSeries<DataPoint> series = new LineGraphSeries<>(new DataPoint[] {
-                new DataPoint(1, currentWeight + rand.nextInt(3)),
-                new DataPoint(2, currentWeight + rand.nextInt(3)),
-                new DataPoint(3, currentWeight + rand.nextInt(3)),
-                new DataPoint(4, currentWeight + rand.nextInt(3)),
+                new DataPoint(1, weightMonth1),
+                new DataPoint(2, weightMonth2),
+                new DataPoint(3, weightMonth3),
+                new DataPoint(4, weightMonth4),
                 new DataPoint(5, currentWeight)
         });
 

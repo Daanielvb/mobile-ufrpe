@@ -1,6 +1,7 @@
 package com.example.daniel.fitkeeper;
 
 import android.os.Bundle;
+import android.os.Parcelable;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.AdapterView;
@@ -82,6 +83,32 @@ public class WorkoutActivity extends AppCompatActivity implements View.OnClickLi
         Spinner spinner = (Spinner) findViewById(R.id.spinnerWeek);
         spinner.setAdapter(adapter);
         spinner.setSelection(getIndexByName(getCurrentDay()));
+
+        if (savedInstanceState != null) {
+
+            if (savedInstanceState.getBoolean("finishWorkoutBtn"))
+            {
+                finishWorkoutBtn.setVisibility(View.VISIBLE);
+                setRowColor(R.id.tablerow1, true);
+                setRowColor(R.id.tablerow2, true);
+                setRowColor(R.id.tablerow3, true);
+                setRowColor(R.id.tablerow4, true);
+            }
+            else {
+                if (savedInstanceState.getBoolean("c1"))
+                    setRowColor(R.id.tablerow1, true);
+
+                if (savedInstanceState.getBoolean("c2"))
+                    setRowColor(R.id.tablerow2, true);
+
+                if (savedInstanceState.getBoolean("c3"))
+                    setRowColor(R.id.tablerow3, true);
+
+                if (savedInstanceState.getBoolean("c4"))
+                    setRowColor(R.id.tablerow4, true);
+            }
+        }
+
         spinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> parentView, View selectedItemView, int position, long id) {
@@ -299,6 +326,21 @@ public class WorkoutActivity extends AppCompatActivity implements View.OnClickLi
         String preparedDay = day.replaceAll("f", "F");
         preparedDay = preparedDay.substring(0, 1).toUpperCase() + preparedDay.substring(1);
         return Arrays.asList(days).indexOf(preparedDay);
+    }
+
+    @Override
+    protected void onSaveInstanceState(Bundle outState) {
+        super.onSaveInstanceState(outState);
+        if (c1.isChecked())
+            outState.putBoolean("c1",true);
+        if (c2.isChecked())
+            outState.putBoolean("c2",true);
+        if (c3.isChecked())
+            outState.putBoolean("c3",true);
+        if (c4.isChecked())
+            outState.putBoolean("c4",true);
+        if (finishWorkoutBtn.getVisibility() == View.VISIBLE)
+            outState.putBoolean("finishWorkoutBtn",true);
     }
 
 }
