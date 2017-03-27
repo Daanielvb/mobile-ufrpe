@@ -17,8 +17,6 @@ import com.example.daniel.fitkeeper.utils.Constants;
 import com.example.daniel.fitkeeper.utils.Controller;
 import com.example.daniel.fitkeeper.utils.RequestHelper;
 import com.example.daniel.fitkeeper.utils.Session;
-import com.google.gson.JsonArray;
-import com.google.gson.JsonElement;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -32,8 +30,7 @@ import java.util.Calendar;
 import java.util.List;
 import java.util.Locale;
 
-import model.Membership;
-import model.Workout;
+import model.Exercise;
 
 import static java.lang.String.valueOf;
 
@@ -47,6 +44,26 @@ public class WorkoutActivity extends AppCompatActivity implements View.OnClickLi
     private Button finishWorkoutBtn;
     private TextView currentDayText;
     private TextView workoutInfoMessage;
+
+    private TextView exercise1;
+    private TextView exercise2;
+    private TextView exercise3;
+    private TextView exercise4;
+
+    private TextView set1;
+    private TextView set2;
+    private TextView set3;
+    private TextView set4;
+
+    private TextView reps1;
+    private TextView reps2;
+    private TextView reps3;
+    private TextView reps4;
+
+    private TextView weigth1;
+    private TextView weigth2;
+    private TextView weigth3;
+    private TextView weigth4;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -180,6 +197,27 @@ public class WorkoutActivity extends AppCompatActivity implements View.OnClickLi
         c2 = (CheckBox) findViewById(R.id.checkbox_2);
         c3 = (CheckBox) findViewById(R.id.checkbox_3);
         c4 = (CheckBox) findViewById(R.id.checkbox_4);
+
+        exercise1 = (TextView) findViewById(R.id.exercise1);
+        exercise2 = (TextView) findViewById(R.id.exercise2);
+        exercise3 = (TextView) findViewById(R.id.exercise3);
+        exercise4 = (TextView) findViewById(R.id.exercise4);
+
+        set1 = (TextView) findViewById(R.id.set1);
+        set2 = (TextView) findViewById(R.id.set2);
+        set3 = (TextView) findViewById(R.id.set3);
+        set4 = (TextView) findViewById(R.id.set4);
+
+        reps1 = (TextView) findViewById(R.id.reps1);
+        reps2 = (TextView) findViewById(R.id.reps2);
+        reps3 = (TextView) findViewById(R.id.reps3);
+        reps4 = (TextView) findViewById(R.id.reps4);
+
+        weigth1 = (TextView) findViewById(R.id.weight1);
+        weigth2 = (TextView) findViewById(R.id.weight2);
+        weigth3 = (TextView) findViewById(R.id.weight3);
+        weigth4 = (TextView) findViewById(R.id.weight4);
+
         getCurrentWorkout();
     }
 
@@ -197,16 +235,27 @@ public class WorkoutActivity extends AppCompatActivity implements View.OnClickLi
         }
     }
 
-    private void getCurrentExercises(JSONArray exercises){
+    private void getCurrentExercises(JSONArray exercises) {
         List<Integer> workoutIds = new ArrayList<>();
+        List<Exercise> exerciseList = new ArrayList<>();
         try {
-            for(int i = 0; i < exercises.length(); i++){
-                 workoutIds.add((Integer) exercises.get(i));
-                }
-            JSONObject response = Controller.getJSONRealObjectFromURL(RequestHelper.composeUrlPathWithMultipleParams
+            for (int i = 0; i < exercises.length(); i++) {
+                workoutIds.add((Integer) exercises.get(i));
+            }
+            JSONArray response = Controller.getJSONObjectFromURL(RequestHelper.composeUrlPathWithMultipleParams
                     (Constants.EXERCISE_ENTITY, "id", workoutIds), Constants.GET_REQUEST);
-        }
-        catch (JSONException e) {
+            System.out.println(response);
+
+            for (int i = 0; i < response.length(); i++) {
+                JSONObject element = (JSONObject) response.get(i);
+                System.out.println(element);
+                Exercise exercise = new Exercise(element.get("name").toString(),
+                        Integer.valueOf((Integer) element.get("series")), ((Integer) element.get("reps")),
+                        (Integer) element.get("weight"));
+                exerciseList.add(exercise);
+            }
+            setExercises(exerciseList);
+        } catch (JSONException e) {
             e.printStackTrace();
         } catch (IOException e) {
             e.printStackTrace();
@@ -214,6 +263,36 @@ public class WorkoutActivity extends AppCompatActivity implements View.OnClickLi
 
 
     }
+
+    private void setExercises(List<Exercise> exerciseList) {
+        for (int j = 0; j < exerciseList.size(); j++) {
+            if (j == 0) {
+                exercise1.setText(exerciseList.get(j).getName());
+                set1.setText(String.valueOf(exerciseList.get(j).getSeries()));
+                reps1.setText(String.valueOf(exerciseList.get(j).getReps()));
+                weigth1.setText(String.valueOf(exerciseList.get(j).getWeigth()));
+            }
+            if (j == 1) {
+                exercise2.setText(exerciseList.get(j).getName());
+                set2.setText(String.valueOf(exerciseList.get(j).getSeries()));
+                reps2.setText(String.valueOf(exerciseList.get(j).getReps()));
+                weigth2.setText(String.valueOf(exerciseList.get(j).getWeigth()));
+            }
+            if (j == 2) {
+                exercise3.setText(exerciseList.get(j).getName());
+                set3.setText(String.valueOf(exerciseList.get(j).getSeries()));
+                reps3.setText(String.valueOf(exerciseList.get(j).getReps()));
+                weigth3.setText(String.valueOf(exerciseList.get(j).getWeigth()));
+            }
+            if (j == 3) {
+                exercise4.setText(exerciseList.get(j).getName());
+                set4.setText(String.valueOf(exerciseList.get(j).getSeries()));
+                reps4.setText(String.valueOf(exerciseList.get(j).getReps()));
+                weigth4.setText(String.valueOf(exerciseList.get(j).getWeigth()));
+            }
+        }
+    }
+
 
     public void saveWorkoutFinished() {
         try {

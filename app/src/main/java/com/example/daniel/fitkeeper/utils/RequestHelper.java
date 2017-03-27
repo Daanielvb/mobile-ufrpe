@@ -20,7 +20,7 @@ public class RequestHelper {
                                                           List<Integer> values){
         String baseStr = Constants.API_URL + entity + "?" + fixedParam + "=" +  values.get(0).toString();
         for( int i = 1; i < values.size(); i++){
-            baseStr += "&" + values.get(i).toString();
+            baseStr += "&" + fixedParam + "=" + values.get(i).toString();
         }
         return baseStr;
     }
