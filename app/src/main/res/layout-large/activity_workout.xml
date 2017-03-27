@@ -47,16 +47,18 @@
         android:layout_alignParentStart="true"
         android:layout_below="@+id/screenTxt"
         android:layout_marginLeft="30dp"
-        android:layout_marginTop="188dp" />
+        android:layout_marginTop="188dp"
+        android:visibility="invisible"/>
 
     <TextView
         android:id="@+id/currentDayTxt"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@+id/spinnerWeek"
-        android:layout_toEndOf="@+id/backBtn"
         android:text=""
-        android:textAppearance="?android:attr/textAppearanceSmall" />
+        android:textAppearance="?android:attr/textAppearanceSmall"
+        android:layout_centerHorizontal="true"
+        android:textSize="20sp"/>
 
     <TableLayout xmlns:android="http://schemas.android.com/apk/res/android"
         android:id="@+id/table"
