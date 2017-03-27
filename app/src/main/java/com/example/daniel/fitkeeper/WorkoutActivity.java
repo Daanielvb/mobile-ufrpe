@@ -113,7 +113,7 @@ public class WorkoutActivity extends AppCompatActivity implements View.OnClickLi
             @Override
             public void onItemSelected(AdapterView<?> parentView, View selectedItemView, int position, long id) {
                 currentDayText.setText(getString(R.string.current_day) + " " + days[position]);
-
+                getCurrentWorkout(days[position]);
             }
 
             @Override
@@ -218,14 +218,22 @@ public class WorkoutActivity extends AppCompatActivity implements View.OnClickLi
         weigth3 = (TextView) findViewById(R.id.weight3);
         weigth4 = (TextView) findViewById(R.id.weight4);
 
-        getCurrentWorkout();
+        getCurrentWorkout(null);
     }
 
-    private void getCurrentWorkout() {
+    private void getCurrentWorkout(String day) {
         try {
-            JSONArray response = Controller.getJSONObjectFromURL(
-                    RequestHelper.composeUrlPathWithParam(Constants.WORKOUT_ENTITY, "weekday",
-                            valueOf(getCurrentDay())), Constants.GET_REQUEST);
+            JSONArray response = new JSONArray();
+            if(day == null) {
+                response = Controller.getJSONObjectFromURL(
+                        RequestHelper.composeUrlPathWithParam(Constants.WORKOUT_ENTITY, "weekday",
+                                valueOf(getCurrentDay())), Constants.GET_REQUEST);
+            }
+            else{
+                response = Controller.getJSONObjectFromURL(
+                        RequestHelper.composeUrlPathWithParam(Constants.WORKOUT_ENTITY, "weekday",
+                                day), Constants.GET_REQUEST);
+            }
             JSONArray exercises = response.getJSONObject(0).getJSONArray("exercises");
             getCurrentExercises(exercises);
         } catch (IOException e) {
